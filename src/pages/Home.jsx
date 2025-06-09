@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
+import logo from "../assets/logo.svg";
 import arrowButton from "../assets/arrow-button.png";
 import loadButton from "../assets/load-button.png";
 import serviceIcon1 from "../assets/service-icon1.png";
@@ -9,6 +10,7 @@ import serviceIcon4 from "../assets/service-icon4.png";
 import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
+import bgVideo from "../assets/bg-tempt.mp4";
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -313,6 +315,10 @@ const Home = () => {
 
       {/* Evolution Quote */}
       <section className="evolution">
+        <video autoPlay muted loop className="evolution-video">
+          <source src={bgVideo} type="video/mp4" />
+        </video>
+        <div className="evolution-overlay"></div>
         <div className="container">
           <p className="evolution-text">
             As all insights platforms continue to evolve, their role in shaping
@@ -321,20 +327,138 @@ const Home = () => {
           </p>
         </div>
       </section>
-
-      {/* Footer CTA */}
-      <section className="footer-cta">
-        <div className="container">
-          <div className="cta-buttons">
-            <button className="cta-btn">FAQ</button>
-            <button className="cta-btn">DOCS</button>
-            <button className="cta-btn">BLOG</button>
-          </div>
-          <div className="contact-info">
-            <div className="logo">IGA@InsightGenesis.AI 🌐</div>
-          </div>
-        </div>
+      
+             {/* Resources Section */}
+       <section className="resources-section">
+         <video autoPlay muted loop className="resources-video">
+           <source src={bgVideo} type="video/mp4" />
+         </video>
+         <div className="resources-overlay"></div>
+         <div className="container">
+           <div className="resources-content">
+             <h2 className="resources-title">RESOURCES</h2>
+             <div className="resources-buttons">
+               <button className="resource-btn">FAQ</button>
+               <button className="resource-btn central-btn">DOCS</button>
+               <button className="resource-btn">BLOG</button>
+             </div>
+             <div className="resources-visual">
+               <div className="central-particle-effect">
+                 <div className="effect-core"></div>
+                 <div className="effect-particles">
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                   <div className="effect-particle"></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
       </section>
+             {/* Social Section */}
+       <section className="social-section">
+         <div className="container">
+           <div className="social-content">
+             <div className="contact-email">
+               <span className="email-text">IGAi@InsightGenesis.Ai</span>
+               <img src={arrowButton} alt="arrow" className="email-arrow" />
+             </div>
+             <div className="social-links">
+               <a href="#" className="social-link">Linkedin</a>
+               <a href="#" className="social-link">Telegram</a>
+               <a href="#" className="social-link">X (Twitter)</a>
+             </div>
+           </div>
+         </div>
+       </section>
+      
+              {/* Footer */}
+        <footer className="footer">
+          <div className="container">
+            <div className="footer-content">
+              {/* Column 1: Logo and CTA */}
+              <div className="footer-column">
+                <div className="footer-logo">
+                  <img src={logo} alt="Insight Genesis" className="logo-image" />                  
+                </div>
+                <a href="#" className="footer-cta-btn">
+                  <span>Get Your Own Insights Now</span>
+                  <img src={arrowButton} alt="arrow" className="cta-arrow" />
+                </a>
+              </div>
+
+              {/* Column 2: Solutions */}
+              <div className="footer-column">
+                <h3 className="footer-title">Solutions</h3>
+                <ul className="footer-links">
+                  <li><a href="#" className="footer-link">Decentralized Personal Insight ( DPI )</a></li>
+                  <li><a href="#" className="footer-link">Financial Inclusion</a></li>
+                  <li><a href="#" className="footer-link">Health & Wellness</a></li>
+                  <li><a href="#" className="footer-link">Human Resource</a></li>
+                  <li><a href="#" className="footer-link">Education</a></li>
+                </ul>
+              </div>
+
+              {/* Column 3: Resource */}
+              <div className="footer-column">
+                <h3 className="footer-title">Resource</h3>
+                <ul className="footer-links">
+                  <li><a href="#" className="footer-link">FAQ</a></li>
+                  <li><a href="#" className="footer-link">Blog</a></li>
+                  <li><a href="#" className="footer-link">Docs</a></li>
+                </ul>
+              </div>
+
+              {/* Column 4: Contact */}
+              <div className="footer-column">
+                <h3 className="footer-title">Contact</h3>
+                <ul className="footer-links">
+                  <li><a href="#" className="footer-link">Linkedin</a></li>
+                  <li><a href="#" className="footer-link">Telegram Channel</a></li>
+                  <li><a href="#" className="footer-link">Telegram Group Chat</a></li>
+                  <li><a href="#" className="footer-link">X (Twitter)</a></li>
+                  <li><a href="mailto:IGAi@insightgenesis.ai" className="footer-link">IGAi@insightgenesis.ai</a></li>
+                </ul>
+              </div>
+
+              {/* Column 5: Legal */}
+              <div className="footer-column">
+                <h3 className="footer-title">Legal</h3>
+                <ul className="footer-links">
+                  <li><a href="#" className="footer-link">Privacy Policy</a></li>
+                  <li><a href="#" className="footer-link">Terms Of Service</a></li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Copyright */}
+            <div className="footer-bottom">
+              <p className="copyright">© 2025 Insight Genesis</p>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 };
