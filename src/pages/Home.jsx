@@ -21,6 +21,10 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
+        <a href="#" className="hero-link">
+          <span>Get Your Own Insights Now</span>
+          <img src={arrowButton} alt="arrow" className="arrow-icon" />
+        </a>
         <div className="hero-background">
           <div className="energy-orb"></div>
           <div className="energy-particles"></div>
@@ -34,10 +38,6 @@ const Home = () => {
               INSIGHTS
             </h1>
           </div>
-          <a href="#" className="hero-link">
-            <span>Get Your Own Insights Now</span>
-            <img src={arrowButton} alt="arrow" className="arrow-icon" />
-          </a>
         </div>
       </section>
 
