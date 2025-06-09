@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
+import logo from "../assets/logo.svg";
 import arrowButton from "../assets/arrow-button.png";
 import loadButton from "../assets/load-button.png";
 import serviceIcon1 from "../assets/service-icon1.png";
@@ -9,6 +10,7 @@ import serviceIcon4 from "../assets/service-icon4.png";
 import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
+import bgVideo from "../assets/bg-tempt.mp4";
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
