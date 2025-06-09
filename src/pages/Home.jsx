@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import arrowButton from '../assets/arrow-button.png';
 import loadButton from '../assets/load-button.png';
+import serviceIcon1 from '../assets/service-icon1.png';
+import serviceIcon2 from '../assets/service-icon2.png';
+import serviceIcon3 from '../assets/service-icon3.png';
+import serviceIcon4 from '../assets/service-icon4.png';
+import coreFeature1 from '../assets/core-1.png';
+import coreFeature2 from '../assets/core-2.png';
+import coreFeature3 from '../assets/core-3.png';
 
 const Home = () => {
+  const [activeCard, setActiveCard] = useState(0);
+
+  const handleCardClick = (cardIndex) => {
+    setActiveCard(cardIndex);
+  };
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -18,7 +31,7 @@ const Home = () => {
               OWN YOUR DESTINY<br />
               <span className="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
             </h1>
-                         <a href="https://insightgenie.ai" className="hero-link">
+                         <a href="#" className="hero-link">
              <span>Get Your Own Insights Now</span>
              <img src={arrowButton} alt="arrow" className="arrow-icon" />
              </a>
@@ -81,26 +94,68 @@ const Home = () => {
       {/* Solutions Section */}
       <section className="solutions">
         <div className="container">
+          <div className="solutions-header">
+            <h2 className="solutions-title">WHAT WE DO</h2>
+            <p className="solutions-description">
+            We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.
+            </p>
+            <a href="#" className="solutions-cta">
+              <span>Get Your Own Insights Now</span>
+              <img src={arrowButton} alt="arrow" className="arrow-icon" />
+            </a>
+          </div>
+          
           <div className="solutions-grid">
-            <div className="solution-card">
-              <div className="solution-icon">💰</div>
-              <h3>Financial Services</h3>
-              <p>Insight Genesis leverages advanced AI models combined with real-time financial data to create sophisticated predictive analytics for investors, traders, and financial institutions.</p>
+            <div className="solution-row">
+              <div className="solution-title">
+                <div className="solution-number">01</div>
+                <h3>Financial<br />Services</h3>
+              </div>
+              <div className="solution-description">
+                <p>Insight Genesis empowers <span className="highlight">financial institutions</span> to extend credit and reduce fraud while enabling all users, including unbanked, to securely own, monetize, and <span className="highlight">benefit from their behavioral data.</span></p>
+              </div>
+              <div className="solution-icon">
+                <img src={serviceIcon1} alt="Financial Services" />
+              </div>
             </div>
-            <div className="solution-card">
-              <div className="solution-icon">🏥</div>
-              <h3>Health & Wellness</h3>
-              <p>Combining artificial intelligence with personal health data and lifestyle factors, Insight Genesis delivers real-time health insights, personalized wellness recommendations, and predictive health analytics.</p>
+            
+            <div className="solution-row">
+              <div className="solution-title">
+                <div className="solution-number">02</div>
+                <h3>Health &<br />Wellness</h3>
+              </div>
+              <div className="solution-description">
+                <p>Empowering telehealth companies and users with personalized health insights derived from cutting-edge AI, our Decentralized Personal Insights <span className="highlight">inspire proactive wellness, smarter health decisions, and vibrant, data-driven lives.</span></p>
+              </div>
+              <div className="solution-icon">
+                <img src={serviceIcon2} alt="Health & Wellness" />
+              </div>
             </div>
-            <div className="solution-card">
-              <div className="solution-icon">👥</div>
-              <h3>Human Resources</h3>
-              <p>Revolutionizing HR processes through Human Resources AI analysis, Insight Genesis provides cutting-edge candidate screening, performance prediction, team compatibility assessment, and workforce optimization insights.</p>
+            
+            <div className="solution-row">
+              <div className="solution-title">
+                <div className="solution-number">03</div>
+                <h3>Human<br />Resources</h3>
+              </div>
+              <div className="solution-description">
+                <p>Revolutionizing enterprises and career guidance organizations, our <span className="highlight">AI-powered Decentralized Personal Insights deliver dynamic,</span> data-driven solutions, inspiring precise candidate matching, boosting employee engagement, and empowering individuals to thrive in their careers.</p>
+              </div>
+              <div className="solution-icon">
+                <img src={serviceIcon3} alt="Human Resources" />
+              </div>
             </div>
-            <div className="solution-card">
-              <div className="solution-icon">🎓</div>
-              <h3>Education</h3>
-              <p>Starting from early age education analytics, Insight Genesis employs AI to create personalized learning paths, predict academic performance, and optimize educational outcomes for learners and institutions.</p>
+            
+            <div className="solution-row">
+              <div className="solution-title">
+                <div className="solution-number">04</div>
+                <h3>Education</h3>
+              </div>
+              <div className="solution-description">
+                <p>Igniting the future for both educational institutions and students, our AI-driven Decentralized Personal Insights analyze <span className="highlight">interests and strengths to deliver tailored guidance,</span> inspiring confident career paths and empowering informed choices.</p>
+              </div>
+              <div className="solution-icon">
+                <img src={serviceIcon4} alt="Education" />
+              </div>
             </div>
           </div>
         </div>
@@ -109,74 +164,66 @@ const Home = () => {
       {/* Mission Statement */}
       <section className="mission">
         <div className="container">
-          <p className="mission-text">
-            Insight Genesis is committed to transforming lives by delivering Decentralized Personal Insights (DPI) through a secure Blockchain infrastructure. Our cutting-edge AI algorithms provide deep Intelligent about themselves for growth and fulfillment, while providing businesses with verified behavioral insights to drive progress, all built on privacy, ethics, and technological advancement.
-          </p>
+          <div className="mission-header">
+            <h2 className="mission-title">OUR VISION</h2>
+          </div>
+          <div className="mission-content">
+            <p className="mission-text">
+              Insight Genesis is committed to transforming lives by delivering Decentralized Personal Insights (DPI) through a secure, Blockchain-powered platform. We enable individuals to gain deep, actionable intelligence about themselves for growth and fulfillment, while providing businesses with verified behavioral insights to drive progress, all built on privacy, collaboration, and advanced AI technology
+            </p>
+          </div>
+          <div className="mission-commitment">
+            <div className="commitment-point">
+              <span className="bullet">●</span>
+              <p>This ensures users retain full ownership and control over their data while fostering trust, transparency, and collaboration among individuals, researchers, and organizations. </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Core Features */}
       <section className="core-features">
         <div className="container">
-          <div className="feature-block">
-            <div className="feature-content">
-              <h2>Decentralization</h2>
-              <div className="feature-points">
-                <div className="point">• Real-time AI insights</div>
-                <div className="point">• Secure data ownership</div>
-                <div className="point">• Privacy-first approach</div>
+          <div className="stacked-cards">
+            <div 
+              className={`feature-card ${activeCard === 0 ? 'active' : ''}`} 
+              onClick={() => handleCardClick(0)}
+              style={{ zIndex: activeCard === 0 ? 3 : 1 }}
+            >
+              <div className="card-content">
+                <h2>Decentralization</h2>
+                <p>The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.</p>
+              </div>
+              <div className="card-icon">
+                <img src={coreFeature1} alt="Decentralization" />
               </div>
             </div>
-            <div className="feature-visual">
-              <div className="decentralization-visual">
-                <div className="center-node"></div>
-                <div className="outer-nodes">
-                  <div className="node"></div>
-                  <div className="node"></div>
-                  <div className="node"></div>
-                  <div className="node"></div>
-                  <div className="node"></div>
-                  <div className="node"></div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="feature-block">
-            <div className="feature-content">
-              <h2>Tokenization</h2>
-              <div className="feature-grid">
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
-                <div className="token-item"></div>
+            <div 
+              className={`feature-card ${activeCard === 1 ? 'active' : ''}`} 
+              onClick={() => handleCardClick(1)}
+              style={{ zIndex: activeCard === 1 ? 3 : 2 }}
+            >
+              <div className="card-content">
+                <h2>Tokenization<br />of data</h2>
+                <p>Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.</p>
+              </div>
+              <div className="card-icon">
+                <img src={coreFeature2} alt="Tokenization" />
               </div>
             </div>
-          </div>
 
-          <div className="feature-block">
-            <div className="feature-content">
-              <h2>Empowering Users</h2>
-              <p>We make our users unlock their potential and take control of their insights digital journey.</p>
-            </div>
-            <div className="feature-visual">
-              <div className="empowering-visual">
-                <div className="user-nodes">
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                  <div className="user-node"></div>
-                </div>
+            <div 
+              className={`feature-card ${activeCard === 2 ? 'active' : ''}`} 
+              onClick={() => handleCardClick(2)}
+              style={{ zIndex: activeCard === 2 ? 3 : 1 }}
+            >
+              <div className="card-content">
+                <h2>Empowering<br />Users</h2>
+                <p>This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.</p>
+              </div>
+              <div className="card-icon">
+                <img src={coreFeature3} alt="Empowering Users" />
               </div>
             </div>
           </div>
