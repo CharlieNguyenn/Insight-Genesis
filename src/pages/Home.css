@@ -79,7 +79,6 @@
 }
 
 .hero-content {
-  /* max-width: fit; */
   width: fit-content;
   position: absolute;
   top: 50%;
@@ -107,6 +106,14 @@
   font-size: 1.5rem;
   margin-bottom: 3rem;
   color: #ccc;
+}
+
+.hero-link {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
 }
 
 /* Stats Cards */
