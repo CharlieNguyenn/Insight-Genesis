@@ -10,6 +10,7 @@ import serviceIcon4 from "../assets/service-icon4.png";
 import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
+import viewer from "../assets/svgviewer-output.svg";
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -37,7 +38,7 @@ const Home = () => {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
-              OWN YOUR DESTINY
+              <img src={viewer} alt="viewer" className="viewer-icon" />
               <br />
               <span className="hero-subtitle-accent">with</span> AI PERSONAL
               INSIGHTS
