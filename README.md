@@ -11,34 +11,6 @@
 - **📊 Real-time Analytics**: Phân tích và insights trong thời gian thực
 - **🛡️ Privacy-First**: Bảo vệ quyền riêng tư và kiểm soát dữ liệu cá nhân
 
-## 📁 Cấu trúc Project
-
-```
-insight-genesis/
-├── src/
-│   ├── components/
-│   │   ├── Navigation.jsx
-│   │   └── Navigation.css
-│   ├── pages/
-│   │   ├── Home.jsx & Home.css
-│   │   ├── About.jsx & About.css
-│   │   ├── GetAIInsight.jsx & GetAIInsight.css
-│   │   ├── Staking.jsx & Staking.css
-│   │   ├── Resource.jsx & Resource.css
-│   │   ├── Blog.jsx & Blog.css
-│   │   ├── FAQ.jsx & FAQ.css
-│   │   └── solutions/
-│   │       ├── Finance.jsx
-│   │       ├── HealthWellness.jsx
-│   │       ├── HumanResource.jsx
-│   │       ├── Education.jsx
-│   │       └── DecentralizedPersonalInsights.jsx
-│   ├── App.jsx
-│   ├── App.css
-│   └── main.jsx
-├── package.json
-└── README.md
-```
 
 ## 🎯 7 Trang chính
 
@@ -194,6 +166,5 @@ MIT License - see LICENSE file for details
 
 ---
 
-**Built with ❤️ using React + Vite**
 
 *Empowering the future with AI and Blockchain technology*
