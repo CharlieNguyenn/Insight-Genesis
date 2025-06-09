@@ -192,11 +192,13 @@ const Home = () => {
             >
               <div className="card-content">
                 <h2>Decentralization</h2>
-                <p>The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.</p>
-              </div>
-              <div className="card-icon">
+                <p> The decentralized nature of this approach empowers
+                    users to control their data, reducing reliance on centralized 
+                    platforms. This not only enhances security but also fosters
+                    trust among participants.
+                </p>
                 <img src={coreFeature1} alt="Decentralization" />
-              </div>
+              </div>              
             </div>
 
             <div 
@@ -206,11 +208,12 @@ const Home = () => {
             >
               <div className="card-content">
                 <h2>Tokenization<br />of data</h2>
-                <p>Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.</p>
-              </div>
-              <div className="card-icon">
+                <p>Once collected, this data can be tokenized, transforming 
+it into digital assets that represent ownership or access
+rights. Tokenization opens up new economic models, 
+allowing users to monetize their contributions.</p>
                 <img src={coreFeature2} alt="Tokenization" />
-              </div>
+              </div>              
             </div>
 
             <div 
@@ -220,11 +223,11 @@ const Home = () => {
             >
               <div className="card-content">
                 <h2>Empowering<br />Users</h2>
-                <p>This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.</p>
-              </div>
-              <div className="card-icon">
+                <p>This model not only democratizes data access but also 
+incentivizes user participation, creating a more vibrant and 
+inclusive digital economy.</p>
                 <img src={coreFeature3} alt="Empowering Users" />
-              </div>
+              </div>              
             </div>
           </div>
         </div>
