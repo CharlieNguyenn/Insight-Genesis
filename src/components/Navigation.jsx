@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import logo from '../assets/logo.svg';
 
 const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <h2>InSight Genesis</h2>
+          {/* <h2>InSight Genesis</h2> */}
+          <img src={logo} />
         </Link>
         
         <ul className="nav-menu">
