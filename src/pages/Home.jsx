@@ -10,7 +10,6 @@ import serviceIcon4 from "../assets/service-icon4.png";
 import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
-import bgVideo from "../assets/bg-tempt.mp4";
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -21,16 +20,20 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <a href="#" className="hero-link">
-          <span>Get Your Own Insights Now</span>
-          <img src={arrowButton} alt="arrow" className="arrow-icon" />
-        </a>
-        <div className="hero-background">
-          <div className="energy-orb"></div>
-          <div className="energy-particles"></div>
-        </div>
+              {/* Hero Section */}
+        <section className="hero">
+          <video autoPlay muted loop className="hero-video">
+            <source src="/mp4/bg-homepage1.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+          <a href="#" className="hero-link">
+            <span>Get Your Own Insights Now</span>
+            <img src={arrowButton} alt="arrow" className="arrow-icon" />
+          </a>
+          <div className="hero-background">
+            <div className="energy-orb"></div>
+            <div className="energy-particles"></div>
+          </div>
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -316,7 +319,7 @@ const Home = () => {
       {/* Evolution Quote */}
       <section className="evolution">
         <video autoPlay muted loop className="evolution-video">
-          <source src={bgVideo} type="video/mp4" />
+          <source src="/mp4/bg-homepage2.mp4" type="video/mp4" />
         </video>
         <div className="evolution-overlay"></div>
         <div className="container">
@@ -331,7 +334,7 @@ const Home = () => {
              {/* Resources Section */}
        <section className="resources-section">
          <video autoPlay muted loop className="resources-video">
-           <source src={bgVideo} type="video/mp4" />
+           <source src="/mp4/bg-homepage3.mp4" type="video/mp4" />
          </video>
          <div className="resources-overlay"></div>
          <div className="container">
@@ -379,6 +382,10 @@ const Home = () => {
       </section>
              {/* Social Section */}
        <section className="social-section">
+         <video autoPlay muted loop className="social-video">
+           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+         </video>
+         <div className="social-overlay"></div>
          <div className="container">
            <div className="social-content">
              <div className="contact-email">

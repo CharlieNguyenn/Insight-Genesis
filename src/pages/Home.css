@@ -17,7 +17,27 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at center, rgba(0, 150, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 70%);
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 .hero-background {
@@ -26,7 +46,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
 }
 
 .energy-orb {
@@ -75,7 +95,7 @@
 
 .hero .container {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .hero-content {
@@ -110,10 +130,26 @@
 
 .hero-link {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-link:hover {
+  border-color: #00ffff;
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
 }
 
 /* Stats Cards */
@@ -763,28 +799,33 @@
 /* Social Section */
 .social-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, rgba(15, 35, 45, 0.9) 0%, rgba(5, 15, 25, 0.95) 100%);
   position: relative;
   overflow: hidden;
 }
 
-.social-section::before {
-  content: '';
+.social-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(0, 255, 255, 0.02) 0%, transparent 50%);
+  object-fit: cover;
   z-index: 1;
+}
+
+.social-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 
 .social-section .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .social-content {
