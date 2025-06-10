@@ -1,72 +1,90 @@
 import React from 'react';
 import './Blog.css';
+import blogImage from '../assets/blog.png';
+import blogImage1 from '../assets/blog1.png';
+import blogImage2 from '../assets/blog2.png';
+import blogImage3 from '../assets/blog3.png';
+import blogImage4 from '../assets/blog4.png';
+import blogImage5 from '../assets/blog5.png';
+import blogImage6 from '../assets/blog6.png';
 
 const Blog = () => {
+  const featuredPost = {
+    id: 0,
+    title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+    excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen, exploring the hidden forces and phenomena that shape our reality. From the microscopic wonders of Nanotex undiscovered gems.',
+    author: 'Community',
+    date: 'April 25, 2025',
+    category: 'Insight',
+    readTime: '12 min read',
+    image: blogImage
+  };
+
   const blogPosts = [
     {
       id: 1,
-      title: 'The Future of AI and Blockchain Integration',
-      excerpt: 'Exploring how artificial intelligence and blockchain technology are converging to create new possibilities...',
-      author: 'Dr. Alex Chen',
-      date: '2024-01-15',
-      category: 'Technology',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 5, 2025',
+      category: 'Community',
       readTime: '8 min read',
-      image: '🤖'
+      image: blogImage1
     },
     {
       id: 2,
-      title: 'Decentralized AI: Democratizing Intelligent Insights',
-      excerpt: 'How decentralized AI networks are making advanced analytics accessible to everyone...',
-      author: 'Sarah Johnson',
-      date: '2024-01-10',
-      category: 'Innovation',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 10, 2025',
+      category: 'Community',
       readTime: '6 min read',
-      image: '🌐'
+      image: blogImage2
     },
     {
       id: 3,
-      title: 'Privacy-Preserving Machine Learning on Blockchain',
-      excerpt: 'Maintaining data privacy while leveraging the power of machine learning through blockchain technology...',
-      author: 'Dr. Michael Roberts',
-      date: '2024-01-08',
-      category: 'Security',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 13, 2025',
+      category: 'Community',
       readTime: '10 min read',
-      image: '🔒'
+      image: blogImage3
     },
     {
       id: 4,
-      title: 'IGT Tokenomics: Understanding Our Token Economy',
-      excerpt: 'A deep dive into the InSight Genesis Token economics and how it powers our ecosystem...',
-      author: 'Lisa Park',
-      date: '2024-01-05',
-      category: 'Tokenomics',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 5, 2025',
+      category: 'Community',
       readTime: '7 min read',
-      image: '💰'
+      image: blogImage4
     },
     {
       id: 5,
-      title: 'Building Sustainable AI Solutions for Healthcare',
-      excerpt: 'How our AI platform is revolutionizing healthcare analytics while ensuring patient privacy...',
-      author: 'Dr. Alex Chen',
-      date: '2024-01-03',
-      category: 'Healthcare',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 13, 2025',
+      category: 'Community',
       readTime: '9 min read',
-      image: '🏥'
+      image: blogImage5
     },
     {
       id: 6,
-      title: 'The Role of Community in Decentralized AI Development',
-      excerpt: 'How community governance and participation drive innovation in our decentralized AI platform...',
-      author: 'Sarah Johnson',
-      date: '2024-01-01',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
+      author: 'Community',
+      date: 'April 13, 2025',
       category: 'Community',
       readTime: '5 min read',
-      image: '👥'
+      image: blogImage6
     }
   ];
 
-  const categories = ['All', 'Technology', 'Innovation', 'Security', 'Tokenomics', 'Healthcare', 'Community'];
-  const [selectedCategory, setSelectedCategory] = React.useState('All');
+  const categories = ['All', 'Community', 'Insight', 'Products', 'News'];
+  const [selectedCategory, setSelectedCategory] = React.useState('Community');
 
   const filteredPosts = selectedCategory === 'All' 
     ? blogPosts 
@@ -74,71 +92,83 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <section className="blog-hero">
+      <section className="trending-header">
+        <div className="trending-text">
+          // TRENDING // HOT NEWS // TRENDING
+        </div>
+      </section>
+
+      <section className="featured-post">
         <div className="container">
-          <h1 className="page-title">InSight Genesis Blog</h1>
-          <p className="page-subtitle">
-            Latest insights, updates, and thoughts from our team
-          </p>
+          <div className="featured-card">
+            <div className="featured-image">
+              <img src={featuredPost.image} alt={featuredPost.title} />
+            </div>
+            <div className="featured-content">
+              <h2 className="featured-title">{featuredPost.title}</h2>
+              <p className="featured-excerpt">{featuredPost.excerpt}</p>
+              <div className="featured-meta">
+                <span className="featured-read-time">{featuredPost.readTime}</span>
+                <span className="featured-date">{featuredPost.date}</span>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-dots">
+            <span className="dot active"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
         </div>
       </section>
 
       <section className="blog-content">
         <div className="container">
-          <div className="blog-filters">
-            {categories.map((category) => (
-              <button
-                key={category}
-                className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
+          <div className="blog-header">
+            <h2 className="blog-section-title">BLOGS</h2>
+            <div className="blog-controls">
+              <div className="blog-filters">
+                <span className="category-label">Category</span>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+              <button className="newest-btn">
+                <span className="sort-icon">⚡</span>
+                Newest First
               </button>
-            ))}
+            </div>
           </div>
 
           <div className="blog-grid">
             {filteredPosts.map((post) => (
               <article key={post.id} className="blog-card">
                 <div className="blog-image">
-                  <div className="blog-emoji">{post.image}</div>
+                  <img src={post.image} alt={post.title} />
                 </div>
                 <div className="blog-content-area">
-                  <div className="blog-meta">
-                    <span className="category-tag">{post.category}</span>
-                    <span className="read-time">{post.readTime}</span>
-                  </div>
-                  <h2 className="blog-title">{post.title}</h2>
+                  <h3 className="blog-title">{post.title}</h3>
                   <p className="blog-excerpt">{post.excerpt}</p>
                   <div className="blog-footer">
-                    <div className="author-info">
-                      <span className="author-name">{post.author}</span>
+                    <div className="blog-meta">
+                      <span className="category-tag">{post.category}</span>
                       <span className="blog-date">{post.date}</span>
                     </div>
-                    <a href={`#post-${post.id}`} className="read-more">
-                      Read More →
-                    </a>
+                    <span className="read-tag">Read</span>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="newsletter">
-        <div className="container">
-          <div className="newsletter-content">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to our newsletter for the latest insights and updates</p>
-            <div className="newsletter-form">
-              <input 
-                type="email" 
-                placeholder="Enter your email address"
-                className="email-input"
-              />
-              <button className="btn btn-primary">Subscribe</button>
-            </div>
+          <div className="view-more">
+            <button className="view-more-btn">View more</button>
           </div>
         </div>
       </section>
