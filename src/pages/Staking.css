@@ -1,229 +1,277 @@
 .staking {
   min-height: 100vh;
+  background: #0a0f1c;
+  color: #ffffff;
 }
 
-.staking-calculator {
-  padding: 4rem 0;
-  background: #f8f9fa;
+.staking-main {
+  padding: 2rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.calculator-container {
+.staking-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 4rem;
+  min-height: 80vh;
 }
 
-.calculator-form {
-  background: white;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.stake-input,
-.period-select {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-.rewards-preview {
-  margin: 2rem 0;
+.staking-left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 12px;
+}
+
+.loading-icon-container {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.main-loading-icon {
+  width: 200px;
+  height: 200px;
+}
+
+
+.staking-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   text-align: center;
 }
 
-.reward-amount {
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #00bcd4;
+}
+
+.stats-divider {
   font-size: 2rem;
-  font-weight: 700;
-  color: #667eea;
-  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 1rem;
 }
 
-.staking-info {
-  background: white;
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+.staking-right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+.staking-form-container {
+  max-width: 500px;
+}
+
+.staking-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.highlight-text {
+  color: #00bcd4;
+}
+
+.form-section {
   margin-top: 2rem;
 }
 
-.stat-card {
-  text-align: center;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 12px;
+.form-group {
+  margin-bottom: 2rem;
 }
 
-.stat-value {
-  font-size: 52px;
-  font-weight: 400;
-  color: #667eea;
+.form-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-.staking-options {
-  padding: 4rem 0;
+.period-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.options-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.option-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+.period-tab {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.option-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+.period-tab:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.option-header {
+.period-tab.active {
+  background: #00bcd4;
+  border-color: #00bcd4;
+  color: #ffffff;
+}
+
+.amount-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.amount-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.amount-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.max-button {
+  background: transparent;
+  border: none;
+  color: #00bcd4;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.max-button:hover {
+  color: #26c6da;
+}
+
+.staking-details {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.risk-badge {
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.detail-row:last-child {
+  margin-bottom: 0;
 }
 
-.risk-badge.low {
-  background: #d4edda;
-  color: #155724;
+.detail-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
 }
 
-.risk-badge.medium {
-  background: #fff3cd;
-  color: #856404;
+.detail-value {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
 }
 
-.risk-badge.high {
-  background: #f8d7da;
-  color: #721c24;
+.detail-value.highlight {
+  color: #00bcd4;
 }
 
-.apy-display {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.apy-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #667eea;
-}
-
-.apy-label {
+.connect-wallet-btn {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-size: 1rem;
-  color: #666;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
-.option-features {
-  margin-bottom: 2rem;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8rem;
-}
-
-.feature .icon {
-  margin-right: 0.8rem;
-  font-size: 1.2rem;
-}
-
-.benefits {
-  padding: 4rem 0;
-  background: #f8f9fa;
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.benefit-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-.benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.how-it-works {
-  padding: 4rem 0;
-}
-
-.steps-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.step {
-  text-align: center;
-  padding: 2rem;
-}
-
-.step-number {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 auto 1.5rem;
+.connect-wallet-btn:hover {
+  background: #00bcd4;
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
-  .calculator-container {
+  .staking-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .staking-left-column {
+    padding: 1rem;
+    text-align: center;
   }
   
-  .steps-container {
-    grid-template-columns: 1fr;
+  .main-loading-icon {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .staking-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stats-divider {
+    display: none;
+  }
+  
+  .staking-right-column {
+    padding: 1rem;
+  }
+  
+  .staking-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .period-tabs {
+    justify-content: center;
+  }
+  
+  .period-tab {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
   }
 } 
