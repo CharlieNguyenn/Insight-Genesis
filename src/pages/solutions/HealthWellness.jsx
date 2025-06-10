@@ -5,7 +5,7 @@ const HealthWellness = () => {
   return (
     <div className="health-wellness">
       {/* health hero */}
-      <section className="health-hero">
+      <section className="solutions-hero">
         <video 
           className="hero-video-bg" 
           autoPlay 
