@@ -1,6 +1,5 @@
 import React from 'react';
-import '../Solutions.css';
-import './css/HumanResource.css';
+import styles from './css/HumanResource.css';
 import humanBg from '../../assets/human-bg1.png';
 import cardImage1 from '../../assets/Card.png';
 import cardImage2 from '../../assets/Card-2.png';
@@ -18,14 +17,21 @@ const HumanResource = () => {
           loop 
           playsInline
         >
-          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+          <source src="/mp4/085e4b8dcc96a5df48e607c966bcfbfec4318516hls_abr_3_00001.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay"></div>
         <div className="container">
-          <h1 className="hero-title">
-              HUMAN<br />
-              RESOURCE
+          <div className='title-1'>
+            <h1 className="hero-title">
+                <span>H</span>UMAN
             </h1>
+          </div>
+          <div className='title-2'>
+            <h1 className="hero-title">
+                RES<span>O</span>URCES
+            </h1>
+          </div>
+          
         </div>
       </section>
       {/* human-resources-section */}
@@ -50,10 +56,19 @@ const HumanResource = () => {
                   <span className="dot"></span>
                 </div>
               </div>
-              <h2 className="hr-title">
-                HUMAN<br />
-                RESOURCES
-              </h2>
+              <div>
+                <div className='title-1'>
+                  <h2 className="section-title">
+                      <span>H</span>UMAN
+                  </h2>
+                </div>
+                <div className='title-2'>
+                  <h2 className="section-title">
+                      RES<span>O</span>URCES
+                  </h2>
+                </div>
+              </div>
+
               <p className="hr-description">
                 SUPERCHARGE YOUR HR TEAM WITHOUT INCREASING HEADCOUNT.
               </p>
@@ -138,8 +153,8 @@ const HumanResource = () => {
                 </div>
               </div>
               <h2 className="assessment-title">
-                CANDIDATE<br />
-                ASSESSMENT
+                CANDIDATE <br />
+                <span>ASSESSMENT</span>
               </h2>
               <h3 className="assessment-slogan">
                 HIRE FAST, HIRE RIGHT!
@@ -154,9 +169,15 @@ const HumanResource = () => {
               
               <div className="assessment-features">
                 <div className="feature-item">
-                  <div className="feature-dots">
-                    <span className="dot-blue"></span>
-                    <span className="dot-blue"></span>
+                  <div className='mark'>
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>                  
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>
                   </div>
                   <div className="feature-text">
                     Customers increase their job fit rate by 27% on average
@@ -164,9 +185,15 @@ const HumanResource = () => {
                 </div>
                 
                 <div className="feature-item">
-                  <div className="feature-dots">
-                    <span className="dot-blue"></span>
-                    <span className="dot-blue"></span>
+                  <div className='mark'>
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>                  
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>
                   </div>
                   <div className="feature-text">
                     Real time assessment during interviews with Genie Score™
@@ -174,9 +201,15 @@ const HumanResource = () => {
                 </div>
                 
                 <div className="feature-item">
-                  <div className="feature-dots">
-                    <span className="dot-blue"></span>
-                    <span className="dot-blue"></span>
+                  <div className='mark'>
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>                  
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>
                   </div>
                   <div className="feature-text">
                     Easily integrates into your existing applicant tracking system
