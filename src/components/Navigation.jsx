@@ -8,13 +8,12 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          {/* <h2>InSight Genesis</h2> */}
           <img src={logo} />
         </Link>
         
         <ul className="nav-menu">
           <li className="nav-item">
-            <Link to="/about" className="nav-link">About InSight Genesis</Link>
+            <Link to="/" className="nav-link">About InSight Genesis</Link> {/*about*/}
           </li>
           <li className="nav-item dropdown">
             <span className="nav-link">Solutions</span>
@@ -27,13 +26,13 @@ const Navigation = () => {
             </ul>
           </li>
           <li className="nav-item">
-            <Link to="/get-ai-insight" className="nav-link">Get AI Insight</Link>
+            <Link to="/" className="nav-link">Get AI Insight</Link> {/*get-ai-insight*/}
           </li>
           <li className="nav-item">
             <Link to="/staking" className="nav-link">Staking</Link>
           </li>
           <li className="nav-item">
-            <Link to="/resource" className="nav-link">Resource</Link>
+            <Link to="/" className="nav-link">Resource</Link> {/*resource*/}
           </li>
           <li className="nav-item">
             <Link to="/blog" className="nav-link">Blog</Link>

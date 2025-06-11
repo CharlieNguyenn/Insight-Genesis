@@ -1,6 +1,7 @@
 import React from 'react';
 import './Finance.css';
 import bgFinance from "../../assets/bg-finance.png";
+import iconList from "../../assets/list-icon.svg";
 
 const Finance = () => {
   return (
