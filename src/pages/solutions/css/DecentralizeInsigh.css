@@ -1,0 +1,308 @@
+/* Decentralized Personal Insights Section */
+.control-data-section {
+    position: relative;
+    padding: 100px 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #0a0f1c;
+  }
+  
+  .control-data-section .container {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .control-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .control-data-content {
+    color: #ffffff;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+  }
+  
+  .main-heading {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+  }
+  
+  .intro-description {
+    margin-bottom: 50px;
+  }
+  
+  .intro-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .features-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .feature-group {
+    border-left: 2px solid rgba(0, 188, 212, 0.3);
+    padding-left: 25px;
+  }
+  
+  .feature-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 8px;
+  }
+  
+  .feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00bcd4;
+  }
+  
+  .feature-header h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    line-height: 1.3;
+  }
+  
+  .feature-content {
+    margin-left: 21px;
+  }
+  
+  .feature-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+  }
+  
+  .feature-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .feature-content strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .control-data-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .decentral-bg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .decentral-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    object-fit: cover;
+  }
+  
+  /* Secure Transparent Section */
+  .secure-transparent-section {
+    position: relative;
+    padding: 100px 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #0a0f1c;
+  }
+  
+  .secure-transparent-section .container {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .secure-transparent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .secure-transparent-content {
+    color: #ffffff;
+  }
+  
+  .secure-main-heading {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  
+  .secure-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+  }
+  
+  .secure-transparent-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .secure-hand-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .secure-hand-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    object-fit: cover;
+  }
+  
+  /* New Data Economy Section */
+  .new-data-section {
+    position: relative;
+    padding: 100px 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #0a0f1c;
+  }
+  
+  .new-data-section .container {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .new-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 80vh;
+  }
+  
+  .new-data-content {
+    color: #ffffff;
+  }
+  
+  .new-data-main-heading {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  
+  .new-data-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+  }
+  
+  .new-data-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .data-economy-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .data-economy-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    object-fit: cover;
+  }

@@ -1,7 +1,8 @@
 import React from 'react';
-import './Finance.css';
+import './css/Finance.css';
 import bgFinance from "../../assets/bg-finance.png";
 import iconList from "../../assets/list-icon.svg";
+import humanImage from "../../assets/human-image.png";
 
 const Finance = () => {
   return (
@@ -34,30 +35,87 @@ const Finance = () => {
               </div>
               
               <h2 className="section-title">
-              Enabling access to economic opportunities for the unbanked & underbanked
+                ENABLING ACCESS TO ECONOMIC OPPORTUNITIES<br />
+                FOR THE UNBANKED & UNDERBANKED
               </h2>
 
               <div className="feature-points">
                 <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>Insight Genesis’ Financial Inclusion empowers users with seamless access to financial services through AI-driven insights, while enabling companies to approve users faster and more accurately.</p>
+                  <img src={iconList} alt="feature icon" className="point-icon" />
+                  <p>Insight Genesis' Financial Inclusion empowers users with seamless access to financial services through AI-driven insights, while enabling companies to approve users faster and more accurately.</p>
                 </div>
                 
                 <div className="feature-point">
-                  <span className="point-icon"></span>
+                  <img src={iconList} alt="feature icon" className="point-icon" />
                   <p>This enables financial institutions to extend credit access responsibly to new customer segments lacking traditional credit histories.</p>
                 </div>
                 
                 <div className="feature-point">
-                  <span className="point-icon"></span>
+                  <img src={iconList} alt="feature icon" className="point-icon" />
                   <p>Genesis Score™ reduces Portfolio at Risk by 45% and can be used with or without traditional credit scores.</p>
                 </div>
               </div>
             </div>
 
             <div className="visual-side">
-              <div className="finance-image-container">
-                <img src={bgFinance} alt="Financial Analysis Interface" className="finance-bg-image" />
+              <div className="face-recognition">
+                <div className="face-container">
+                  <div className="face-image">
+                    <img src={humanImage} alt="Human face" className="human-face" />
+                    <div className="face-mesh">
+                      <div className="mesh-lines"></div>
+                      <div className="detection-points">
+                        <div className="point point-1"></div>
+                        <div className="point point-2"></div>
+                        <div className="point point-3"></div>
+                        <div className="point point-4"></div>
+                        <div className="point point-5"></div>
+                      </div>
+                    </div>
+                    <div className="processing-label">Analyzing...</div>
+                  </div>
+                </div>
+                
+                <div className="stats-panel">
+                  <div className="main-stat">
+                    <div className="stat-label">Intent to pay back</div>
+                    <div className="stat-value">93%</div>
+                  </div>
+                  
+                  <div className="stat-bars">
+                    <div className="stat-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="stat-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="stat-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="stat-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

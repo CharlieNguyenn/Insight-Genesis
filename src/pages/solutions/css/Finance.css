@@ -122,15 +122,11 @@
 }
 
 .point-icon {
-  color: #00ffff;
-  font-size: 1rem;
+  width: 16px;
+  height: 16px;
   margin-top: 0.3rem;
   flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  background: #00ffff;
-  border-radius: 50%;
-  display: block;
+  filter: brightness(0) saturate(100%) invert(66%) sepia(98%) saturate(3207%) hue-rotate(184deg) brightness(104%) contrast(101%);
 }
 
 .feature-point p {
@@ -150,8 +146,8 @@
 
 .face-container {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 450px;
   margin: 0 auto;
   background: linear-gradient(135deg, rgba(0, 50, 100, 0.6), rgba(0, 20, 40, 0.8));
   border-radius: 20px;
@@ -163,17 +159,26 @@
 .face-image {
   position: relative;
   width: 100%;
-  height: 70%;
-  background: linear-gradient(135deg, rgba(0, 100, 150, 0.2), rgba(0, 50, 100, 0.3));
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.human-face {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
 .face-mesh {
-  position: relative;
-  width: 200px;
-  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .mesh-lines {
@@ -183,7 +188,7 @@
   background-image: 
     linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px),
     linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: 30px 30px;
   animation: meshPulse 2s ease-in-out infinite;
 }
 
@@ -195,44 +200,46 @@
 
 .point {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: #00ffff;
   border-radius: 50%;
-  box-shadow: 0 0 10px #00ffff;
+  box-shadow: 0 0 15px #00ffff;
   animation: pointPulse 1.5s ease-in-out infinite;
 }
 
-.point-1 { top: 20%; left: 40%; animation-delay: 0s; }
-.point-2 { top: 20%; right: 40%; animation-delay: 0.3s; }
-.point-3 { top: 40%; left: 50%; animation-delay: 0.6s; }
-.point-4 { top: 60%; left: 35%; animation-delay: 0.9s; }
-.point-5 { top: 60%; right: 35%; animation-delay: 1.2s; }
+.point-1 { top: 25%; left: 35%; animation-delay: 0s; }
+.point-2 { top: 25%; right: 35%; animation-delay: 0.3s; }
+.point-3 { top: 45%; left: 50%; animation-delay: 0.6s; }
+.point-4 { top: 65%; left: 30%; animation-delay: 0.9s; }
+.point-5 { top: 65%; right: 30%; animation-delay: 1.2s; }
 
 @keyframes meshPulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
 @keyframes pointPulse {
   0%, 100% { 
     transform: scale(1);
-    box-shadow: 0 0 10px #00ffff;
+    box-shadow: 0 0 15px #00ffff;
   }
   50% { 
-    transform: scale(1.3);
-    box-shadow: 0 0 20px #00ffff;
+    transform: scale(1.5);
+    box-shadow: 0 0 25px #00ffff;
   }
 }
 
 .processing-label {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   color: #00ffff;
   font-size: 0.9rem;
   font-weight: 600;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 /* Stats Panel */
