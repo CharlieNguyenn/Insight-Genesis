@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Solutions.css';
+import './css/HealthWellness.css';
 
 const HealthWellness = () => {
   return (
@@ -356,7 +357,7 @@ const HealthWellness = () => {
                       <div className="metric-bar-full">
                         <div className="metric-fill-blue" style={{width: '70%'}}></div>
                       </div>
-                      <span className="metric-value-right">7/10</span>
+                      <span className="">7/10</span>
                     </div>
                   </div>
                 </div>

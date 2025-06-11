@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Solutions.css';
+import './css/HumanResource.css';
 import humanBg from '../../assets/human-bg1.png';
 import cardImage1 from '../../assets/Card.png';
 import cardImage2 from '../../assets/Card-2.png';

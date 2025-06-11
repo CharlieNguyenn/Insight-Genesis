@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Solutions.css';
+import './css/Education.css';
 import educationBg1 from '../../assets/education-bg1.png';
 import educationBg2 from '../../assets/education-bg2.png';
 const Education = () => {

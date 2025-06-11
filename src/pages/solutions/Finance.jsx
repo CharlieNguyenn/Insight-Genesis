@@ -1,5 +1,5 @@
 import React from 'react';
-import './Finance.css';
+import './css/Finance.css';
 import bgFinance from "../../assets/bg-finance.png";
 import Footer from '../../components/Footer';
 

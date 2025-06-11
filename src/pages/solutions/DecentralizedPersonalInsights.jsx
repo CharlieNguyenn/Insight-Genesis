@@ -1,6 +1,5 @@
 import React from 'react';
-import '../Solutions.css';
-import './DecentralizedPersonalInsights.css';
+import './css/DecentralizedPersonalInsights.css';
 
 const DecentralizedPersonalInsights = () => {
   return (
