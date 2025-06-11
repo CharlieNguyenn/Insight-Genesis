@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../assets/logo.svg';
@@ -8,9 +8,14 @@ import narrowRightIcon from '../assets/icons/narrow-right.svg';
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const sideMenuRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   useEffect(() => {
@@ -27,6 +32,19 @@ const Navigation = () => {
     // Cleanup event listener
     return () => {
       window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sideMenuRef.current && !sideMenuRef.current.contains(event.target) && !event.target.closest('.menu-toggle')) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -49,13 +67,16 @@ const Navigation = () => {
         </div>
       </div>
       
-      <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
+      <div className={`side-menu ${menuOpen ? 'open' : ''}`} ref={sideMenuRef}>
+        <button className="close-menu" onClick={closeMenu}>
+          <span className="close-icon">×</span>
+        </button>
         <div className="menu-items">
           <Link to="/" className="menu-item">About Insight Genesis</Link>
           
           <div className="menu-section">
             <h3 className="menu-heading">Solutions</h3>
-            <Link to="/solutions/decentralized-personal-insights" className="menu-item submenu-item">Decentralized Personal Insights ( DPI )</Link>
+            <Link to="/solutions/decentralized-personal-insights" className="menu-item submenu-item">Decentralized Personal Insights</Link>
             <Link to="/solutions/finance" className="menu-item submenu-item">Finance</Link>
             <Link to="/solutions/health-wellness" className="menu-item submenu-item">Health & Wellness</Link>
             <Link to="/solutions/human-resource" className="menu-item submenu-item">Human Resources</Link>
@@ -70,7 +91,7 @@ const Navigation = () => {
         </div>
       </div>
       
-      {menuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
+      {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
     </header>
   );
 };
