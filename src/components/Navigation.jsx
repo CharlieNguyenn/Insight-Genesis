@@ -38,7 +38,7 @@ const Navigation = () => {
         </Link>
         
         <div className="header-actions">
-          <Link to="/contact" className="get-in-touch">
+          <Link to="/" className="get-in-touch">
             Get in touch
             <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
           </Link>
@@ -51,7 +51,7 @@ const Navigation = () => {
       
       <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
         <div className="menu-items">
-          <Link to="/about" className="menu-item">About Insight Genesis</Link>
+          <Link to="/" className="menu-item">About Insight Genesis</Link>
           
           <div className="menu-section">
             <h3 className="menu-heading">Solutions</h3>
@@ -62,9 +62,9 @@ const Navigation = () => {
             <Link to="/solutions/education" className="menu-item submenu-item">Education</Link>
           </div>
           
-          <Link to="/get-ai-insight" className="menu-item">Get AI Insight</Link>
+          <Link to="/" className="menu-item">Get AI Insight</Link>
           <Link to="/staking" className="menu-item">Staking</Link>
-          <Link to="/resource" className="menu-item">Resource</Link>
+          <Link to="/" className="menu-item">Resource</Link>
           <Link to="/blog" className="menu-item">Blog</Link>
           <Link to="/faq" className="menu-item">FAQ</Link>
         </div>

@@ -14,7 +14,7 @@ const Footer = () => {
               <img src={logo} alt="Insight Genesis" />
             </Link>
             
-            <Link to="/get-ai-insight" className="cta-button">
+            <Link to="/" className="cta-button">
               <span>Get Your Own Insights Now</span>
               <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
             </Link>

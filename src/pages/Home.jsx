@@ -34,7 +34,7 @@ const Home = () => {
             <br />
             <span className="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
           </h1>
-          <Link to="/get-ai-insight" className="hero-link">
+          <Link to="/" className="hero-link">
             <span>Get Your Own Insights Now</span>
             <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
@@ -104,7 +104,7 @@ const Home = () => {
         <div className="container">
           <div className="section-header">
             <h2>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</h2>
-            <Link to="/get-ai-insight" className="cta-button">
+            <Link to="/" className="cta-button">
               <span>Get Your Own Insights Now</span>
               <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>

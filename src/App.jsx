@@ -24,10 +24,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/get-ai-insight" element={<GetAIInsight />} />
+            <Route path="/" element={<About />} />
+            <Route path="/" element={<GetAIInsight />} />
             <Route path="/staking" element={<Staking />} />
-            <Route path="/resource" element={<Resource />} />
+            <Route path="/" element={<Resource />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/solutions/finance" element={<Finance />} />
