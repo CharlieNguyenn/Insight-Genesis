@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import arrowButton from "../assets/arrow-button.png";
 import loadButton from "../assets/load-button.png";
-import serviceIcon1 from "../assets/service-icon1.png";
-import serviceIcon2 from "../assets/service-icon2.png";
-import serviceIcon3 from "../assets/service-icon3.png";
+import serviceIcon1 from "../assets/service-icon1.svg";
+import serviceIcon2 from "../assets/service-icon2.svg";
+import serviceIcon3 from "../assets/service-icon3.svg";
 import serviceIcon4 from "../assets/service-icon4.png";
 import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
@@ -190,47 +190,20 @@ const Home = () => {
       {/* Core Features */}
       <section className="core-features">
         <div className="container">
-          <div className="stacked-cards">
-            <div
-              className={`feature-card ${activeCard === 0 ? "active" : ""}`}
-              onClick={() => handleCardClick(0)}
-              style={{ zIndex: activeCard === 0 ? 3 : 1 }}
-            >
-              <div className="card-content">
-                <h2>Decentralization</h2>
-                <p>
-                  The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.
-                </p>
-                <div className="card-visual decentralization"></div>
-              </div>
+          <div className="feature-cards-container">
+            <div className="feature-card feature-card-1" style={{backgroundColor: '#1e4d6b', color: 'white'}}>
+              <h2 style={{color: 'white'}}>Decentralization</h2>
+              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.</p>
             </div>
-
-            <div
-              className={`feature-card ${activeCard === 1 ? "active" : ""}`}
-              onClick={() => handleCardClick(1)}
-              style={{ zIndex: activeCard === 1 ? 3 : 2 }}
-            >
-              <div className="card-content">
-                <h2>Tokenization<br />of data</h2>
-                <p>
-                  Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.
-                </p>
-                <div className="card-visual tokenization"></div>
-              </div>
+            
+            <div className="feature-card feature-card-2" style={{backgroundColor: '#153743', color: 'white'}}>
+              <h2 style={{color: 'white'}}>Tokenization</h2>
+              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.</p>
             </div>
-
-            <div
-              className={`feature-card ${activeCard === 2 ? "active" : ""}`}
-              onClick={() => handleCardClick(2)}
-              style={{ zIndex: activeCard === 2 ? 3 : 1 }}
-            >
-              <div className="card-content">
-                <h2>Empowering<br />Users</h2>
-                <p>
-                  This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.
-                </p>
-                <div className="card-visual empowering"></div>
-              </div>
+            
+            <div className="feature-card feature-card-3" style={{backgroundColor: '#0c1b23', color: 'white'}}>
+              <h2 style={{color: 'white'}}>Empowering Users</h2>
+              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.</p>
             </div>
           </div>
         </div>

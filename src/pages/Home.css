@@ -247,19 +247,19 @@
 }
 
 .service-graphic.financial {
-  background-image: url('../assets/service-icon1.png');
+  background-image: url('../assets/service-icon1.svg');
 }
 
 .service-graphic.health {
-  background-image: url('../assets/service-icon2.png');
+  background-image: url('../assets/service-icon2.svg');
 }
 
 .service-graphic.hr {
-  background-image: url('../assets/service-icon3.png');
+  background-image: url('../assets/service-icon3.svg');
 }
 
 .service-graphic.education {
-  background-image: url('../assets/service-icon4.png');
+  background-image: url('../assets/service-icon4.svg');
 }
 
 /* Mission Section */
@@ -290,92 +290,120 @@
 /* Core Features */
 .core-features {
   padding: 5rem 0;
-}
-
-.stacked-cards {
+  background-color: #000000;
   position: relative;
-  height: 500px;
-  perspective: 1000px;
-  max-width: 1000px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
-.feature-card {
-  position: absolute;
+.feature-cards-container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 120px; /* Để dành chỗ cho margin-top âm của feature-card đầu tiên */
+}
+
+/* Tất cả thẻ có margin-top để xếp lớp */
+.feature-card {
+  position: relative;
   border-radius: 20px;
-  padding: 2rem;
-  background: rgba(0, 20, 40, 0.3);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  transition: all 0.5s ease;
-  transform-style: preserve-3d;
-  cursor: pointer;
+  padding: 4rem;
+  color: white;
+  margin-top: -120px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  background-color: transparent;
 }
 
-.feature-card:nth-child(1) {
-  transform: translateZ(-10px) translateY(-10px);
-  background-color: rgba(29, 85, 119, 0.3);
+/* Lớp thấp nhất */
+.feature-card-1 {
+  background-color: #1e4d6b;
+  z-index: 1;
+  border: 1px solid rgba(79, 209, 242, 0.2);
 }
 
-.feature-card:nth-child(2) {
-  transform: translateZ(-5px) translateY(-5px);
-  background-color: rgba(19, 49, 67, 0.3);
+/* Lớp giữa */
+.feature-card-2 {
+  background-color: #153743;
+  z-index: 2;
+  border: 1px solid rgba(79, 209, 242, 0.2);
 }
 
-.feature-card:nth-child(3) {
-  transform: translateZ(0) translateY(0);
-  background-color: rgba(11, 33, 48, 0.3);
+/* Lớp trên cùng */
+.feature-card-3 {
+  background-color: #0c1b23;
+  z-index: 3;
+  border: 1px solid rgba(79, 209, 242, 0.2);
 }
 
-.feature-card.active {
-  transform: translateZ(50px) scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-}
-
-.feature-card:hover {
-  border-color: rgba(0, 255, 255, 0.7);
-}
-
-.card-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  height: 100%;
-}
-
-.card-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.feature-card h2 {
+  font-size: 4rem;
+  font-weight: 300;
   margin-bottom: 1.5rem;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: none;
+  line-height: 1.1;
 }
 
-.card-content p {
+.feature-card p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
-  max-width: 400px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 90%;
 }
 
-.card-visual {
-  height: 100%;
-  background-position: center;
+/* Thêm background image cho từng card */
+.feature-card-1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  width: 250px;
+  height: 250px;
+  background-image: url('../assets/core-1.png');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.card-visual.decentralization {
-  background-image: url('../assets/core-1.png');
-}
-
-.card-visual.tokenization {
+.feature-card-2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  width: 250px;
+  height: 250px;
   background-image: url('../assets/core-2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.card-visual.empowering {
+.feature-card-3::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  width: 250px;
+  height: 250px;
   background-image: url('../assets/core-3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 /* Evolution Section */
