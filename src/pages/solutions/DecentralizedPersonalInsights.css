@@ -1,0 +1,283 @@
+/* Decentralized Personal Insights Styles */
+.decentralized-personal-insights {
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.dpi-hero {
+  position: relative;
+}
+
+.dpi-hero .hero-title {
+  text-align: right;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 400;
+  margin-right: 2rem;
+}
+
+/* Section Background Structure */
+.section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Common Styles for All Sections */
+.control-data-section,
+.secure-transparent-section,
+.new-data-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.control-data-section .container,
+.secure-transparent-section .container,
+.new-data-section .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Grid Layouts */
+.control-data-grid,
+.secure-transparent-grid,
+.new-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Content Styles */
+.control-data-content,
+.secure-transparent-content,
+.new-data-content {
+  padding-right: 2rem;
+}
+
+/* Badge Styles */
+.section-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.badge-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.badge-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dot.active {
+  background-color: #00ffff;
+}
+
+/* Headings */
+.main-heading,
+.secure-main-heading,
+.new-data-main-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Descriptions */
+.intro-description p,
+.secure-description p,
+.new-data-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.feature-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.feature-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 5px;
+}
+
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #00ffff;
+  border-radius: 50%;
+}
+
+.feature-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00ffff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.feature-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.feature-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Visual Containers */
+.visual-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(0, 20, 40, 0.3);
+}
+
+.globe-visualization,
+.hand-device-visualization,
+.data-economy-visualization {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Call to Action Section */
+.dpi-cta-section {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: rgba(0, 20, 40, 0.3);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 1px solid #00ffff;
+  border-radius: 50px;
+  color: #00ffff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .control-data-grid,
+  .secure-transparent-grid,
+  .new-data-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .control-data-content,
+  .secure-transparent-content,
+  .new-data-content {
+    padding-right: 0;
+  }
+  
+  .dpi-hero .hero-title {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-heading,
+  .secure-main-heading,
+  .new-data-main-heading {
+    font-size: 2rem;
+  }
+  
+  .visual-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-badge {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .main-heading,
+  .secure-main-heading,
+  .new-data-main-heading {
+    font-size: 1.8rem;
+  }
+} 
