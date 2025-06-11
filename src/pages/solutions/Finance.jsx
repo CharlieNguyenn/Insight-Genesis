@@ -1,179 +1,182 @@
 import React from 'react';
 import './Finance.css';
 import bgFinance from "../../assets/bg-finance.png";
+import Footer from '../../components/Footer';
 
 const Finance = () => {
   return (
-    <div className="finance-page">
-      {/* Video Background */}
+    <div className="finance-wrapper">
+      {/* Video Background và Overlay ở cấp cao nhất */}
       <video autoPlay muted loop className="finance-video-bg">
         <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
       </video>
       <div className="finance-overlay"></div>
-
-      {/* Header */}
-      <header className="finance-header">
-        <div className="container">
-          <h1 className="main-title">
-            FINANCIAL<br />
-            SERVICES
-          </h1>
-        </div>
-      </header>
-
-      {/* Financial Inclusion Section */}
-      <section className="financial-inclusion">
-        <div className="container">
-          <div className="section-grid">
-            <div className="content-side">
-              <div className="section-label">
-                <span className="dot"></span>
-                FINANCIAL<br />
-                INCLUSION
-              </div>
-              
-              <h2 className="section-title">
-              Enabling access to economic opportunities for the unbanked & underbanked
-              </h2>
-
-              <div className="feature-points">
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>Insight Genesis’ Financial Inclusion empowers users with seamless access to financial services through AI-driven insights, while enabling companies to approve users faster and more accurately.</p>
-                </div>
-                
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>This enables financial institutions to extend credit access responsibly to new customer segments lacking traditional credit histories.</p>
-                </div>
-                
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>Genesis Score™ reduces Portfolio at Risk by 45% and can be used with or without traditional credit scores.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="visual-side">
-              <div className="finance-image-container">
-                <img src={bgFinance} alt="Financial Analysis Interface" className="finance-bg-image" />
-              </div>
-            </div>
+      
+      <div className="finance-page">
+        {/* Header */}
+        <header className="finance-header">
+          <div className="container">
+            <h1 className="main-title">
+              FINANCIAL<br />
+              SERVICES
+            </h1>
           </div>
-        </div>
-      </section>
+        </header>
 
-      {/* Credit Risk Assessment Section */}
-      <section className="credit-risk">
-        <div className="container">
-          <div className="section-grid">
-            <div className="content-side">
-              <div className="section-label">
-                <span className="dot"></span>
-                CREDIT RISK ASSESSMENT
+        {/* Financial Inclusion Section */}
+        <section className="financial-inclusion">
+          <div className="container">
+            <div className="section-grid">
+              <div className="content-side">
+                <div className="section-label">
+                  <span className="dot"></span>
+                  FINANCIAL<br />
+                  INCLUSION
+                </div>
+                
+                <h2 className="section-title">
+                Enabling access to economic opportunities for the unbanked & underbanked
+                </h2>
+
+                <div className="feature-points">
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>Insight Genesis' Financial Inclusion empowers users with seamless access to financial services through AI-driven insights, while enabling companies to approve users faster and more accurately.</p>
+                  </div>
+                  
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>This enables financial institutions to extend credit access responsibly to new customer segments lacking traditional credit histories.</p>
+                  </div>
+                  
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>Genesis Score™ reduces Portfolio at Risk by 45% and can be used with or without traditional credit scores.</p>
+                  </div>
+                </div>
               </div>
-              
-              <h2 className="section-title">
-                Assess individual credit risk
-              </h2>
 
-              <div className="feature-points">
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>Incorporating voice and social media analysis, we can improve traditional credit scores or negate the need altogether.</p>
-                </div>
-                
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>More tailored analysis increases credit approval by 20% for Web3 projects</p>
-                </div>
-                
-                <div className="feature-point">
-                  <span className="point-icon"></span>
-                  <p>Easily integrates with traditional credit scores or other financial data</p>
-                </div>
-              </div>
-
-              <button className="cta-button">
-                Get Your Own Insights Now
-                <span className="button-arrow">→</span>
-              </button>
-            </div>
-
-            <div className="visual-side">
-              <div className="risk-assessment">
-                <div className="risk-header">
-                  <div className="risk-title">Personal loan lending default probability</div>
-                </div>
-                
-                <div className="circular-progress">
-                  <div className="progress-circle">
-                    <div className="main-percentage">36%</div>
-                  </div>
-                </div>
-                
-                <div className="risk-bars">
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
-                  
-                  <div className="risk-bar">
-                    <span className="bar-label">Burnout</span>
-                    <div className="bar-container">
-                      <div className="bar-fill" style={{width: '70%'}}></div>
-                    </div>
-                    <span className="bar-value">7/10</span>
-                  </div>
+              <div className="visual-side">
+                <div className="finance-image-container">
+                  <img src={bgFinance} alt="Financial Analysis Interface" className="finance-bg-image" />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Credit Risk Assessment Section */}
+        <section className="credit-risk">
+          <div className="container">
+            <div className="section-grid">
+              <div className="content-side">
+                <div className="section-label">
+                  <span className="dot"></span>
+                  CREDIT RISK ASSESSMENT
+                </div>
+                
+                <h2 className="section-title">
+                  Assess individual credit risk
+                </h2>
+
+                <div className="feature-points">
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>Incorporating voice and social media analysis, we can improve traditional credit scores or negate the need altogether.</p>
+                  </div>
+                  
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>More tailored analysis increases credit approval by 20% for Web3 projects</p>
+                  </div>
+                  
+                  <div className="feature-point">
+                    <span className="point-icon"></span>
+                    <p>Easily integrates with traditional credit scores or other financial data</p>
+                  </div>
+                </div>
+
+                <button className="cta-button">
+                  Get Your Own Insights Now
+                  <span className="button-arrow">→</span>
+                </button>
+              </div>
+
+              <div className="visual-side">
+                <div className="risk-assessment">
+                  <div className="risk-header">
+                    <div className="risk-title">Personal loan lending default probability</div>
+                  </div>
+                  
+                  <div className="circular-progress">
+                    <div className="progress-circle">
+                      <div className="main-percentage">36%</div>
+                    </div>
+                  </div>
+                  
+                  <div className="risk-bars">
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                    
+                    <div className="risk-bar">
+                      <span className="bar-label">Burnout</span>
+                      <div className="bar-container">
+                        <div className="bar-fill" style={{width: '70%'}}></div>
+                      </div>
+                      <span className="bar-value">7/10</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
