@@ -31,7 +31,7 @@ const Home = () => {
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-title">
-            OWN YOUR DESTINY
+            <span className="parabole-letter">O</span>WN YOUR <span className="parabole-letter">D</span>ESTINY
             <br />
             <span className="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
           </h1>
@@ -104,14 +104,19 @@ const Home = () => {
       {/* What We Do Section */}
       <section className="what-we-do">
         <div className="container">
+          <div className="title">
+            <h2>WHAT WE DO</h2>
+          </div>
           <div className="section-header">
-            <h2>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</h2>
+            <p>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</p>            
+          </div>
+          <div className="cta-button-container">
             <Link to="/" className="cta-button">
-              <span>Get Your Own Insights Now</span>
-              <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
-              </svg>
-            </Link>
+                <span>Get Your Own Insights Now</span>
+                <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
+                </svg>
+              </Link>
           </div>
         </div>
       </section>
@@ -121,8 +126,10 @@ const Home = () => {
         <div className="container">
           <div className="service-item">
             <div className="service-number">01</div>
+            <div className="service-title">
+              <h2>Financial<br/> &nbsp;Services</h2>
+            </div>
             <div className="service-content">
-              <h3>Financial<br />Services</h3>
               <p>Insight Genesis empowers <span className="highlight">financial institutions</span> to extend credit and reduce fraud while enabling all users, including unbanked, to securely own, monetize, and <span className="highlight">benefit from their behavioral data.</span></p>
             </div>
             <div className="service-visual">
@@ -132,8 +139,10 @@ const Home = () => {
 
           <div className="service-item">
             <div className="service-number">02</div>
+            <div className="service-title">
+              <h2>Health &<br /> &nbsp;Wellness</h2>
+            </div>
             <div className="service-content">
-              <h3>Health &<br />Wellness</h3>
               <p>Empowering telehealth companies and users with personalized health insights derived from cutting-edge AI, our Decentralized Personal Insights <span className="highlight">inspire proactive wellness, smarter health decisions, and vibrant, data-driven lives.</span></p>
             </div>
             <div className="service-visual">
@@ -143,8 +152,10 @@ const Home = () => {
 
           <div className="service-item">
             <div className="service-number">03</div>
+            <div className="service-title">
+              <h2>Human<br /> &nbsp;Resources</h2>
+            </div>
             <div className="service-content">
-              <h3>Human<br />Resources</h3>
               <p>Revolutionizing enterprises and career guidance organizations, our <span className="highlight">AI-powered Decentralized Personal Insights deliver dynamic,</span> data-driven solutions, inspiring precise candidate matching, boosting employee engagement, and empowering individuals to thrive in their careers.</p>
             </div>
             <div className="service-visual">
@@ -154,8 +165,10 @@ const Home = () => {
 
           <div className="service-item">
             <div className="service-number">04</div>
+            <div className="service-title">
+              <h2>Education</h2>
+            </div>
             <div className="service-content">
-              <h3>Education</h3>
               <p>Igniting the future for both educational institutions and students, our AI-driven Decentralized Personal Insights analyze <span className="highlight">interests and strengths to deliver tailored guidance,</span> inspiring confident career paths and empowering informed choices.</p>
             </div>
             <div className="service-visual">
@@ -177,9 +190,9 @@ const Home = () => {
             </p>
           </div>
           <div className="mission-commitment">
-            <div className="commitment-point">
-              <span className="bullet">●</span>
-              <p>
+            <div className="commitment-point">              
+              <p> 
+                <span className="bullet">●</span> &nbsp;
                 This ensures users retain full ownership and control over their
                 data while fostering trust, transparency, and collaboration
                 among individuals, researchers, and organizations.{" "}
@@ -193,19 +206,19 @@ const Home = () => {
       <section className="core-features">
         <div className="container">
           <div className="feature-cards-container">
-            <div className="feature-card feature-card-1" style={{backgroundColor: '#1e4d6b', color: 'white'}}>
-              <h2 style={{color: 'white'}}>Decentralization</h2>
-              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.</p>
+            <div className="feature-card feature-card-1">
+              <h2>Decentralizati<span className="parabole-letter">o</span>n</h2>
+              <p> &emsp;&emsp;The decentralized nature of this approach empowers users to control their data, reducing reliance on centralized platforms. This not only enhances security but also fosters trust among participants.</p>
             </div>
             
-            <div className="feature-card feature-card-2" style={{backgroundColor: '#153743', color: 'white'}}>
-              <h2 style={{color: 'white'}}>Tokenization</h2>
-              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.</p>
+            <div className="feature-card feature-card-2">
+              <h2><span className="parabole-letter">T</span>okenization</h2>
+              <p>&emsp;&emsp;Once collected, this data can be tokenized, transforming it into digital assets that represent ownership or access rights. Tokenization opens up new economic models, allowing users to monetize their contributions.</p>
             </div>
             
-            <div className="feature-card feature-card-3" style={{backgroundColor: '#0c1b23', color: 'white'}}>
-              <h2 style={{color: 'white'}}>Empowering Users</h2>
-              <p style={{color: 'rgba(255, 255, 255, 0.8)'}}>This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.</p>
+            <div className="feature-card feature-card-3">
+              <h2><span className="parabole-letter">E</span>mpowering <br/> &nbsp;Users</h2>
+              <p>&emsp;&emsp;This model not only democratizes data access but also incentivizes user participation, creating a more vibrant and inclusive digital economy.</p>
             </div>
           </div>
         </div>
@@ -218,9 +231,12 @@ const Home = () => {
         </video>
         <div className="evolution-overlay"></div>
         <div className="container">
-          <p className="evolution-text">
-            As AI insights platforms continue to evolve, their role in shaping decentralized data ecosystems and tokenization will be pivotal in driving innovation and user empowerment.
-          </p>
+          <div className="evolution-content">
+            <h2 className="evolution-title">THE FUTURE OF AI INSIGHT</h2>
+            <p className="evolution-text">
+              As AI insights platforms continue to evolve, their role in shaping <span className="highlight">decentralized data ecosystems and tokenization</span> will be pivotal in driving innovation and user empowerment.
+            </p>
+          </div>
         </div>
       </section>
       
@@ -235,7 +251,7 @@ const Home = () => {
             <h2 className="resources-title">RESOURCES</h2>
             <div className="resources-buttons">
               <Link to="/faq" className="resource-btn">FAQ</Link>
-              <Link to="/docs" className="resource-btn central-btn">DOCS</Link>
+              <Link to="/docs" className="resource-btn ">DOCS</Link>
               <Link to="/blog" className="resource-btn">BLOG</Link>
             </div>
           </div>
@@ -251,12 +267,19 @@ const Home = () => {
         <div className="container">
           <div className="contact-content">
             <div className="contact-email">
-              <a href="mailto:IGAi@InsightGenesis.Ai" className="email-link">
+              <a href="/" className="email-link">
                 <span className="email-text">IGAi@InsightGenesis.Ai</span>
-                <svg className="email-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
-                </svg>
+                <svg width="48" height="48" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M56 28.5C56 13.0359 43.464 0.499901 28 0.499901C12.536 0.499901 0 13.0359 0 28.5C0 43.964 12.536 56.5 28 56.5C43.464 56.5 56 43.964 56 28.5Z" fill="#8FEAFF"/>
+      <path d="M18.0566 28.2009H38.3255" stroke="#030507" stroke-width="2" stroke-miterlimit="10"/>
+      <path d="M32.5607 35.2207L31.3613 33.9214L37.7286 27.9407L31.3613 21.9778L32.5607 20.6607L40.3213 27.9407L32.5607 35.2207Z" fill="#030507"/>
+</svg>
               </a>
+            </div>
+            <div className="social-links">
+              <Link to="/" className="social-link">LinkedIn</Link>
+              <Link to="/" className="social-link">Telegram</Link>
+              <Link to="/" className="social-link">X (Twitter)</Link>
             </div>
           </div>
         </div>

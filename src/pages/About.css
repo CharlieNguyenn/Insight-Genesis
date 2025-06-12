@@ -3,10 +3,6 @@
   min-height: 100vh;
 }
 
-.mission {
-  padding: 5rem 0;
-  /* background: #f8f9fa; */
-}
 
 .content-grid {
   display: grid;
