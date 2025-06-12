@@ -24,13 +24,14 @@
   }
 
   .title-2 {
-    margin-left: 140px
+    margin-left: 140px;
   }
 
   .solutions-hero .container {
     position: relative;
     width: fit-content;
-    margin-right: 10%;
+    margin-right: 60px;
+
   }
 
   .hero-video-bg {
@@ -315,7 +316,7 @@
   .mark {
     display: flex;
     flex-direction: row;
-    gap: 3px;
+    gap: 7px;
   }
   
   .assessment-features {
