@@ -71,7 +71,7 @@ const HumanResource = () => {
               </div>
 
               <p className="hr-description">
-                SUPERCHARGE YOUR HR TEAM WITHOUT INCREASING HEADCOUNT.
+              Supercharge your HR team without increasing headcount.
               </p>
               
               <div className="hr-details">
@@ -95,7 +95,7 @@ const HumanResource = () => {
                 <div className="evaluation-header">
                   <h3>Technical Evaluation</h3>
                   <div className="evaluation-score">
-                    <span className="score-percentage">83%</span>
+                    <span className="score-percentage">83<span>%</span></span>
                     <span className="score-description">of their skills fits with your requirement</span>
                   </div>
                 </div>
@@ -248,15 +248,19 @@ const HumanResource = () => {
               </div>
               
               <div className="review-statistics">
-                <div className="stats-header">
-                  <h4>Review Statistics</h4>                                    
-                </div>
+
                 
                 <div className="stats-content">                  
                   <div className="best-matches">
+                    <div className="stats-header">
+                      <h4>Review Statistics</h4>                                    
+                    </div>
                     <div className="stats-badge">42 new applicants +26.4%</div>
-                    <span className="matches-percentage">87%</span>
-                    <span className="matches-label">Best Matches</span>
+                    <div className='score'>
+                      <span className="matches-percentage">87%</span>
+                      <span className="matches-label">Best <br />Matches</span>
+                    </div>
+
                   </div>
                   
                   <div className="weekly-chart">
