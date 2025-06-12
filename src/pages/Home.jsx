@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import iconLoad from "../assets/icons/icon-load.svg";
@@ -16,6 +16,18 @@ import viewer from "../assets/svgviewer-output.svg";
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleCardClick = (cardIndex) => {
     setActiveCard(cardIndex);
