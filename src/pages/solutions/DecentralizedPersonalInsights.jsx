@@ -14,13 +14,13 @@ const DecentralizedPersonalInsights = () => {
           loop 
           playsInline
         >
-          <source src="/mp4/decentral-bg-1.mp4" type="video/mp4" />
+          <source src="/mp4/085e4b8dcc96a5df48e607c966bcfbfec4318516hls_abr_3_00001.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay"></div>
         <div className="container">
           <h1 className="hero-title">
-            DECENTRALIZED<br />
-            PERSONAL INSIGHTS
+            <div className="text-left"><span className="parabole-font">D</span>ECENTRALIZED</div>
+            <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
           </h1>
         </div>
       </section>
@@ -50,8 +50,8 @@ const DecentralizedPersonalInsights = () => {
                   <span className="dot"></span>
                 </div>
                 <div className="badge-label">
-                  DECENTRALIZED<br />
-                  PERSONAL INSIGHTS
+                  <div className="text-left"><span className="parabole-font">D</span>ECENTRALIZED</div>
+                  <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
               
@@ -69,10 +69,16 @@ const DecentralizedPersonalInsights = () => {
               <div className="features-section">
                 <div className="feature-group">
                   <div className="feature-header">
+                  <div className='mark'>
                     <div className="feature-dots">
-                      <span className="feature-dot"></span>
-                      <span className="feature-dot"></span>
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>                  
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
                     </div>
+                  </div>
                     <h4>GET INSTANT NOTIFICATIONS ON EMPLOYEE SENTIMENT</h4>
                   </div>
                   <div className="feature-content">
@@ -86,10 +92,16 @@ const DecentralizedPersonalInsights = () => {
                 
                 <div className="feature-group">
                   <div className="feature-header">
+                  <div className='mark'>
                     <div className="feature-dots">
-                      <span className="feature-dot"></span>
-                      <span className="feature-dot"></span>
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
+                    </div>                  
+                    <div className="feature-dots">
+                      <span className="dot-blue"></span>
+                      <span className="dot-blue"></span>
                     </div>
+                  </div>
                     <h4>AI-ENHANCED DATA ANALYSIS</h4>
                   </div>
                   <div className="feature-content">
@@ -105,9 +117,12 @@ const DecentralizedPersonalInsights = () => {
             <div className="control-data-visual">
               <div className="visual-container">
                 <div className="globe-visualization">
-                  <video autoPlay muted loop playsInline>
-                    <source src="/mp4/decentral-bg-1.mp4" type="video/mp4" />
-                  </video>
+                <div className="video-container">
+                    <div className="video-overlay"></div>
+                    <video autoPlay muted loop playsInline>
+                      <source src="/mp4/decentral-bg-1.mp4" type="video/mp4" />
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
@@ -140,8 +155,8 @@ const DecentralizedPersonalInsights = () => {
                   <span className="dot"></span>
                 </div>
                 <div className="badge-label">
-                  DECENTRALIZED<br />
-                  PERSONAL INSIGHTS
+                  <div className="text-left"><span className="parabole-font">D</span>ECENTRALIZED</div>
+                  <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
               
@@ -160,9 +175,12 @@ const DecentralizedPersonalInsights = () => {
             <div className="secure-transparent-visual">
               <div className="visual-container">
                 <div className="hand-device-visualization">
-                  <video autoPlay muted loop playsInline>
-                    <source src="/mp4/decentral-bg-2.mp4" type="video/mp4" />
-                  </video>
+                  <div className="video-container">
+                    <div className="video-overlay"></div>
+                      <video autoPlay muted loop playsInline>
+                      <source src="/mp4/decentral-bg-2.mp4" type="video/mp4" />
+                      </video>
+                  </div>
                 </div>
               </div>
             </div>
@@ -195,8 +213,8 @@ const DecentralizedPersonalInsights = () => {
                   <span className="dot active"></span>
                 </div>
                 <div className="badge-label">
-                  DECENTRALIZED<br />
-                  PERSONAL INSIGHTS
+                  <div className="text-left"><span className="parabole-font">D</span>ECENTRALIZED</div>
+                  <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
               
@@ -215,9 +233,14 @@ const DecentralizedPersonalInsights = () => {
             <div className="new-data-visual">
               <div className="visual-container">
                 <div className="data-economy-visualization">
-                  <video autoPlay muted loop playsInline>
-                    <source src="/mp4/decentral-bg-3.mp4" type="video/mp4" />
-                  </video>
+                <div className="video-container">
+                  <div className="video-decoration top"></div>
+                    <div className="video-overlay"></div>
+                      <video autoPlay muted loop playsInline>
+                      <source src="/mp4/decentral-bg-3.mp4" type="video/mp4" />
+                      </video>
+                    <div className="video-decoration bottom"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -240,4 +263,4 @@ const DecentralizedPersonalInsights = () => {
   );
 };
 
-export default DecentralizedPersonalInsights; 
+export default DecentralizedPersonalInsights;
