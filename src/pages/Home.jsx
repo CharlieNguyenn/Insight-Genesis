@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import iconLoad from "../assets/icons/icon-load.svg";
 import logo from "../assets/logo.svg";
 import arrowButton from "../assets/arrow-button.png";
 import loadButton from "../assets/load-button.png";
@@ -46,7 +47,7 @@ const Home = () => {
       {/* Company Description */}
       <section className="company-description">
         <div className="container">
-          <img src={loadButton} alt="load" className="load-button" />
+          <img src={iconLoad} alt="load" className="load-icon" />
           <p className="main-description">
             Insight Genesis is the innovative Web3 arm of Insight Genie, a
             proven AI industry leader
@@ -93,9 +94,10 @@ const Home = () => {
           <div className="additional-stats">
             Building on Insight Genie's Web2 success with proven AI tech—Insight
             Genesis empowers users to own, control, and monetize their data,
-            revolutionizing self-discovery and success in the Web3 era.
-            <img src={loadButton} alt="arrow" className="arrow-icon" />
-          </div>
+            revolutionizing self-discovery and success in the Web3 era.  
+            &nbsp;
+            <img src={iconLoad} alt="arrow" className="load-icon" />           
+          </div>          
         </div>
       </section>
 
