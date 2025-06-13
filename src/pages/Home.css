@@ -395,7 +395,7 @@ body {
 /* Mission Section */
 .mission {
   padding: 5rem 0;
-  background: rgba(0, 20, 40, 0.3);
+  background: url('../assets/our-vision0.png') no-repeat center center;
   display: flex;
   align-items: center;
   justify-content: center
@@ -467,52 +467,96 @@ body {
   overflow: hidden;
 }
 
+.core-features .container { 
+  width: 1800px;
+  height: 100vh;
+  max-width: 1800px;
+  margin: 0 auto;
+}
 .feature-cards-container {
   position: relative;
-  width: 100%;  
+  width: 100%;
+  max-width: 1800px;
   margin: 0 auto;
-  padding-top: 120px; /* Để dành chỗ cho margin-top âm của feature-card đầu tiên */
 }
 
-/* Tất cả thẻ có margin-top để xếp lớp */
+/* Base styles cho tất cả feature cards */
 .feature-card {
-  position: relative;
+  position: sticky;
   border-radius: 50px;
   padding: 4rem;
   color: white;
-  margin-top: -120px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 600px;
-  justify-content: center;
+  height: 700px;
+  justify-content: flex-start;
   background-color: transparent;
+  margin-bottom: 2rem;
+  transform-origin: center bottom;
+  will-change: transform, opacity;
 }
 
-/* Lớp thấp nhất */
+/* Card 1 - Lớp dưới cùng */
 .feature-card-1 {
   background: url('../assets/bg2.svg') no-repeat center center;
   background-color: #3e5c70;
-  z-index: 1;  
+  z-index: 1;
+  transform: scale(0.9) translateY(0);
 }
 
-/* Lớp giữa */
+/* Card 2 - Lớp giữa */
 .feature-card-2 {
   background: url('../assets/bg2.svg') no-repeat center center;
   background-color: #232e35;
   z-index: 2;
-  transform: translateY(-160px);
+  transform: scale(1) translateY(-550px) !important;
+  opacity: 0.8;
 }
 
-/* Lớp trên cùng */
+/* Card 3 - Lớp trên cùng */
 .feature-card-3 {
   background: url('../assets/bg2.svg') no-repeat center center;
   background-color: #0f1519;
-  transform: translateY(-320px);
   z-index: 3;
+  transform: scale(1) translateY(-1100px) !important;
+  opacity: 0.6;
+}
+
+/* Hover effects để tạo tương tác */
+.feature-card:hover {
+  /* transform: scale(1.02) translateY(-5px) !important; */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 1 !important;
+}
+
+/* Animation khi scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .feature-card {
+    animation: stackedEntry 2s ease-out forwards;
+  }
   
+  .feature-card-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .feature-card-3 {
+    animation-delay: 0.1s;
+  }
+}
+
+@keyframes stackedEntry {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  to {
+    opacity: var(--final-opacity, 1);
+    transform: var(--final-transform, scale(1) translateY(0));
+  }
 }
 
 .feature-card h2 {
@@ -1183,10 +1227,14 @@ body {
     font-size: 18px;
   }
   
+  .feature-cards-container {
+    padding: 0 1rem;
+  }
+  
   .feature-card {
-    margin-top: -80px;
-    padding: 2.5rem 2rem;
-    height: 400px;
+    height: 60vh;
+    padding: 2rem;
+    margin-bottom: 1rem;
   }
   
   .feature-card h2 {
@@ -1203,36 +1251,17 @@ body {
   }
   
   .feature-card-2 {
-    transform: translateY(-80px);
+    transform: scale(0.98) translateY(-5vh);
   }
   
   .feature-card-3 {
-    transform: translateY(-160px);
+    transform: scale(0.96) translateY(-10vh);
   }
   
   .feature-card-1::after,
   .feature-card-2::after,
   .feature-card-3::after {
     display: none;
-  }
-  
-  .feature-cards-container {
-    padding-top: 60px;
-  }
-  
-  /* Stack feature cards vertically on mobile */
-  .feature-card-1 {
-    transform: none;
-  }
-  
-  .feature-card-2 {
-    transform: none;
-    margin-top: 2rem;
-  }
-  
-  .feature-card-3 {
-    transform: none;
-    margin-top: 2rem;
   }
   
   .evolution {
