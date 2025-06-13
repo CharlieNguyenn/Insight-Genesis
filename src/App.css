@@ -8,8 +8,16 @@
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: #030f17;
+  color: #fff;
+  background: #030507;
+}
+
+:root {
+  --primary-color: #8feaff;
+  --secondary-color: #32d3fe;
+  --bg-color1: #030507;
+  --bg-color2: #02090b;
+  --font-text: #b3b3b3;
 }
 
 #root {
