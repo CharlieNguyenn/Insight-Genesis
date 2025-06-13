@@ -1,0 +1,227 @@
+.privacy-root {
+  min-height: 100vh;
+  background: #0a1a1f;
+  padding: 120px 100px 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Satoshi', Arial, sans-serif;
+}
+
+.privacy-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacy-title {
+  color: #8feaff;
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.privacy-updated {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.privacy-desc {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.privacy-section-title {
+  color: #8feaff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 36px 0 12px 0;
+  text-align: left;
+}
+
+.privacy-section-subtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 24px 0 8px 0;
+  text-align: left;
+}
+
+.privacy-section-subsubtitle {
+  color: #8feaff;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 18px 0 8px 0;
+  text-align: left;
+}
+
+.privacy-list {
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: left;
+  margin: 0 0 18px 0;
+  max-width: 800px;
+  line-height: 2;
+  padding-left: 24px;
+  list-style-position: outside;
+}
+
+.privacy-list li {
+  margin-bottom: 8px;
+}
+
+.privacy-content a {
+  color: #8feaff;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .privacy-title {
+    font-size: 2.2rem;
+  }
+  .privacy-content {
+    padding: 0 12px;
+  }
+  .privacy-section-title {
+    font-size: 1.1rem;
+  }
+  .privacy-section-subtitle {
+    font-size: 1rem;
+  }
+  .privacy-desc, .privacy-list {
+    font-size: 0.98rem;
+  }
+}
+
+.Interpretation-Definitions-section {
+  margin: 48px 0 0 0;
+  text-align: left;
+}
+
+.Interpretation-Definitions-title {
+  color: #8feaff;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.Interpretation-Definitions-subtitle {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 24px 0 8px 0;
+}
+
+.Interpretation-Definitions-desc {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.Interpretation-Definitions-list {
+  color: #fff;
+  font-size: 1.08rem;
+  margin: 18px 0 0 0;
+  padding-left: 24px;
+  line-height: 2.1;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.Interpretation-Definitions-list li {
+  margin-bottom: 8px;
+}
+
+.Interpretation-Definitions-list a {
+  color: #8feaff;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .Interpretation-Definitions-title {
+    font-size: 1.2rem;
+  }
+  .Interpretation-Definitions-subtitle {
+    font-size: 1rem;
+  }
+  .Interpretation-Definitions-desc, .Interpretation-Definitions-list {
+    font-size: 0.98rem;
+  }
+}
+
+.Collect-data-section {
+  margin: 48px 0 0 0;
+  text-align: left;
+}
+
+.Collect-data-title {
+  color: #8feaff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.Collect-data-subtitle {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 24px 0 8px 0;
+}
+
+.Collect-data-subsubtitle {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 18px 0 8px 0;
+}
+
+.Collect-data-desc {
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.Collect-data-list {
+  color: #fff;
+  font-size: 1.08rem;
+  margin: 0 0 18px 0;
+  padding-left: 24px;
+  line-height: 2.1;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.Collect-data-list li {
+  margin-bottom: 8px;
+}
+
+.Collect-data-list ul {
+  padding-left: 24px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.Collect-data-list a {
+  color: #8feaff;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .Collect-data-title {
+    font-size: 1.1rem;
+  }
+  .Collect-data-subtitle {
+    font-size: 1rem;
+  }
+  .Collect-data-desc, .Collect-data-list {
+    font-size: 0.98rem;
+  }
+} 

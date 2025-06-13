@@ -14,6 +14,13 @@ import HealthWellness from './pages/solutions/HealthWellness';
 import HumanResource from './pages/solutions/HumanResource';
 import Education from './pages/solutions/Education';
 import DecentralizedPersonalInsights from './pages/solutions/DecentralizedPersonalInsights';
+import InsightForm from './pages/form/InsightForm';
+import FaceAnalysis from './pages/form/FaceAnalysis';
+import VideoAnalysis from './pages/form/VideoAnalysis';
+import DigitalFootprint from './pages/form/DigitalFootprint';
+import Result from './pages/form/Result';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import './App.css';
 
 function App() {
@@ -35,6 +42,13 @@ function App() {
             <Route path="/solutions/human-resource" element={<HumanResource />} />
             <Route path="/solutions/education" element={<Education />} />
             <Route path="/solutions/decentralized-personal-insights" element={<DecentralizedPersonalInsights />} />
+            <Route path="/form" element={<InsightForm />} />
+            <Route path="/form/face-analysis" element={<FaceAnalysis />} />
+            <Route path="/form/video-analysis" element={<VideoAnalysis />} />
+            <Route path="/form/digital-footprint" element={<DigitalFootprint />} />
+            <Route path="/form/result" element={<Result />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />
