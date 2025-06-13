@@ -38,7 +38,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 
@@ -94,7 +94,7 @@
 
 /* Company Description */
 .company-description {
-  background: linear-gradient(360deg, #135365 0%, #000000 100%);
+  background: linear-gradient(360deg, #32D3FE 0%, #000000 80%);
   padding: 4rem 0;
   text-align: center;
 }
@@ -127,8 +127,8 @@
 /* Stats Section */
 
 .stats .container {
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: 1800px;
+  margin: 0 auto !important;
   padding: 50px 1rem 100px 1rem;
   text-align: center;
 }
@@ -139,9 +139,10 @@
 }
 
 .stats .title h2 {
+  font-family: 'Parabole', sans-serif;
   font-size: 24px;
-  color: #fff;
-  font-weight: 400;
+  color: #72BBCC;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -150,8 +151,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  margin: 0 auto 3rem auto;
-  max-width: 1440px;
+  margin: 0 auto 100px auto;
+  max-width: 1800px;
 }
 
 .stat-card {
@@ -201,16 +202,31 @@
 .what-we-do {
   padding: 5rem 0;
   background: rgba(0, 20, 40, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-we-do .container {
+  margin: 0 !important;
+}
+
+.what-we-do .title h2 {
+  font-family: 'Parabole', sans-serif;
+  font-size: 24px;
+  color: #72BBCC;
+  font-weight: 600;
+  text-align: center;
 }
 
 .section-header {
   text-align: center;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .section-header h2 {
-  font-size: 1.8rem;
+  font-size: 58px;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -241,34 +257,62 @@
   padding: 5rem 0;
 }
 
+.services .container {
+  width: 1800px;
+  margin: 0 !important;
+  max-width: 1800px;
+}
+
 .service-item {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr;
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
   gap: 2rem;
   margin-bottom: 4rem;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
 }
 
 .service-number {
   font-size: 1.8rem;
-  color: #00ffff;
+  color: #72BBCC;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.services .line {
+  flex: 1;
+  height: 0.5px;
+  background-color: #ffffff50;
+}
+
+.service-item .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .service-content {
-  padding-right: 2rem;
+  width: 650px;
 }
 
-.service-content h3 {
-  font-size: 2rem;
-  font-weight: 700;
+.service-label h1 {
+  font-size: 56px;
+  font-weight: 400;
   margin-bottom: 1rem;
   color: #fff;
 }
 
+.service-label .services-line {
+  margin-left: 50px;
+}
+
 .service-content p {
-  font-size: 1rem;
+  font-size: 28px;
   line-height: 1.6;
   color: #ccc;
 }
@@ -282,7 +326,7 @@
 }
 
 .service-graphic {
-  width: 100%;
+  width: 200px;
   height: 200px;
   background-position: center;
   background-size: contain;
@@ -309,25 +353,67 @@
 .mission {
   padding: 5rem 0;
   background: rgba(0, 20, 40, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.mission .container {
+  width: 1800px;
+  max-width: 1800px;
+  margin: 0!important;
+}
+
+.mission-header {
+  margin-bottom: 40px;
+}
+
+.mission .title h2 {
+  font-family: 'Parabole', sans-serif;
+  font-size: 24px;
+  color: #72BBCC;
+  font-weight: 600;
+  text-align: left;
 }
 
 .mission-content {
-  max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
 
 .mission-text {
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-size: 54px;
+  text-align: left;
+  line-height: 1.2;
   margin-bottom: 2rem;
   color: #fff;
 }
 
+.mission-text span {
+  color: #8FEAFF;
+}
+
 .mission-subtext {
-  font-size: 1.2rem;
+  font-size: 24px;
   line-height: 1.6;
   color: #ccc;
+}
+
+.commitment-point {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 160px;
+}
+
+.commitment-point .bullet {
+  margin-right: 0;
+}
+
+.commitment-point p {
+  width: 1035px;
+  font-size: 24px;
+  text-align: right;
 }
 
 /* Core Features */
@@ -763,9 +849,14 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
+@media screen and (max-width: 768px) {
+  .home .hero-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.3) !important;
   }
   
   .hero-subtitle-accent {
@@ -773,17 +864,22 @@
   }
   
   .main-description {
-    font-size: 48px;
-    line-height: 1.2;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
   }
   
   .load-icon {
     width: 60px;
     height: 60px;
   }
+
+  .stats .title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
   
   .stats .title h2 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   
   .stat-label {
@@ -791,7 +887,7 @@
   }
   
   .stat-value {
-    font-size: 36px;
+    font-size: 32px !important;
   }
   
   .additional-stats {
@@ -803,6 +899,7 @@
   
   .stats-cards {
     grid-template-columns: 1fr;
+    margin-bottom: 100px;
   }
   
   .service-item {
@@ -841,6 +938,15 @@
   .footer-content {
     grid-template-columns: 1fr;
   }
+
+  .stat-card {
+    padding: 24px 0;
+  }
+
+  .section-header h2 {
+    text-align: left;
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -850,8 +956,8 @@
   }
   
   .load-icon {
-    width: 50px;
-    height: 50px;
+    width: 21px;
+    height: 21px;
   }
   
   .company-description {
@@ -867,10 +973,11 @@
   }
   
   .stat-value {
-    font-size: 28px;
+    font-size: 32px !important;
   }
   
   .additional-stats {
     font-size: 24px;
+    text-align: left;
   }
 }

@@ -104,6 +104,9 @@ const Home = () => {
       {/* What We Do Section */}
       <section className="what-we-do">
         <div className="container">
+          <div className="title">
+            <h2>ABOUT INSIGHT GENIE</h2>
+          </div>
           <div className="section-header">
             <h2>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</h2>
             <Link to="/" className="cta-button">
@@ -120,46 +123,86 @@ const Home = () => {
       <section className="services">
         <div className="container">
           <div className="service-item">
-            <div className="service-number">01</div>
-            <div className="service-content">
-              <h3>Financial<br />Services</h3>
-              <p>Insight Genesis empowers <span className="highlight">financial institutions</span> to extend credit and reduce fraud while enabling all users, including unbanked, to securely own, monetize, and <span className="highlight">benefit from their behavioral data.</span></p>
-            </div>
-            <div className="service-visual">
+            <div className="service-number">
+              01
+              <div className="line"></div>
+              </div>
+            <div className="content">
+              <div className="service-label">
+                <h1>
+                  <div className="text-left"><span className="parabole-font">F</span>inancial</div>
+                  <div className="services-line"><span className="parabole-font">S</span>ervices</div>
+                </h1>
+              </div>
+              <div className="service-content">
+                <p>Insight Genesis empowers <span className="highlight">financial institutions</span> to extend credit and reduce fraud while enabling all users, including unbanked, to securely own, monetize, and <span className="highlight">benefit from their behavioral data.</span></p>
+              </div>
+              {/* <div className="service-visual">
+              </div> */}
               <div className="service-graphic financial"></div>
             </div>
           </div>
 
           <div className="service-item">
-            <div className="service-number">02</div>
+            <div className="service-number">
+              02
+              <div className="line"></div>
+              </div>
+            <div className="content">
+              <div className="service-label">
+                <h1>
+                  <div className="text-left">Health <span className="parabole-font">&</span></div>
+                  <div className="services-line">W<span className="parabole-font">e</span>llness</div>
+                </h1>
+              </div>
             <div className="service-content">
-              <h3>Health &<br />Wellness</h3>
               <p>Empowering telehealth companies and users with personalized health insights derived from cutting-edge AI, our Decentralized Personal Insights <span className="highlight">inspire proactive wellness, smarter health decisions, and vibrant, data-driven lives.</span></p>
             </div>
             <div className="service-visual">
               <div className="service-graphic health"></div>
             </div>
           </div>
+          </div>
 
           <div className="service-item">
-            <div className="service-number">03</div>
-            <div className="service-content">
-              <h3>Human<br />Resources</h3>
+            <div className="service-number">
+              03
+              <div className="line"></div>
+            </div>
+            <div className="content">
+              <div className="service-label">
+                  <h1>
+                    <div className="text-left">Human<span className="parabole-font"></span></div>
+                    <div className="services-line"><span className="parabole-font">R</span>es<span className="parabole-font">o</span>urces</div>
+                  </h1>
+              </div>
+              <div className="service-content">
               <p>Revolutionizing enterprises and career guidance organizations, our <span className="highlight">AI-powered Decentralized Personal Insights deliver dynamic,</span> data-driven solutions, inspiring precise candidate matching, boosting employee engagement, and empowering individuals to thrive in their careers.</p>
             </div>
             <div className="service-visual">
               <div className="service-graphic hr"></div>
             </div>
+            </div>
+
           </div>
 
           <div className="service-item">
-            <div className="service-number">04</div>
-            <div className="service-content">
-              <h3>Education</h3>
-              <p>Igniting the future for both educational institutions and students, our AI-driven Decentralized Personal Insights analyze <span className="highlight">interests and strengths to deliver tailored guidance,</span> inspiring confident career paths and empowering informed choices.</p>
-            </div>
-            <div className="service-visual">
-              <div className="service-graphic education"></div>
+            <div className="service-number">
+              04
+              <div className="line"></div>
+              </div>
+              <div className="content">
+                <div className="service-label">
+                  <h1>
+                    <div className="text-left">Education</div>
+                  </h1>
+                </div>
+                <div className="service-content">
+                <p>Igniting the future for both educational institutions and students, our AI-driven Decentralized Personal Insights analyze <span className="highlight">interests and strengths to deliver tailored guidance,</span> inspiring confident career paths and empowering informed choices.</p>
+              </div>
+              <div className="service-visual">
+                <div className="service-graphic education"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -169,11 +212,13 @@ const Home = () => {
       <section className="mission">
         <div className="container">
           <div className="mission-header">
-            <h2 className="mission-title">OUR VISION</h2>
+            <div className="title">
+              <h2>OUR VISION</h2>
+            </div>
           </div>
           <div className="mission-content">
             <p className="mission-text">
-              Insight Genesis is committed to transforming lives by delivering Decentralized Personal Insights (DPI) through a secure, Blockchain-powered platform. We enable individuals to gain deep, actionable intelligence about themselves for growth and fulfillment, while providing businesses with verified behavioral insights to drive progress, all built on privacy, collaboration, and advanced AI technology
+              <span>Insight Genesis</span> is committed to transforming lives by delivering Decentralized Personal Insights (DPI) through a secure, Blockchain-powered platform. We enable individuals to gain deep, actionable intelligence about themselves for growth and fulfillment, while providing businesses with verified behavioral insights to drive progress, all built on privacy, collaboration, and advanced AI technology
             </p>
           </div>
           <div className="mission-commitment">
