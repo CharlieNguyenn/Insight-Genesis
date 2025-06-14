@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../assets/logo.svg';
 import menuIcon from '../assets/icons/menu.svg';
@@ -9,6 +9,7 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const sideMenuRef = useRef(null);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,6 +18,11 @@ const Navigation = () => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  // Đóng menu khi chuyển trang
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
