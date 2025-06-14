@@ -8,7 +8,7 @@ const Finance = () => {
     <div className="finance-wrapper">
       {/* Video Background và Overlay ở cấp cao nhất */}
       <video autoPlay muted loop className="finance-video-bg">
-        <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+        <source src="/mp4/085e4b8dcc96a5df48e607c966bcfbfec4318516hls_abr_3_00001.mp4" type="video/mp4" />
       </video>
       <div className="finance-overlay"></div>
       
@@ -17,8 +17,8 @@ const Finance = () => {
         <header className="finance-header">
           <div className="container">
             <h1 className="main-title">
-              FINANCIAL<br />
-              SERVICES
+              <div className="text-left"><span className="parabole-font">F</span>INANCIAL</div>
+              <div className="services-line">SERVI<span className="parabole-font">C</span>ES</div>
             </h1>
           </div>
         </header>
@@ -29,9 +29,14 @@ const Finance = () => {
             <div className="section-grid">
               <div className="content-side">
                 <div className="section-label">
-                  <span className="dot"></span>
-                  FINANCIAL<br />
-                  INCLUSION
+                  <div className="badge-dots">
+                    <span className="dot active"></span>
+                    <span className="dot"></span>
+                  </div>
+                  <h1>
+                    <div className="text-left"><span className="parabole-font">F</span>INANCIAL</div>
+                    <div className="services-line">INCLUSI<span className="parabole-font">O</span>N</div>
+                  </h1>
                 </div>
                 
                 <h2 className="section-title">
@@ -40,17 +45,44 @@ const Finance = () => {
 
                 <div className="feature-points">
                   <div className="feature-point">
-                    <span className="point-icon"></span>
+                    <div className='mark'>
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>                  
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>
+                    </div>
                     <p>Insight Genesis' Financial Inclusion empowers users with seamless access to financial services through AI-driven insights, while enabling companies to approve users faster and more accurately.</p>
                   </div>
                   
                   <div className="feature-point">
-                    <span className="point-icon"></span>
+                    <div className='mark'>
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>                  
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>
+                    </div>
                     <p>This enables financial institutions to extend credit access responsibly to new customer segments lacking traditional credit histories.</p>
                   </div>
                   
                   <div className="feature-point">
-                    <span className="point-icon"></span>
+                    <div className='mark'>
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>                  
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>
+                    </div>
                     <p>Genesis Score™ reduces Portfolio at Risk by 45% and can be used with or without traditional credit scores.</p>
                   </div>
                 </div>
@@ -58,7 +90,41 @@ const Finance = () => {
 
               <div className="visual-side">
                 <div className="finance-image-container">
-                  <img src={bgFinance} alt="Financial Analysis Interface" className="finance-bg-image" />
+                  <div className="finance-analysis">
+                    <div className="face-scan">
+                      <img src="/src/assets/facial-recognition-software 1.png" alt="Face Scan" className="scan-image" />
+                      {/* <div className="scan-overlay"></div> */}
+                    </div>
+                    <div className="analysis-data">
+                      <div className="intent-score">
+                        <h3>Intent to pay back</h3>
+                        <div className="score">93<span>%</span></div>
+                      </div>
+                      <div className="connection-line">
+                        <div className='outline-dot'>
+                          <div className="dot left"></div>
+                        </div>
+                        <div className="line"></div>
+                        <div className='outline-dot'>
+                          <div className="dot right"></div>
+                        </div>
+                        
+                      </div>
+                      <div className="burnout-metrics">
+                        {Array(4).fill(null).map((_, index) => (
+                          <div key={index} className="metric-row">
+                            <div className="metric-info">
+                              <span className="metric-label">Burnout</span>
+                              <span className="metric-score">7<span>/10</span></span>
+                            </div>
+                            <div className="metric-bar">
+                              <div className="bar-fill" style={{width: '70%'}}></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,8 +137,14 @@ const Finance = () => {
             <div className="section-grid">
               <div className="content-side">
                 <div className="section-label">
-                  <span className="dot"></span>
-                  CREDIT RISK ASSESSMENT
+                  <div className="badge-dots">
+                      <span className="dot active"></span>
+                      <span className="dot"></span>
+                    </div>
+                    <h1>
+                      <div className="text-left">CREDIT RI<span className="parabole-font">S</span>K</div>
+                      <div className="services-line">A<span className="parabole-font">S</span>SESMENT</div>
+                    </h1>
                 </div>
                 
                 <h2 className="section-title">
@@ -80,18 +152,35 @@ const Finance = () => {
                 </h2>
 
                 <div className="feature-points">
-                  <div className="feature-point">
-                    <span className="point-icon"></span>
+                  <div className="feature-point label">
                     <p>Incorporating voice and social media analysis, we can improve traditional credit scores or negate the need altogether.</p>
                   </div>
                   
                   <div className="feature-point">
-                    <span className="point-icon"></span>
+                  <div className='mark'>
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>                  
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>
+                    </div>
                     <p>More tailored analysis increases credit approval by 20% for Web3 projects</p>
                   </div>
                   
                   <div className="feature-point">
-                    <span className="point-icon"></span>
+                    <div className='mark'>
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>                  
+                      <div className="feature-dots">
+                        <span className="dot-blue"></span>
+                        <span className="dot-blue"></span>
+                      </div>
+                    </div>
                     <p>Easily integrates with traditional credit scores or other financial data</p>
                   </div>
                 </div>
@@ -114,7 +203,7 @@ const Finance = () => {
                     </div>
                   </div>
                   
-                  <div className="risk-bars">
+                  {/* <div className="risk-bars">
                     <div className="risk-bar">
                       <span className="bar-label">Burnout</span>
                       <div className="bar-container">
@@ -169,8 +258,37 @@ const Finance = () => {
                         <div className="bar-fill" style={{width: '70%'}}></div>
                       </div>
                       <span className="bar-value">7/10</span>
+                    </div>
+                  </div> */}
+                  <div className='metrics'>
+                    <div className="burnout-metrics">
+                      {Array(4).fill(null).map((_, index) => (
+                        <div key={index} className="metric-row">
+                          <div className="metric-info">
+                            <span className="metric-label">Burnout</span>
+                            <span className="metric-score">7<span>/10</span></span>
+                          </div>
+                          <div className="metric-bar">
+                            <div className="bar-fill" style={{width: '70%'}}></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="burnout-metrics-2">
+                      {Array(3).fill(null).map((_, index) => (
+                        <div key={index} className="metric-row">
+                          <div className="metric-info">
+                            <span className="metric-label">Burnout</span>
+                            <span className="metric-score">7<span>/10</span></span>
+                          </div>
+                          <div className="metric-bar">
+                            <div className="bar-fill" style={{width: '70%'}}></div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -181,4 +299,4 @@ const Finance = () => {
   );
 };
 
-export default Finance; 
+export default Finance;

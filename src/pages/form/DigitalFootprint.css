@@ -1,0 +1,222 @@
+.footprint-root {
+  background: var(--bg-color1);
+  color: #fff;
+  font-family: 'Satoshi', Arial, sans-serif;  
+  padding: 120px 100px 50px 100px;
+}
+
+.footprint-header {  
+  text-align: left;  
+}
+.footprint-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+.footprint-title .blue {
+  color: #8feaff;
+}
+.footprint-subtitle {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.footprint-card-row {
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+  margin: 80px auto 80px auto;  
+}
+.footprint-card {
+  background: #10212b;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.18);
+  padding: 38px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;  
+  flex: 1 1 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.footprint-card:hover {
+  box-shadow: 0 4px 32px 0 rgba(143,234,255,0.15);
+  transform: translateY(-4px);
+  background: #152935;
+}
+.footprint-card-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 22px;
+}
+.footprint-card-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 28px;
+  color: #fff;
+  text-align: center;
+}
+.footprint-card-btn {
+  background: #0a2536;
+  color: #8feaff;
+  border: 1.5px solid #8feaff;
+  border-radius: 22px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.footprint-card-btn:hover {
+  background: #8feaff;
+  color: #0a2536;
+  border: 1.5px solid #8feaff;
+}
+
+.footprint-section {
+  background: linear-gradient(to right, #042D36 0%, #040608 43%);
+  border-radius: 16px;
+  border: 1px solid #ffffff0f;
+  padding: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footprint-section-title {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.footprint-section-title h2 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #8feaff;
+  margin-bottom: 12px;
+}
+
+.footprint-section-title p {
+  font-size: 24px;
+  color: #b3b3b3;
+  line-height: 1.4;
+}
+
+.footprint-form {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff0f;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.footprint-form-group {
+  margin-bottom: 24px;
+}
+
+.footprint-form-label {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.footprint-form-input {
+  width: 100%;
+  background: #ffffff0f;
+  border: 1px dashed #ffffff0f;
+  border-radius: 8px;
+  padding: 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footprint-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.footprint-form-select {
+  width: 100%;
+  background: #ffffff0f;
+  border: 1px dashed #ffffff0f;
+  border-radius: 8px;
+  padding: 16px;
+  color: #fff;
+  font-size: 16px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%238feaff' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
+.footprint-form-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #8feaff44;
+}
+
+/* Custom dropdown background for Chrome */
+.footprint-form-select option {
+  background: #1a2a35;
+  color: #fff;
+}
+
+/* Custom dropdown background for Firefox */
+@-moz-document url-prefix() {
+  .footprint-form-select {
+    background-color: #1a2a35 !important;
+  }
+}
+
+.footprint-form-terms {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-top: 24px;
+}
+
+.footprint-form-terms a {
+  color: #8feaff;
+  text-decoration: none;
+}
+
+.footprint-submit {
+  display: block;
+  width: fit-content;
+  margin: 32px auto 0;
+  padding: 12px 32px;
+  background: #8feaff;
+  color: #0a2536;
+  border: none;
+  border-radius: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.footprint-submit:hover {
+  background: #7ad9ee;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footprint-section {
+    padding: 24px;
+    margin: 0 16px;
+  }
+
+  .footprint-form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
