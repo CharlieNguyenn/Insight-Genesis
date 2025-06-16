@@ -47,7 +47,7 @@ const Home = () => {
             <br />
             <span className="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
           </h1>
-          <Link to="/" className="hero-link">
+          <Link to="/form" className="hero-link">
             <span>Get Your Own Insights Now</span>
             <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
@@ -126,7 +126,7 @@ const Home = () => {
             <p>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</p>            
           </div>
           <div className="cta-button-container">
-            <Link to="/" className="cta-button">
+            <Link to="/form" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
@@ -300,7 +300,7 @@ const Home = () => {
             <h2 className="resources-title">RESOURCES</h2>
             <div className="resources-buttons">
               <Link to="/faq" className="resource-btn">FAQ</Link>
-              <Link to="/docs" className="resource-btn ">DOCS</Link>
+              <Link to="/" className="resource-btn ">DOCS</Link>
               <Link to="/blog" className="resource-btn">BLOG</Link>
             </div>
           </div>

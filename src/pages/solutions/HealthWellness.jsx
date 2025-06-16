@@ -204,10 +204,10 @@ const HealthWellness = () => {
               </div>
               
               <div className="cta-section">
-                <button className="cta-button">
+                <a href="/form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="arrow-icon">→</span>
-                </button>
+                </a>
                 <p className="cta-note">
                   *a free report is available once a day. For a more in-depth report get it here
                 </p>
@@ -266,10 +266,10 @@ const HealthWellness = () => {
               </p>
               
               <div className="cta-section">
-                <button className="cta-button">
+                <a href="/form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="arrow-icon">→</span>
-                </button>
+                </a>
               </div>
               
               <div className="quote-section">

@@ -62,7 +62,7 @@ const Navigation = () => {
         </Link>
         
         <div className="header-actions">
-          <Link to="/" className="get-in-touch">
+          <Link to="/form" className="get-in-touch">
             Get in touch
             <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
           </Link>

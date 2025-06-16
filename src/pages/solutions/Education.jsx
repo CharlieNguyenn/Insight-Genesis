@@ -58,10 +58,10 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-                <button className="cta-button">
+                <a href="/form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="arrow-icon">→</span>
-                </button>
+                </a>
               </div>
             </div>
             
@@ -112,10 +112,10 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-                <button className="cta-button">
+                <a href="/form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="arrow-icon">→</span>
-                </button>
+                </a>
               </div>
             </div>
             

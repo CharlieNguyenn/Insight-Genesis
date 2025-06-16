@@ -185,10 +185,10 @@ const Finance = () => {
                   </div>
                 </div>
 
-                <button className="cta-button">
+                <a href="/form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="button-arrow">→</span>
-                </button>
+                </a>
               </div>
 
               <div className="visual-side">
