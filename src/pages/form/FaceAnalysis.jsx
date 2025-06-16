@@ -205,7 +205,7 @@ const FaceAnalysis = () => {
                 <img src={faceScanningImg} alt="Face Scanning" />
             </div>
             <div className="face-analysis-camera-preview-note">
-              <img src={cameraIcon} alt="Camera" /> &nbsp;             
+              <img src={cameraIcon} alt="Camera" />              
               It is necessary to allow us to use the camera to start the test.
             </div>
           </div>
