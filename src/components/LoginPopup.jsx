@@ -136,9 +136,11 @@ useEffect(() => {
       default:
         loginType = 'metamask'; // fallback cho các ví crypto khác
     }
+    const currentUrl = new URL(location.href);
+    currentUrl.search = "";
     
     // Chuyển hướng đến API InsightGenesis
-    const apiUrl = `https://api.insightgenesis.ai/lg?t=${loginType}`;
+    const apiUrl = `https://api.insightgenesis.ai/lg?t=${loginType}&u=${currentUrl.toString()}`;
     
     // Thêm các tham số từ form data
     const url = new URL(apiUrl);
@@ -237,6 +239,14 @@ useEffect(() => {
                 disabled={!formData.age || formData.gender === 'M/F'}
               >
                 Connect Wallet
+              </button>
+
+              <button 
+                type="button" 
+                className={`connect-wallet-btn`}
+                onClick={() => { window.location.href = '/form' }}
+              >
+                Scan Now
               </button>
               
               <div className="form-divider">
