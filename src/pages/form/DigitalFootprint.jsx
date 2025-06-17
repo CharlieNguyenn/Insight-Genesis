@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './DigitalFootprint.css';
 import { useNavigate } from 'react-router-dom';
 import faceIcon from '../../assets/form-assets/face.svg';
@@ -19,6 +19,7 @@ const DigitalFootprint = () => {
     phoneNumber: ''
   });
   const [apiError, setApiError] = useState(null);
+  const resultRef = useRef(null);
 
   const formatDate = (date) => {
     if (!date) return '';
@@ -60,6 +61,11 @@ const DigitalFootprint = () => {
       }
       setAnalysisResult(data);
       setApiError(null);
+      setTimeout(() => {
+        if (resultRef.current) {
+          resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 200);
     } catch (error) {
       setApiError(error.message || 'An error occurred.');
       setAnalysisResult(null);
@@ -240,7 +246,7 @@ const DigitalFootprint = () => {
         </form>
       </section>
       {analysisResult && (
-        <div className="footprint-result-container">
+        <div className="footprint-result-container" ref={resultRef}>
           <div className="footprint-result-header">
             <div className="footprint-result-main">
               <div className="footprint-report-label">REPORT</div>

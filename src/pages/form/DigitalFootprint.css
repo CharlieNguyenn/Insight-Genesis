@@ -331,15 +331,16 @@
   margin: 40px auto 0 auto;
   max-width: 1100px;
   width: 100%;
-  background: #fff;
-  color: #222;
+  background: #10151a;
+  color: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
+  box-shadow: 0 4px 32px 0 rgba(143,234,255,0.10);
   padding: 48px 64px 40px 64px;
   display: flex;
   flex-direction: column;
   gap: 48px;
   box-sizing: border-box;
+  border: 1.5px solid #1e2a36;
 }
 .footprint-result-header {
   display: flex;
@@ -353,7 +354,7 @@
   min-width: 320px;
 }
 .footprint-report-label {
-  color: #444;
+  color: #8feaff;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 1.5px;
@@ -364,15 +365,15 @@
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #222;
+  color: #fff;
 }
 .footprint-result-email {
-  color: #222;
+  color: #8feaff;
   font-size: 1.1rem;
   margin-bottom: 18px;
 }
 .footprint-result-desc {
-  color: #2e7d32;
+  color: #8feaff;
   font-size: 1.1rem;
   margin-bottom: 32px;
   font-weight: 500;
@@ -389,7 +390,7 @@
   align-items: center;
   gap: 16px;
   font-size: 1.15rem;
-  color: #222;
+  color: #fff;
   font-weight: 500;
 }
 .footprint-result-insight-value {
@@ -405,10 +406,10 @@
   vertical-align: middle;
 }
 .footprint-result-insight-icon.success {
-  background: #fffbe6 url('data:image/svg+xml;utf8,<svg fill="none" height="22" viewBox="0 0 18 18" width="22" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" fill="%23fbc02d" r="9"/><path d="M5 9.5l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/20px no-repeat;
+  background: #232b2f url('data:image/svg+xml;utf8,<svg fill="none" height="22" viewBox="0 0 18 18" width="22" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" fill="%23fbc02d" r="9"/><path d="M5 9.5l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/20px no-repeat;
 }
 .footprint-result-insight-icon.danger {
-  background: #ffeaea url('data:image/svg+xml;utf8,<svg fill="none" height="22" viewBox="0 0 18 18" width="22" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" fill="%23b71c1c" r="9"/><text x="6.5" y="14" font-size="13" fill="white">!</text></svg>') center/20px no-repeat;
+  background: #2a1818 url('data:image/svg+xml;utf8,<svg fill="none" height="22" viewBox="0 0 18 18" width="22" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" fill="%23b71c1c" r="9"/><text x="6.5" y="14" font-size="13" fill="white">!</text></svg>') center/20px no-repeat;
 }
 .footprint-result-risk {
   flex: 1;
@@ -423,7 +424,7 @@
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: #fff;
+  background: #181f25;
   box-shadow: 0 2px 16px 0 rgba(143,234,255,0.10);
   display: flex;
   flex-direction: column;
@@ -431,16 +432,17 @@
   justify-content: center;
   position: relative;
   margin-bottom: 8px;
+  border: 2.5px solid #8feaff;
 }
 .footprint-risk-label {
-  color: #2e7d32;
+  color: #8feaff;
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 8px;
   text-align: center;
 }
 .footprint-risk-score {
-  color: #2e7d32;
+  color: #8feaff;
   font-size: 2.8rem;
   font-weight: 700;
   text-align: center;
@@ -455,7 +457,7 @@
   pointer-events: none;
 }
 .footprint-risk-note {
-  color: #2e7d32;
+  color: #8feaff;
   font-size: 1.05rem;
   margin-top: 8px;
   max-width: 340px;
@@ -464,23 +466,27 @@
 }
 .footprint-result-notes {
   margin-top: 18px;
-  background: #fff;
+  background: #181f25;
   border-radius: 16px;
   padding: 32px 32px 24px 32px;
   box-shadow: 0 2px 12px 0 rgba(143,234,255,0.06);
+  border: 1.5px solid #1e2a36;
 }
 .footprint-result-notes h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 18px;
-  color: #222;
+  color: #8feaff;
 }
 .footprint-result-notes ul {
-  padding-left: 20px;
-  margin: 0;
+  padding-left: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+  list-style: none;
 }
 .footprint-result-notes li {
-  color: #222;
+  color: #fff;
   font-size: 1.13rem;
   margin-bottom: 18px;
   position: relative;
@@ -491,7 +497,7 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  background: #43a047;
+  background: #8feaff;
   border-radius: 3px;
   margin-right: 14px;
   vertical-align: middle;
@@ -523,29 +529,65 @@
     border-radius: 10px;
     min-width: 0;
   }
-  .footprint-result-title {
-    font-size: 1.2rem;
+  .footprint-result-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
   }
-  .footprint-result-email, .footprint-result-desc {
-    font-size: 0.95rem;
+  .footprint-result-main {
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .footprint-result-title,
+  .footprint-result-email,
+  .footprint-result-desc {
+    text-align: center;
+    width: 100%;
+  }
+  .footprint-result-insights-list {
+    align-items: center;
+    width: 100%;
+  }
+  .footprint-result-insight-row {
+    justify-content: center;
+    width: 100%;
+  }
+  .footprint-result-risk {
+    align-items: center;
+    margin-top: 12px;
+    width: 100%;
   }
   .footprint-risk-circle {
-    width: 140px;
-    height: 140px;
+    margin: 0 auto 8px auto;
   }
-  .footprint-risk-score {
-    font-size: 1.5rem;
+  .footprint-risk-note {
+    text-align: center;
+    margin: 0 auto;
   }
   .footprint-result-notes {
     padding: 12px 8px 8px 8px;
     border-radius: 8px;
+    margin: 0 auto;
+    text-align: center;
   }
   .footprint-result-notes h3 {
     font-size: 1.1rem;
+    text-align: center;
+  }
+  .footprint-result-notes ul {
+    padding-left: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
   }
   .footprint-result-notes li {
     font-size: 0.98rem;
     margin-bottom: 10px;
+    text-align: left;
   }
   .footprint-result-notes li:before {
     width: 10px;
