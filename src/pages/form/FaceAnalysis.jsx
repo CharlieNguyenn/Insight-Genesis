@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './FaceAnalysis.css';
 import faceIcon from '../../assets/form-assets/face.svg';
 import videoIcon from '../../assets/form-assets/video.svg';
@@ -9,8 +9,145 @@ import checkIcon from '../../assets/form-assets/group3.svg';
 import uncheckIcon from '../../assets/form-assets/group4.svg';
 
 import cameraIcon from '../../assets/form-assets/group2.svg';
+
+const SECRET_KEY = 'c5UqVPihwtydCKe57YJPtpyE2ryB9AJn';
+
 const FaceAnalysis = () => {
   const navigate = useNavigate();
+  const [apiResult, setApiResult] = useState(null);
+  const [apiError, setApiError] = useState(null);
+  const [iFrameURL, setIFrameURL] = useState(null);
+  
+  // useEffect(() => {
+  //   const callApi = async () => {
+  //     const gender = localStorage.getItem('gender') || 'male';
+  //     const age = localStorage.getItem('age') || '30';
+  //     try {
+  //       const response = await fetch(`https://api.insightgenesis.ai/iframe?g=${gender}&y=${age}`, {
+  //         method: 'GET',
+  //         headers: {
+  //           'auth': SECRET_KEY
+  //         }
+  //       });
+  //       if (!response.ok) throw new Error('API error: ' + response.status);
+  //       const data = await response.json();
+  //       setApiResult(data);
+  //       setApiError(null);
+  //     } catch (err) {
+  //       setApiError(err.message);
+  //       setApiResult(null);
+  //     }
+  //   };
+  //   callApi();
+  // }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      e.preventDefault();
+      e.returnValue = '';
+      return '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    const authenticateAndFetchVideoToken = async () => {
+      let APIToken = localStorage.getItem('APIToken') || '';
+
+      const authenticate = async () => {
+        const payload = {
+          key: "6738b6f4-1390-404b-95ac-59b6ade17773",
+          secret: "a4dc7b7f-a6fd-4441-8a0a-53c62957ef55"
+        };
+
+        try {
+          const response = await fetch('https://api.insightgenie.ai/auth/authenticate', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Error response:', errorData);
+            throw new Error('Failed to authenticate');
+          }
+
+          const data = await response.json();
+          APIToken = data.token || '';
+          localStorage.setItem('APIToken', APIToken);
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('Error:', error.message);
+          } else {
+            console.error('Unexpected error:', error);
+          }
+          return;
+        }
+      };
+
+      const fetchVideoToken = async () => {
+        try {
+          const payload = {
+            "clientId": "123456789",
+            "age": 18,
+            "gender": "male",
+            "showResults": "display",
+            "noDesign": false,
+            // "buttonBgColor": "#ebfbff",
+            // "buttonTextColor": "#ebfbff",
+            "isVoiceAnalysisOn": true,
+            "voiceAnalysisType": "fraud"
+          };
+          const videoResponse = await fetch('https://api.insightgenie.ai/face-scan/generate-video-token', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${APIToken}`,
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          if (!videoResponse.ok) {
+            const errorData = await videoResponse.json();
+            console.error('Error response:', errorData);
+
+            if (videoResponse.status === 401 && errorData.errorCode === 'UNAUTHORIZED') {
+              localStorage.removeItem('APIToken');
+              await authenticate();
+              await fetchVideoToken();
+            } else {
+              throw new Error('Failed to fetch video token');
+            }
+          } else {
+            const videoData = await videoResponse.json();
+            setIFrameURL(videoData.videoIframeUrl);
+            console.log('Video URL:', videoData.videoIframeUrl);
+          }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('Error:', error.message);
+          } else {
+            console.error('Unexpected error:', error);
+          }
+        }
+      };
+
+      if (!APIToken) {
+        await authenticate();
+      }
+      await fetchVideoToken();
+    };
+
+    authenticateAndFetchVideoToken();
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <div className="face-analysis-root">
@@ -43,6 +180,7 @@ const FaceAnalysis = () => {
         <div className="face-analysis-feature-desc">
           A 30-second video clip from a webcam or phone provides enough information for our video module to enhance your understanding of a person's physiological health and wellbeing.
         </div>
+        {!iFrameURL && (
         <div className="face-analysis-form">
           <div className="face-analysis-checkbox">
             <input type="checkbox" id="add-hypertension" />
@@ -249,7 +387,31 @@ const FaceAnalysis = () => {
           <button className="face-analysis-submit" onClick={() => navigate('/form/result')}>
             Show insight
           </button>
+          {apiResult && (
+            <pre style={{background:'#222',color:'#8feaff',padding:12,borderRadius:8,marginTop:12}}>
+              {JSON.stringify(apiResult, null, 2)}
+            </pre>
+          )}
+          {apiError && (
+            <div style={{color:'red',marginTop:12}}>{apiError}</div>
+          )}
         </div>
+        )}
+
+        {iFrameURL && (
+          <div className="face-analysis-field face-iframe">
+            <iframe
+              title='face analysis form'
+              id='face-analysis'
+              src={iFrameURL}
+              allow="camera;microphone;display-capture"
+              width='100%'
+              height='2000px'
+              style={{maxWidth: '850px'}}
+            />
+          </div>
+        )}
+
       </section>
     </div>
   );
