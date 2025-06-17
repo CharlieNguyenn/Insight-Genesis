@@ -2,17 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import iconLoad from "../assets/icons/icon-load.svg";
-import logo from "../assets/logo.svg";
-import arrowButton from "../assets/arrow-button.png";
-import loadButton from "../assets/load-button.png";
-import serviceIcon1 from "../assets/service-icon1.svg";
-import serviceIcon2 from "../assets/service-icon2.svg";
-import serviceIcon3 from "../assets/service-icon3.svg";
-import serviceIcon4 from "../assets/service-icon4.png";
-import coreFeature1 from "../assets/core-1.png";
-import coreFeature2 from "../assets/core-2.png";
-import coreFeature3 from "../assets/core-3.png";
-import viewer from "../assets/svgviewer-output.svg";
+import narrowRightIcon from '../assets/icons/narrow-right.svg';
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
@@ -47,18 +37,28 @@ const Home = () => {
             <br />
             <span className="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
           </h1>
-          <Link to="/form" className="hero-link">
+          {/* <Link to="/" className="hero-link">
             <span>Get Your Own Insights Now</span>
             <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
             </svg>
+          </Link> */}
+
+          <Link to="/">
+            <div class="row">
+              <div class="button">
+                <div class="get-your-own-insights-now">Get Your Own Insights Now</div>
+                <img class="icon" src={narrowRightIcon}></img>
+              </div>
+            </div>
           </Link>
+
         </div>
       </section>
 
       {/* Company Description */}
       <section className="company-description">
-        <div className="container">
+        <div className="home-container">
           <img src={iconLoad} alt="load" className="load-icon" />
           <p className="main-description">
             Insight Genesis is the innovative Web3 arm of Insight Genie, a
@@ -69,7 +69,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <section className="stats">
-        <div className="container">
+        <div className="home-container">
           <div className="title">
             <h2>ABOUT INSIGHT GENIE</h2>
           </div>
@@ -115,30 +115,31 @@ const Home = () => {
 
       {/* What We Do Section */}
       <section className="what-we-do">
-        <div className="container">
+        <div className="home-container">
           <div className="title">
             <h2>WHAT WE DO</h2>
           </div>
-          <div className="title">
-            <h2>ABOUT INSIGHT GENIE</h2>
-          </div>
           <div className="section-header">
-            <p>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</p>            
+            <p>We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with <span className="highlight">Decentralized Personal Insights.</span></p>
           </div>
           <div className="cta-button-container">
-            <Link to="/form" className="cta-button">
+            {/* <Link to="/" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
                 </svg>
-              </Link>
+              </Link> */}
+            <Link to="/" className="get-in-touch">
+              Get Your Own Insights Now
+              <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="services">
-        <div className="container">
+        <div className="home-container">
           <div className="service-item">
             <div className="service-number">
               01
@@ -227,7 +228,7 @@ const Home = () => {
 
       {/* Mission Statement */}
       <section className="mission">
-        <div className="container">
+        <div className="home-container">
           <div className="mission-header">
             <div className="title">
               <h2>OUR VISION</h2>
@@ -253,7 +254,7 @@ const Home = () => {
 
       {/* Core Features */}
       <section className="core-features">
-        <div className="container">
+        <div className="home-container">
           <div className="feature-cards-container">
             <div className="feature-card feature-card-1">
               <h2>Decentralizati<span className="parabole-letter">o</span>n</h2>
@@ -279,7 +280,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage2.mp4" type="video/mp4" />
         </video>
         <div className="evolution-overlay"></div>
-        <div className="container">
+        <div className="home-container">
           <div className="evolution-content">
             <h2 className="evolution-title">THE FUTURE OF AI INSIGHT</h2>
             <p className="evolution-text">
@@ -295,7 +296,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage3.mp4" type="video/mp4" />
         </video>
         <div className="resources-overlay"></div>
-        <div className="container">
+        <div className="home-container">
           <div className="resources-content">
             <h2 className="resources-title">RESOURCES</h2>
             <div className="resources-buttons">
@@ -313,7 +314,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
         </video>
         <div className="contact-overlay"></div>
-        <div className="container">
+        <div className="home-container">
           <div className="contact-content">
             <div className="contact-email">
               <a href="/" className="email-link">

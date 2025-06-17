@@ -286,12 +286,12 @@
   margin-bottom: 0.5rem;
 }
 
-.stat-value {
+/* .stat-value {
   font-size: 52px;
   font-weight: 400;
   color: #00ffff;
   text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
+} */
 
 .stat-bars {
   display: flex;
