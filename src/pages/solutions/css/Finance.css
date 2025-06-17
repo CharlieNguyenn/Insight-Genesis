@@ -634,8 +634,9 @@
   font-family: 'Parabole', sans-serif;
 }
 
-.text-left {
+.financial-inclusion .text-left {
   text-align: left;
+  margin: 0;
 }
 
 .services-line {
