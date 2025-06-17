@@ -4,12 +4,14 @@ import './Navigation.css';
 import logo from '../assets/logo.svg';
 import menuIcon from '../assets/icons/menu.svg';
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
+import LoginPopup from './LoginPopup';
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const sideMenuRef = useRef(null);
   const location = useLocation();
+  const [showPopup, setShowPopup] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -62,10 +64,24 @@ const Navigation = () => {
         </Link>
         
         <div className="header-actions">
-          <Link to="/form" className="get-in-touch">
+          {/* <Link to="/form" className="get-in-touch">
             Get in touch
             <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
-          </Link>
+          </Link> */}
+          <div>
+            <button 
+            className='get-in-touch'
+              onClick={() => setShowPopup(true)}
+            >
+              Get in touch
+              <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
+            </button>
+            <LoginPopup 
+              isOpen={showPopup} 
+              onClose={() => setShowPopup(false)} 
+              returnUrl='/form'
+            />
+          </div>
           
           <button className="menu-toggle" onClick={toggleMenu}>
             <img src={menuIcon} alt="menu" className="menu-icon" />
