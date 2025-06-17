@@ -107,8 +107,7 @@ const Finance = () => {
                         <div className="line"></div>
                         <div className='outline-dot'>
                           <div className="dot right"></div>
-                        </div>
-                        
+                        </div>  
                       </div>
                       <div className="burnout-metrics">
                         {Array(4).fill(null).map((_, index) => (
