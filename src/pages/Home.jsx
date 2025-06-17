@@ -76,7 +76,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <section className="stats">
-        <div className="home-container">
+        <div className="container">
           <div className="title">
             <h2>ABOUT INSIGHT GENIE</h2>
           </div>
@@ -122,7 +122,7 @@ const Home = () => {
 
       {/* What We Do Section */}
       <section className="what-we-do">
-        <div className="home-container">
+        <div className="container">
           <div className="title">
             <h2>WHAT WE DO</h2>
           </div>          
@@ -130,16 +130,12 @@ const Home = () => {
             <p> &emsp;&emsp;We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</p>            
           </div>
           <div className="cta-button-container">
-            {/* <Link to="/" className="cta-button">
+            <Link to="/form" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
                 </svg>
-              </Link> */}
-            <Link to="/" className="get-in-touch">
-              Get Your Own Insights Now
-              <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
-            </Link>
+              </Link>
           </div>
         </div>
       </section>
@@ -235,7 +231,7 @@ const Home = () => {
 
       {/* Mission Statement */}
       <section className="mission">
-        <div className="home-container">
+        <div className="container">
           <div className="mission-header">
             <div className="title">
               <h2>OUR VISION</h2>
@@ -261,7 +257,7 @@ const Home = () => {
 
       {/* Core Features */}
       <section className="core-features">
-        <div className="home-container">
+        <div className="container">
           <div className="feature-cards-container">
             <div className="feature-card feature-card-1">
               <div className="feature-content">
@@ -302,7 +298,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage2.mp4" type="video/mp4" />
         </video>
         <div className="evolution-overlay"></div>
-        <div className="home-container">
+        <div className="container">
           <div className="evolution-content">
             <h2 className="evolution-title">THE FUTURE OF AI INSIGHT</h2>
             <p className="evolution-text">
@@ -318,7 +314,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage3.mp4" type="video/mp4" />
         </video>
         <div className="resources-overlay"></div>
-        <div className="home-container">
+        <div className="container">
           <div className="resources-content">
             <h2 className="resources-title">RESOURCES</h2>
             <div className="resources-buttons">
@@ -336,7 +332,7 @@ const Home = () => {
           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
         </video>
         <div className="contact-overlay"></div>
-        <div className="home-container">
+        <div className="container">
           <div className="contact-content">
             <div className="contact-email">
               <a href="/" className="email-link">

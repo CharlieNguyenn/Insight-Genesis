@@ -54,7 +54,7 @@
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.5rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
