@@ -77,7 +77,7 @@ const DigitalFootprint = () => {
             </div>
           </div>
           <p className="footprint-form-terms">
-            By clicking 'Show insights', you agree to the InsightGenie's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            By clicking 'Show insights', you agree to the InsightGenie's <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.
           </p>
           <button type="submit" onClick={() => navigate('/form/result')} className="footprint-submit">Show insight</button>
         </form>

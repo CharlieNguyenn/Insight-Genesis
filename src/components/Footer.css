@@ -33,6 +33,7 @@
 .cta-button {
   display: flex;
   align-items: center;
+  width: fit-content;
   gap: 0.5rem;
   background-color: transparent;
   border: 1px solid #00ffff;

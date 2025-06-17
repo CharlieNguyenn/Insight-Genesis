@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="footer-column">
               <h3 className="footer-heading">Solutions</h3>
               <ul className="footer-links">
-                <li><Link to="/solutions/decentralized-personal-insights">Decentralized Personal Insight ( DPI )</Link></li>
+                <li><Link to="/solutions/decentralized-personal-insights">Decentralized Personal Insight</Link></li>
                 <li><Link to="/solutions/finance">Financial Inclusion</Link></li>
                 <li><Link to="/solutions/health-wellness">Health & Wellness</Link></li>
                 <li><Link to="/solutions/human-resource">Human Resource</Link></li>
