@@ -9,6 +9,13 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '/igai.min.js'; // hoặc từ CDN
+    script.async = true;
+    document.head.appendChild(script);
+    }, []);
+
+  useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
