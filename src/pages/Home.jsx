@@ -17,6 +17,7 @@ import coreFeature1 from "../assets/core-1.png";
 import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
 import viewer from "../assets/svgviewer-output.svg";
+import narrowRightIcon from '../assets/icons/narrow-right.svg';
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
