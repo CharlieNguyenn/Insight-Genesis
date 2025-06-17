@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './LoginPopup.css';
 
 const LoginPopup = ({ isOpen, onClose }) => {
@@ -241,13 +242,12 @@ useEffect(() => {
                 Connect Wallet
               </button>
 
-              <button 
-                type="button" 
-                className={`connect-wallet-btn`}
-                onClick={() => { window.location.href = '/form' }}
+              <Link 
+                to="/form" className="connect-wallet-btn" style={{lineHeight: '22px'}}
+                onClick={onClose}
               >
                 Scan Now
-              </button>
+              </Link>
               
               <div className="form-divider">
                 <span className="divider-text">OR</span>
