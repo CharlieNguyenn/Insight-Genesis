@@ -675,7 +675,7 @@
 }
 
 .services-line {
-  margin-left: 140px;
+  margin-left: 80px;
 }
 
 .finance-analysis {
@@ -1013,5 +1013,10 @@
   .credit-risk .cta-button {
     margin-top: 32px;
     width: fit-content;
+  }
+}
+@media (max-width: 576px) {
+  .main-title{
+    font-size: 32px;
   }
 }
