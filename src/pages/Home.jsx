@@ -23,7 +23,6 @@ const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -255,10 +254,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Core Features */}
-      <section className="core-features">
-        <div className="container">
-          <div className="feature-cards-container">
+      <div className="feature-cards-container wrapper">
             <div className="feature-card feature-card-1">
               <div className="feature-content">
                 <h2>Decentralizati<span className="parabole-letter">o</span>n</h2>
@@ -288,9 +284,9 @@ const Home = () => {
                 <img src={imgCore3} alt="Empowering Users" />
               </div>
             </div>
-          </div>
+
+            <div class="spacer"></div> 
         </div>
-      </section>
 
       {/* Evolution Quote */}
       <section className="evolution">
