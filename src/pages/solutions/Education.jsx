@@ -1,6 +1,7 @@
 import React from 'react';
-import '../Solutions.css';
 import './css/Education.css';
+import { Link } from 'react-router-dom';
+import narrowRightIcon from '../../assets/icons/narrow-right.svg';
 import educationBg1 from '../../assets/education-bg1.png';
 import educationBg2 from '../../assets/education-bg2.png';
 const Education = () => {
@@ -17,10 +18,10 @@ const Education = () => {
         >
           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
         </video>
-        <div className="hero-overlay"></div>
-        <div className="container">
+        
+        <div className="container" id="education-hero-container">
           <h1 className="hero-title">
-              EDUCATION
+              ED<span className="parabole-letter">U</span>CATI<span className="parabole-letter">O</span>N
             </h1>
         </div>
       </section>
@@ -58,10 +59,10 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <span className="arrow-icon">→</span>
-                </a>
+                <Link to="/form" className="cta-button">
+                <span>Get Your Own Insights Now</span>
+                <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+                </Link>
               </div>
             </div>
             
@@ -112,10 +113,10 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <span className="arrow-icon">→</span>
-                </a>
+              <Link to="/form" className="cta-button">
+              <span>Get Your Own Insights Now</span>
+              <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+              </Link>
               </div>
             </div>
             
