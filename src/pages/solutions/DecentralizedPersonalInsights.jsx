@@ -3,10 +3,9 @@ import './css/DecentralizedPersonalInsights.css';
 
 const DecentralizedPersonalInsights = () => {
   return (
-    <div className="decentralized-personal-insights">
-      
-      {/* decentralized-personal-insights hero */}
-      <section className="solutions-hero dpi-hero">
+    <div className="education">
+      {/* education hero */}
+      <section className="solutions-hero">
         <video 
           className="hero-video-bg" 
           autoPlay 
@@ -14,36 +13,33 @@ const DecentralizedPersonalInsights = () => {
           loop 
           playsInline
         >
-          <source src="/mp4/085e4b8dcc96a5df48e607c966bcfbfec4318516hls_abr_3_00001.mp4" type="video/mp4" />
+          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
         </video>
-        <div className="hero-overlay"></div>
-        <div className="container">
-          <h1 className="hero-title">
-            <div className="text-left"><span className="parabole-font">D</span>ECENTRALIZED</div>
-            <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
-          </h1>
+        
+        <div className="container" id="education-hero-container">
+          <h1 className="hero-title" id="dpi-hero-title">
+              <div><span className="parabole-letter special-letter">D</span>ECENTRALIZED </div>
+              <div>PERS<span className="parabole-letter special-letter">O</span>NAL I<span className="parabole-letter special-letter">N</span>SIGHTS</div>
+            </h1>
         </div>
       </section>
-      
-      {/* Full Control Section */}
-      <section className="control-data-section">
-        <div className="section-background">
-          <video 
-            className="section-video-bg" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
-          </video>
-          <div className="section-overlay"></div>
-        </div>
+      {/* Personalized Student Guidance & Holistic */}
+      <section className="personalized-student-guidance">
+        <video 
+          className="section-video-bg" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+        </video>
+        <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="control-data-grid">
-            <div className="control-data-content">
-              <div className="section-badge">
+          <div className="education-grid">
+            <div className="education-content">
+              <div className="section-badge" id="dpi-badge">
                 <div className="badge-dots">
                   <span className="dot active"></span>
                   <span className="dot"></span>
@@ -54,7 +50,6 @@ const DecentralizedPersonalInsights = () => {
                   <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
-              
               <h3 className="main-heading">
                 FULL CONTROL. YOUR PERSONAL DATA.
               </h3>
@@ -114,40 +109,34 @@ const DecentralizedPersonalInsights = () => {
               </div>
             </div>
             
-            <div className="control-data-visual">
-              <div className="visual-container">
-                <div className="globe-visualization">
-                <div className="video-container">
-                    <div className="video-overlay"></div>
+            <div className="education-visual">
+              <div className="education-bg-container">
+              <div className="video-overlay"></div>
                     <video autoPlay muted loop playsInline>
                       <source src="/mp4/decentral-bg-1.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                </div>
+                    </video>   
+                
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Secure Transparent Section */}
-      <section className="secure-transparent-section">
-        <div className="section-background">
-          <video 
-            className="section-video-bg" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
-          </video>
-          <div className="section-overlay"></div>
-        </div>
+            {/* Secure, Data-Driven Decisions for Educators */}
+      <section className="secure-data-driven-decisions">
+        <video 
+          className="section-video-bg" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+        </video>
+        <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="secure-transparent-grid">
-            <div className="secure-transparent-content">
+          <div className="educators-grid">
+            <div className="educators-content">
               <div className="section-badge">
                 <div className="badge-dots">
                   <span className="dot"></span>
@@ -159,7 +148,6 @@ const DecentralizedPersonalInsights = () => {
                   <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
-              
               <h3 className="secure-main-heading">
                 SECURE.<br />
                 TRANSPARENT.
@@ -170,42 +158,35 @@ const DecentralizedPersonalInsights = () => {
                   Open-source, transparent platform with industry-standard 64-bit encryption, quantum-resistant blockchain cryptography, no personal data storage, and advanced zero-knowledge proof and key management technologies (KMS) —ensuring users fully own their personal insights safely.
                 </p>
               </div>
+                            
             </div>
             
-            <div className="secure-transparent-visual">
-              <div className="visual-container">
-                <div className="hand-device-visualization">
-                  <div className="video-container">
-                    <div className="video-overlay"></div>
+            <div className="educators-visual">
+              <div className="educators-bg-container">
+              <div className="video-overlay"></div>
                       <video autoPlay muted loop playsInline>
                       <source src="/mp4/decentral-bg-2.mp4" type="video/mp4" />
-                      </video>
-                  </div>
-                </div>
+                      </video>     
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* New Data Economy Section */}
-      <section className="new-data-section">
-        <div className="section-background">
-          <video 
-            className="section-video-bg" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
-          </video>
-          <div className="section-overlay"></div>
-        </div>
+      <section className="secure-data-driven-decisions">
+        <video 
+          className="section-video-bg" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+        </video>
+        <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="new-data-grid">
-            <div className="new-data-content">
+          <div className="educators-grid">
+            <div className="educators-content">
               <div className="section-badge">
                 <div className="badge-dots">
                   <span className="dot"></span>
@@ -217,7 +198,6 @@ const DecentralizedPersonalInsights = () => {
                   <div className="text-left personal-insights-line">PERS<span className="parabole-font">O</span>NAL I<span className="parabole-font">N</span>SIGHTS</div>
                 </div>
               </div>
-              
               <h3 className="new-data-main-heading">
                 NEW DATA ECONOMY.<br />
                 POWERED BY YOU
@@ -230,33 +210,16 @@ const DecentralizedPersonalInsights = () => {
               </div>
             </div>
             
-            <div className="new-data-visual">
-              <div className="visual-container">
-                <div className="data-economy-visualization">
-                <div className="video-container">
-                  <div className="video-decoration top"></div>
-                    <div className="video-overlay"></div>
+            <div className="educators-visual">
+              <div className="educators-bg-container">
+                
+              <div className="video-overlay"></div>
                       <video autoPlay muted loop playsInline>
                       <source src="/mp4/decentral-bg-3.mp4" type="video/mp4" />
-                      </video>
-                    <div className="video-decoration bottom"></div>
-                  </div>
-                </div>
+                      </video>                     
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call To Action Section */}
-      <section className="dpi-cta-section">
-        <div className="container">
-          <a href="/form" className="cta-button">
-            <span>Get Your Own Insights Now</span>
-            <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
-            </svg>
-          </a>
         </div>
       </section>
     </div>
