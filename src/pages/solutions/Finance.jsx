@@ -1,5 +1,7 @@
 import React from 'react';
 import './css/Finance.css';
+import { Link } from 'react-router-dom';
+import narrowRightIcon from '../../assets/icons/narrow-right.svg';
 import bgFinance from "../../assets/bg-finance.png";
 import Footer from '../../components/Footer';
 
@@ -138,8 +140,8 @@ const Finance = () => {
               <div className="content-side">
                 <div className="section-label">
                   <div className="badge-dots">
-                      <span className="dot active"></span>
                       <span className="dot"></span>
+                      <span className="dot active"></span>
                     </div>
                     <h1>
                       <div className="text-left">CREDIT RI<span className="parabole-font">S</span>K</div>
@@ -185,10 +187,10 @@ const Finance = () => {
                   </div>
                 </div>
 
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <span className="button-arrow">→</span>
-                </a>
+                <Link to="/form" className="cta-button">
+              <span>Get Your Own Insights Now</span>
+              <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+              </Link>
               </div>
 
               <div className="visual-side">
