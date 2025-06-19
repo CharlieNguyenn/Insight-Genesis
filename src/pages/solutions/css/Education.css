@@ -1,10 +1,58 @@
+/* Education Hero Section */
+.education .solutions-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-color1);
+}
+
+.hero-video-bg {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 28, 0.6);
+  z-index: 2;
+}
+
+.education .solutions-hero .container {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1200px; 
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 90px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1;
+  margin-left: auto;
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /* Personalized Student Guidance Section */
 .personalized-student-guidance {
     position: relative;
-    padding: 100px 0;
+    padding: 80px 60px;
     min-height: 100vh;
     overflow: hidden;
-    background: #0a0f1c;
+    background-color: var(--bg-color1);
   }
   
   .personalized-student-guidance .container {
@@ -12,19 +60,21 @@
     z-index: 3;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    
   }
   
   .education-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1fr;        
+    border: 1px solid rgba(179, 179, 179, 0.3);
     align-items: center;
     min-height: 80vh;
   }
   
   .education-content {
     color: #ffffff;
+    padding: 40px;
+    border-right: 1px solid rgba(179, 179, 179, 0.3);
   }
   
   .education-title {
@@ -54,8 +104,7 @@
   .education-bg-container {
     position: relative;
     width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    height: 100%;    
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -95,40 +144,6 @@
     color: #00bcd4;
     text-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
     animation: pulse 2s ease-in-out infinite;
-  }
-  
-  .orbital-rings {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .ring {
-    position: absolute;
-    border: 2px solid rgba(0, 188, 212, 0.3);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .ring-1 {
-    width: 200px;
-    height: 200px;
-    animation: rotate 20s linear infinite;
-  }
-  
-  .ring-2 {
-    width: 300px;
-    height: 300px;
-    animation: rotate 30s linear infinite reverse;
-  }
-  
-  .ring-3 {
-    width: 400px;
-    height: 400px;
-    animation: rotate 40s linear infinite;
-    border-style: dashed;
   }
   
   .floating-icons {
@@ -213,30 +228,31 @@
   /* Secure Data-Driven Decisions for Educators Section */
   .secure-data-driven-decisions {
     position: relative;
-    padding: 100px 0;
+    padding: 80px 60px;
     min-height: 100vh;
     overflow: hidden;
-    background: #0a0f1c;
+    background: var(--bg-color1);
   }
   
   .secure-data-driven-decisions .container {
     position: relative;
     z-index: 3;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0 auto;    
   }
   
   .educators-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    border: 1px solid rgba(179, 179, 179, 0.3);
     align-items: center;
     min-height: 80vh;
   }
   
   .educators-content {
     color: #ffffff;
+    padding: 40px;
+    border-right: 1px solid rgba(179, 179, 179, 0.3);
   }
   
   .educators-title {
@@ -283,3 +299,152 @@
     left: 0;
     z-index: 1;
   }
+
+@media (max-width: 992px) {
+  .education-grid,
+  .educators-grid {
+    grid-template-columns: 1fr;    
+  }
+  .badge-dots {
+    margin-bottom: 20px;
+  }
+  .education-content,
+  .educators-content {
+    border-right: none;
+    border-bottom: 1px solid rgba(179, 179, 179, 0.3);
+    padding-bottom: 32px;
+  }
+  .education .solutions-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-color1);
+  }
+  
+  .education .solutions-hero .hero-video-bg {
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 28, 0.6);
+    z-index: 2;
+  }
+  
+  #education-hero-container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 20px;
+    width: fit-content;
+    margin-right: 60px ;
+    margin-top: 0;
+  }
+  #education-hero-container .hero-title .parabole-letter{
+    font-size: 90px;    
+  }
+  
+  .education .solutions-hero .container .hero-title {
+    font-size: 90px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-family: 'Satoshi', sans-serif;      
+  }
+}
+
+@media (max-width: 768px) {
+  .personalized-student-guidance {
+    padding: 40px 20px;
+  }
+  .education-content{
+    text-align: left;
+  }
+  .badge-dots {
+    margin-bottom: 20px;
+  }
+  .cta-section{
+    text-align: center;
+  }
+  .cta-button {        
+    width: fit-content;
+  }
+  .secure-data-driven-decisions{
+    padding: 40px 20px;
+  }
+  .educators-content{
+    text-align: left;
+  }
+    
+}
+
+@media (max-width: 576px) {
+  .education .solutions-hero .container .hero-title,
+  #education-hero-container .hero-title .parabole-letter{
+    font-size: 32px;    
+  }
+  .education .solutions-hero .hero-video-bg{
+    position: absolute;
+    transform: rotate(270deg) translate(-0%, -50%);
+    transform-origin: center center;
+    height: 100%;
+    width: 100vh;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    object-fit: cover;
+  }
+
+  #education-hero-container{
+    padding-bottom: 300px !important;
+  }
+  
+  .personalized-student-guidance {
+    padding: 40px 20px;
+  }
+  .personalized-student-guidance .container,
+  .secure-data-driven-decisions .container{
+    padding: 0px !important;
+  }
+  .education-title{
+    font-size: 24px;
+  }
+  .education-content{
+    padding: 20px;
+    text-align: left;
+  }
+  .education-visual{
+    height: 300px;
+  }
+  .educators-title{
+    font-size: 24px;
+  }
+  .educators-content{
+    padding: 20px;
+    text-align: left;
+  }
+  .educators-visual{
+    height: 300px;
+  }
+}

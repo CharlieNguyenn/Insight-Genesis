@@ -47,9 +47,8 @@
 }
 
 .container {
-  max-width: fit-content;
-  margin-right: 60px !important;
-  padding: 0 2rem;
+  max-width: fit-content;  
+  padding: 0;  
   position: relative;
   z-index: 3;
 }
@@ -57,12 +56,17 @@
 /* Header */
 .finance-header {
   position: relative;
+  padding:50px;
   z-index: 4;
-  padding: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.finance-header .container{
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .main-title {
@@ -143,6 +147,7 @@
 .feature-points {
   display: flex;
   flex-direction: column;
+  text-align: left;
   gap: 2.5rem;
 }
 
@@ -334,7 +339,7 @@
 
 /* Credit Risk Section */
 .credit-risk {
-  padding: 80px 0;
+  padding: 80px 60px;
   position: relative;
   z-index: 4;
 }
@@ -450,11 +455,12 @@
 /* CTA Button */
 .cta-button {
   background: transparent;
+  width: fit-content;
   border: 1px solid #00ffff;
   color: #00ffff;
   padding: 12px 25px;
   border-radius: 25px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -482,7 +488,7 @@
 
 /* Financial Inclusion Section */
 .financial-inclusion {
-  padding: 80px 0;
+  padding: 80px 60px;
   position: relative;
   z-index: 4;
   display: flex;  
@@ -491,8 +497,7 @@
   /* height: 100vh; */
 }
 
-.financial-inclusion .container {
-  width: 1800px;
+.financial-inclusion .container {  
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
@@ -501,10 +506,7 @@
 .financial-inclusion .section-grid {
   /* background: rgba(0, 20, 40, 0.7); */
   border: 1px solid rgba(179, 179, 179, 0.3);
-  /* border-radius: 20px; */
-  /* padding: 3rem;
-  margin: 2rem 0; */
-  /* backdrop-filter: blur(10px); */
+  
 }
 
 /* Finance Image Container */
@@ -527,15 +529,29 @@
     font-size: 4.5rem;
   }
   
-  .section-grid {
-    gap: 3rem;
+  
+
+  .content-side {
+    padding: 40px;
+  }
+
+  .content-side p {
+    font-size: 20px;
+  }
+
+  .feature-point p {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 968px) {
   .section-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    
     text-align: center;
   }
   
@@ -547,9 +563,22 @@
     font-size: 1.8rem;
   }
   
+  .financial-inclusion {
+    padding: 80px 20px;
+  }
+  .credit-risk{
+    padding: 80px 20px;
+  }
+  .content-side{
+    padding: 2rem;   
+    border-right: none;
+    border-bottom: 1px solid rgba(179, 179, 179, 0.3);
+    text-align: center;
+  }
+
   .financial-inclusion .section-grid,
   .credit-risk .section-grid {
-    padding: 2rem;
+    padding: 0;
     text-align: left;
   }
   
@@ -569,6 +598,13 @@
   
   .main-percentage {
     font-size: 2.2rem;
+  }
+  .content-side .cta-button{
+    margin-top: 32px;
+    gap: 0.8rem;
+    justify-content: center;    
+    margin-left: auto ;
+    margin-right: auto;
   }
 }
 
@@ -640,7 +676,7 @@
 }
 
 .services-line {
-  margin-left: 140px;
+  margin-left: 80px;
 }
 
 .finance-analysis {
@@ -690,7 +726,7 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 2rem;
-  width: 50%;
+  width: 100%;
 }
 
 .intent-score h3 {
@@ -764,7 +800,7 @@
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
-  padding: 0 4rem;
+  padding: 0 2rem;
 }
 
 .connection-line .outline-dot {
@@ -841,7 +877,7 @@
 }
 
 @media (max-width: 768px) {
-  .finance-wrapper video {
+  /* .finance-wrapper video {
     transform: rotate(270deg);
     position: fixed;
     top: 0;
@@ -850,7 +886,7 @@
     height: 100%;
     z-index: 1;
     object-fit: contain;
-  }
+  } */
 
   .financial-inclusion .container {
     margin-right: 0 !important;
@@ -872,7 +908,7 @@
     width: 100%;
     grid-template-columns: 1fr;
     min-height: auto;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .content-side {
@@ -974,8 +1010,14 @@
   .credit-risk .section-title {
     font-size: 32px;
   }
-
+  
   .credit-risk .cta-button {
     margin-top: 32px;
+    width: fit-content;
+  }
+}
+@media (max-width: 576px) {
+  .main-title{
+    font-size: 32px;
   }
 }

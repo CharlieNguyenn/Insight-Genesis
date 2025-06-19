@@ -7,7 +7,7 @@
     padding: 100px 0;
     min-height: 100vh;
     overflow: hidden;
-    background: #0a0f1c;
+    background: var(--bg-color1);
   }
   .hero-title {
     font-family: 'Satoshi', sans-serif;
@@ -258,7 +258,7 @@
     padding: 100px 0;
     min-height: 100vh;
     overflow: hidden;
-    background: #0a0f1c;
+    background: var(--bg-color1);
   }
   
   .candidate-assessment .container {
@@ -496,14 +496,49 @@
   }
 
   @media screen and (max-width: 992px) {
+
+    .human-resource-solution .solutions-hero {
+      align-items: center;
+    }
+
+    .title-1 .hero-title span, .title-2 .hero-title span{
+      font-size: 70px;
+    }
     .solutions-hero .container {
       margin-right: 0;
       margin-left: 0;
       margin-top: 50%;
     }
 
-    .title-1, .title-2 {
-        height: 35px;
+    .human-resource-solution .solutions-hero .hero-video-bg {
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      z-index: 1;
+      -o-object-fit: cover;
+      object-fit: cover;
+  }
+
+  #education-hero-container .title-1 .hero-title, #education-hero-container .title-2 .hero-title {
+    font-size: 70px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1;
+    margin-left: unset;
+    text-transform: uppercase;
+    font-family: 'Satoshi', sans-serif;
+}
+.title-1 .hero-title span, .title-2 .hero-title span{
+  font-size: 70px;
+}
+
+    .title-1, .title-2 {        
         display: flex;
         align-items: center;
         margin-left: 0;
@@ -624,4 +659,28 @@
         width: 12px;
         font-size: 0.8rem;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+
+  }
+  @media screen and (max-width: 576px) {
+    .human-resource-solution .solutions-hero .hero-video-bg {
+      position: absolute;
+      transform: rotate(270deg) translate(-0%, -50%);
+      transform-origin: center center;
+      height: 100%;
+      width: 100vh;
+      top: 0;
+      left: 50%;
+      z-index: 1;
+      -o-object-fit: cover;
+      object-fit: cover;
+  }
+    #education-hero-container .title-1 .hero-title, #education-hero-container .title-2 .hero-title {
+    font-size: 32px;    
+}
+    .title-1 .hero-title span, .title-2 .hero-title span{
+  font-size: 32px;
+}
   }

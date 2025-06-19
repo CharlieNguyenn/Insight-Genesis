@@ -19,9 +19,8 @@ const HumanResource = () => {
           playsInline
         >
           <source src="/mp4/085e4b8dcc96a5df48e607c966bcfbfec4318516hls_abr_3_00001.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-overlay"></div>
-        <div className="container">
+        </video>        
+        <div className="container" id="education-hero-container">
           <div className='title-1'>
             <h1 className="hero-title">
                 <span>H</span>UMAN
