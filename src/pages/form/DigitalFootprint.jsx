@@ -6,6 +6,8 @@ import videoIcon from '../../assets/form-assets/video.svg';
 import footPrintIcon from '../../assets/form-assets/foot-print.svg';
 import COUNTRY_CODES from './countryCodes';
 
+const SECRET_KEY = 'c5UqVPihwtydCKe57YJPtpyE2ryB9AJn';
+
 const DigitalFootprint = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -35,39 +37,46 @@ const DigitalFootprint = () => {
     e.preventDefault()
     setLoading(true)
     setApiError(null);
+    
     try {
-      const response = await fetch('https://api.insightgenie.ai/digital-footprint-demo', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          gender: formData.gender,
-          dateOfBirth: formatDate(formData.birthdate),
-          email: formData.email,
-          phoneCode: formatPhoneCode(formData.phoneCode),
-          phoneNumber: formData.phoneNumber,
-          isImmediateResult: 'true'
-        })
-      })
-
-      const data = await response.json();
-      if (!response.ok || data.success === false) {
-        setApiError(data.msg || 'An error occurred.');
-        setAnalysisResult(null);
+      // Kiểm tra dữ liệu đầu vào
+      if (!formData.email || !formData.phoneCode || !formData.phoneNumber) {
+        setApiError('Vui lòng điền đầy đủ thông tin email, mã quốc gia và số điện thoại.');
         setLoading(false);
         return;
       }
+    
+      // Tạo URL với query parameters
+      const countryCode = formatPhoneCode(formData.phoneCode); // Loại bỏ dấu +
+      const apiUrl = `https://api.insightgenesis.ai/foot?e=${encodeURIComponent(formData.email)}&c=${encodeURIComponent(countryCode)}&n=${encodeURIComponent(formData.phoneNumber)}`;
+    
+      // Gọi API mới
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'auth': SECRET_KEY
+        }
+      });
+    
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    
+      const data = await response.json();
+      
+      // Xử lý kết quả
       setAnalysisResult(data);
       setApiError(null);
+      
       setTimeout(() => {
         if (resultRef.current) {
           resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 200);
+      
     } catch (error) {
-      setApiError(error.message || 'An error occurred.');
+      console.error('Error calling digital footprint API:', error);
+      setApiError(error.message || 'Có lỗi xảy ra khi gọi API.');
       setAnalysisResult(null);
     } finally {
       setLoading(false)
@@ -253,7 +262,7 @@ const DigitalFootprint = () => {
               <h2 className="footprint-result-title">
                 Data availability: {analysisResult.dataAvailability || 'High'}
               </h2>
-              <div className="footprint-result-email">Email: {analysisResult.email || analysisResult.demoCustomer?.email}</div>
+              <div className="footprint-result-email">Email: {formData.email}</div>
               <p className="footprint-result-desc">
                 The data availability score is a metric that assesses the sufficiency and quality of available data for conducting an accurate analysis or evaluation of an entity's digital footprint.
               </p>
@@ -309,4 +318,4 @@ const DigitalFootprint = () => {
   );
 };
 
-export default DigitalFootprint; 
+export default DigitalFootprint;
