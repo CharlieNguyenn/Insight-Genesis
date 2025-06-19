@@ -1,3 +1,7 @@
+.health-wellness .solutions-hero {
+  align-items: center;
+}  
+
 /* Empowering Individuals Section */
 .empowering-individuals {
     position: relative;
@@ -160,8 +164,8 @@
   
   .stat-diamond {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: #00bcd4;
     transform: rotate(45deg);
     display: flex;
@@ -170,32 +174,32 @@
   }
   
   .stat-diamond.top {
-    top: 60px;
-    right: 80px;
+    top: 50px;
+    left: 50px;
+    
   }
   
   .stat-diamond.bottom {
-    bottom: 150px;
+    
     right: 50px;
   }
   
   .stat-diamond .percentage {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1rem;
+    color: #000;    
+    font-size: 24px;
     transform: rotate(-45deg);
   }
   
   .center-stat {
-    text-align: center;
-    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .main-percentage {
     font-size: 4rem;
-    font-weight: 300;
-    color: #00bcd4;
-    margin-bottom: 10px;
+    font-weight: 400;
+    color: #00bcd4;    
   }
   
   .stat-label {
@@ -204,17 +208,24 @@
   }
   
   .health-metrics {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    width: 280px;
+    width: 200px;
+    margin-bottom: 0;
   }
   
   .metric-item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 15px;
-    gap: 10px;
+    gap: 2px;
+  }
+  
+  .metric-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
   
   .metric-label {
@@ -223,8 +234,16 @@
     min-width: 100px;
   }
   
+  .metric-value {
+    color: #00bcd4;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: right;
+  }
+  
   .metric-bar {
-    flex: 1;
+    width: 100%;
     height: 4px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
@@ -236,14 +255,6 @@
     background: #00bcd4;
     border-radius: 2px;
     transition: width 0.3s ease;
-  }
-  
-  .metric-value {
-    color: #00bcd4;
-    font-size: 0.8rem;
-    font-weight: 600;
-    min-width: 40px;
-    text-align: right;
   }
   
   /* Telehealth & Insurance Section */
@@ -296,9 +307,6 @@
     margin-bottom: 40px;
   }
   
-  .cta-section {
-    margin-top: 40px;
-  }
   
   .cta-button {
     background: transparent;
@@ -314,6 +322,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    margin-top: 0px;
   }
   
   .cta-button:hover {
@@ -543,14 +552,37 @@
   }
   
   .analytics-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    
+    z-index: 3;
+  }
+  #pharmaceutical-visual-container {
+    padding: 40px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
   
+  .analytics-pharmaceutical-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
   .analytics-title {
     color: #fff;
     font-size: 1rem;
@@ -610,29 +642,40 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
     gap: 20px 40px;
   }
   
   .metric-bar-item {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+  }
+  
+  .metric-bar-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   
   .metric-label {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.8rem;
     font-weight: 500;
+    text-align: left;
   }
   
-  .metric-bar-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  .metric-value-right {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 35px;
   }
   
   .metric-bar-full {
-    flex: 1;
+    width: 100%;
     height: 6px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
@@ -646,15 +689,94 @@
     transition: width 0.8s ease;
   }
   
-  .metric-value-right {
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    min-width: 35px;
-    text-align: right;
-  }
-
   /* Health & Wellness Solutions Styles */
 .health-wellness {
   overflow-x: hidden;
+}
+
+@media (max-width: 992px) {
+  .health-wellness .solutions-hero .hero-video-bg {
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .feature-item .feature-text {
+    font-size: 20px;
+  }
+  .cta-section .cta-button {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 576px) {
+  .health-wellness .solutions-hero .hero-video-bg {
+    position: absolute;
+    transform: rotate(270deg) translate(-0%, -50%);
+    transform-origin: center center;
+    height: 100vh;
+    width: 100vh;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+  } 
+  .health-wellness .solutions-hero .container .hero-title{
+    font-size: 32px;
+  }
+  #health-visual-container{
+    height: 800px;
+  }
+  .analytics-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 16px;
+  }
+  .health-metrics {
+    width: 100%
+  }
+  .visual-video-bg {
+    
+    max-height: 450px;
+  }
+  .empowering-title, .telehealth-title, .pharmaceutical-title {
+    font-size: 20px;
+  }
+  .health-features h3{
+    font-size: 26px;
+  }
+  .feature-item .feature-text {
+    font-size: 16px;
+  }
+  .metrics-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    gap: 16px;
+  }
+}
+
+.analytics-pharmaceutical-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.pharmaceutical-visual-container {
+  height: unset;
 }

@@ -1,11 +1,13 @@
 import React from 'react';
-import '../Solutions.css';
+import { Link } from 'react-router-dom';
+import narrowRightIcon from '../../assets/icons/narrow-right.svg';
 import './css/HealthWellness.css';
+
 
 const HealthWellness = () => {
   return (
-    <div className="health-wellness">
-      {/* health hero */}
+    <div className="education">
+      {/* education hero */}
       <section className="solutions-hero">
         <video 
           className="hero-video-bg" 
@@ -15,20 +17,18 @@ const HealthWellness = () => {
           playsInline
         >
           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-overlay"></div>
-        <div className="container">
+        </video>        
+        <div className="container" id="education-hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              HEALTH<br />
-              & WELLNESS
+              H<span className="parabole-letter">E</span>AL<span className="parabole-letter">T</span>H<br />
+              & W<span className="parabole-letter">E</span>LLN<span className="parabole-letter">E</span>SS
             </h1>
           </div>
         </div>
       </section>
-
-      {/* empowering individuals */}
-      <section className="empowering-individuals">
+      {/* Personalized Student Guidance & Holistic */}
+      <section className="personalized-student-guidance">
         <video 
           className="section-video-bg" 
           autoPlay 
@@ -41,8 +41,8 @@ const HealthWellness = () => {
         <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="empowering-grid">
-            <div className="empowering-content">
+          <div className="education-grid">
+            <div className="education-content">
               <div className="section-badge">
                 <div className="badge-dots">
                   <span className="dot active"></span>
@@ -54,6 +54,7 @@ const HealthWellness = () => {
                 EMPOWERING<br />
                 INDIVIDUALS
               </h2>
+              
               <p className="empowering-description">
               INSIGHT GENESIS EMPOWERS INDIVIDUALS WITH PERSONALIZED HEALTH AND WELLNESS INSIGHTS, LEVERAGING AI 93% ACCURACY TO ANALYZE BIOMETRIC DATA AND PROMOTE PROACTIVE HEALTH MANAGEMENT FOR A VIBRANT, BALANCED LIFE.
               </p>
@@ -61,9 +62,15 @@ const HealthWellness = () => {
               <div className="health-features">
                 <h3>PERSONALIZED HEALTH INSIGHTS:</h3>
                 <div className="feature-item">
+                  <div className="mark">
                   <div className="feature-dots">
                     <span className="dot-blue"></span>
                     <span className="dot-blue"></span>
+                  </div>
+                  <div className="feature-dots">
+                    <span className="dot-blue"></span>
+                    <span className="dot-blue"></span>
+                  </div>
                   </div>
                   <div className="feature-text">
                   <strong>Data Analysis:</strong> Insight Genesis AI analyzes individual health data, including biometric information and lifestyle choices, to deliver tailored health recommendations that cater to users' specific needs.
@@ -71,9 +78,15 @@ const HealthWellness = () => {
                 </div>
                 
                 <div className="feature-item">
+                  <div className="mark">
                   <div className="feature-dots">
                     <span className="dot-blue"></span>
                     <span className="dot-blue"></span>
+                  </div>
+                  <div className="feature-dots">
+                    <span className="dot-blue"></span>
+                    <span className="dot-blue"></span>
+                  </div>
                   </div>
                   <div className="feature-text">
                   <strong>Predictive Health Monitoring:</strong> AI algorithms can predict potential health risks based on historical data, allowing users to take proactive measures to improve their health.
@@ -82,9 +95,15 @@ const HealthWellness = () => {
                 
                 <h3>BEHAVIORAL HEALTH SUPPORT:</h3>
                 <div className="feature-item">
+                  <div className="mark">
                   <div className="feature-dots">
                     <span className="dot-blue"></span>
                     <span className="dot-blue"></span>
+                  </div>
+                  <div className="feature-dots">
+                    <span className="dot-blue"></span>
+                    <span className="dot-blue"></span>
+                  </div>
                   </div>
                   <div className="feature-text">
                   <strong>Mental Health Insights:</strong> The platform can offer insights and resources for mental health.
@@ -93,7 +112,8 @@ const HealthWellness = () => {
               </div>
             </div>
             
-            <div className="empowering-visual">
+            <div className="education-visual" id="health-visual-container">
+              <div className="education-bg-container">
               <video 
                 className="visual-video-bg" 
                 autoPlay 
@@ -110,48 +130,59 @@ const HealthWellness = () => {
                 <div className="stat-diamond bottom">
                   <span className="percentage">50%</span>
                 </div>
-                <div className="center-stat">
-                  <div className="main-percentage">76%</div>
-                  <div className="stat-label">State of Health: Good</div>
-                </div>
-                <div className="health-metrics">
-                  <div className="metric-item">
-                    <span className="metric-label">Risk of Stroke</span>
-                    <div className="metric-bar">
-                      <div className="metric-fill" style={{width: '3%'}}></div>
-                    </div>
-                    <span className="metric-value">0.3%</span>
+                <div className="analytics-container">
+                  <div className="center-stat">
+                    <div className="main-percentage">76%</div>
+                    <div className="stat-label">State of Health: Good</div>
                   </div>
-                  <div className="metric-item">
-                    <span className="metric-label">Risk of Coronary</span>
-                    <div className="metric-bar">
-                      <div className="metric-fill" style={{width: '13%'}}></div>
+                  <div className="health-metrics">
+                    <div className="metric-item">
+                      <div className="metric-row">
+                        <span className="metric-label">Risk of Stroke</span>
+                        <span className="metric-value">0.3%</span>
+                      </div>
+                      <div className="metric-bar">
+                        <div className="metric-fill" style={{width: '3%'}}></div>
+                      </div>
                     </div>
-                    <span className="metric-value">1.3%</span>
-                  </div>
-                  <div className="metric-item">
-                    <span className="metric-label">Oxygen in Blood</span>
-                    <div className="metric-bar">
-                      <div className="metric-fill" style={{width: '97%'}}></div>
+                    <div className="metric-item">
+                      <div className="metric-row">
+                        <span className="metric-label">Risk of Coronary</span>
+                        <span className="metric-value">1.3%</span>
+                      </div>
+                      <div className="metric-bar">
+                        <div className="metric-fill" style={{width: '13%'}}></div>
+                      </div>
                     </div>
-                    <span className="metric-value">97.67%</span>
-                  </div>
-                  <div className="metric-item">
-                    <span className="metric-label">Burnout</span>
-                    <div className="metric-bar">
-                      <div className="metric-fill" style={{width: '70%'}}></div>
+                    <div className="metric-item">
+                      <div className="metric-row">
+                        <span className="metric-label">Oxygen in Blood</span>
+                        <span className="metric-value">97.67%</span>
+                      </div>
+                      <div className="metric-bar">
+                        <div className="metric-fill" style={{width: '97%'}}></div>
+                      </div>
                     </div>
-                    <span className="metric-value">7/10</span>
+                    <div className="metric-item">
+                      <div className="metric-row">
+                        <span className="metric-label">Burnout</span>
+                        <span className="metric-value">7/10</span>
+                      </div>
+                      <div className="metric-bar">
+                        <div className="metric-fill" style={{width: '70%'}}></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              </div>
+              
             </div>
           </div>
         </div>
       </section>
-
-            {/* telehealth-insurance */}
-      <section className="telehealth-insurance">
+          {/* Secure, Data-Driven Decisions for Educators */}
+      <section className="secure-data-driven-decisions">
         <video 
           className="section-video-bg" 
           autoPlay 
@@ -164,8 +195,8 @@ const HealthWellness = () => {
         <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="telehealth-grid">
-            <div className="telehealth-content">
+          <div className="educators-grid">
+            <div className="educators-content">
               <div className="section-badge">
                 <div className="badge-dots">
                   <span className="dot"></span>
@@ -183,9 +214,15 @@ const HealthWellness = () => {
               
               <div className="telehealth-features">
                 <div className="feature-item">
+                  <div className="mark">
                   <div className="feature-dots">
                     <span className="dot-blue"></span>
                     <span className="dot-blue"></span>
+                  </div>
+                  <div className="feature-dots">
+                    <span className="dot-blue"></span>
+                    <span className="dot-blue"></span>
+                  </div>
                   </div>
                   <div className="feature-text">
                   Offer personalized wellness plans, improve remote diagnostics, and empower patients with actionable health insights, all while ensuring complete data privacy.
@@ -193,9 +230,15 @@ const HealthWellness = () => {
                 </div>
                 
                 <div className="feature-item">
+                  <div className="mark">
                   <div className="feature-dots">
                     <span className="dot-blue"></span>
                     <span className="dot-blue"></span>
+                  </div>
+                  <div className="feature-dots">
+                    <span className="dot-blue"></span>
+                    <span className="dot-blue"></span>
+                  </div>
                   </div>
                   <div className="feature-text">
                   Streamline the creation of personalized patient profiles while ensuring data security, ultimately reducing onboarding time and enhancing care delivery.
@@ -204,17 +247,18 @@ const HealthWellness = () => {
               </div>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <span className="arrow-icon">→</span>
-                </a>
-                <p className="cta-note">
+              <Link to="/form" className="cta-button">
+              <span>Get Your Own Insights Now</span>
+              <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+              </Link>
+              <p className="cta-note">
                   *a free report is available once a day. For a more in-depth report get it here
                 </p>
               </div>
             </div>
             
-            <div className="telehealth-visual">
+            <div className="educators-visual">
+              <div className="educators-bg-container">
               <video 
                 className="visual-video-bg" 
                 autoPlay 
@@ -223,19 +267,14 @@ const HealthWellness = () => {
                 playsInline
               >
                 <source src="/mp4/health-bg-2.mp4" type="video/mp4" />
-              </video>
-              <div className="brain-visualization">
-                <div className="brain-container">
-                  <div className="brain-particles"></div>
-                  <div className="brain-glow"></div>
-                </div>
+              </video>      
               </div>
             </div>
           </div>
         </div>
       </section>
-            {/* pharmaceutical-companies */}
-      <section className="pharmaceutical-companies">
+          {/* Secure, Data-Driven Decisions for Educators */}
+      <section className="secure-data-driven-decisions">
         <video 
           className="section-video-bg" 
           autoPlay 
@@ -248,8 +287,8 @@ const HealthWellness = () => {
         <div className="section-overlay"></div>
         
         <div className="container">
-          <div className="pharmaceutical-grid">
-            <div className="pharmaceutical-content">
+          <div className="educators-grid">
+            <div className="educators-content">
               <div className="section-badge">
                 <div className="badge-dots">
                   <span className="dot"></span>
@@ -266,15 +305,14 @@ const HealthWellness = () => {
               </p>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <span className="arrow-icon">→</span>
-                </a>
+              <Link to="/form" className="cta-button">
+              <span>Get Your Own Insights Now</span>
+              <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+              </Link>
               </div>
-              
               <div className="quote-section">
                 <blockquote className="founder-quote">
-                “Imagine a world where your fitness goals aren’t just about self-improvement but about real rewards. Insight Genesis makes this possible by combining personalized wellness insights with blockchain-powered incentives. You earn, you improve, and you own at the same time.”
+                Imagine a world where your fitness goals aren't just about self-improvement but about real rewards. Insight Genesis makes this possible by combining personalized wellness insights with blockchain-powered incentives. You earn, you improve, and you own at the same time.
                 </blockquote>
                 <cite className="quote-attribution">
                   _Quoted by Founder of Insight Genesis- Jay Koh_
@@ -282,9 +320,9 @@ const HealthWellness = () => {
               </div>
             </div>
             
-            <div className="pharmaceutical-visual">
-              <div className="analytics-container">
-                <div className="analytics-title">SMALL BUSINESS LENDING DEFAULT PROBABILITY</div>
+            <div className="educators-visual" id="pharmaceutical-visual-container">
+              <div className="analytics-pharmaceutical-container"> 
+              <div className="analytics-pharmaceutical-title">SMALL BUSINESS LENDING DEFAULT PROBABILITY</div>
                 
                 <div className="percentage-circle">
                   <video 
@@ -302,65 +340,60 @@ const HealthWellness = () => {
                 
                 <div className="metrics-container">
                   <div className="metric-bar-item">
-                    <span className="metric-label">Burnout</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '80%'}}></div>
-                      </div>
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Burnout</span>
                       <span className="metric-value-right">8/10</span>
                     </div>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '80%'}}></div>
+                    </div>
                   </div>
-                  
                   <div className="metric-bar-item">
-                    <span className="metric-label">Cooperation</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '20%'}}></div>
-                      </div>
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Cooperation</span>
                       <span className="metric-value-right">2/10</span>
                     </div>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '20%'}}></div>
+                    </div>
                   </div>
-                  
                   <div className="metric-bar-item">
-                    <span className="metric-label">Emotional stability</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '20%'}}></div>
-                      </div>
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Emotional stability</span>
                       <span className="metric-value-right">1/5</span>
                     </div>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '20%'}}></div>
+                    </div>
                   </div>
-                  
                   <div className="metric-bar-item">
-                    <span className="metric-label">Energy level</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '10%'}}></div>
-                      </div>
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Energy level</span>
                       <span className="metric-value-right">1/10</span>
                     </div>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '10%'}}></div>
+                    </div>
                   </div>
-                  
                   <div className="metric-bar-item">
-                    <span className="metric-label">Financial risk</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '80%'}}></div>
-                      </div>
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Financial risk</span>
                       <span className="metric-value-right">8/10</span>
                     </div>
-                  </div>
-                  
-                  <div className="metric-bar-item">
-                    <span className="metric-label">Open</span>
-                    <div className="metric-bar-container">
-                      <div className="metric-bar-full">
-                        <div className="metric-fill-blue" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="">7/10</span>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '80%'}}></div>
                     </div>
                   </div>
-                </div>
+                  <div className="metric-bar-item">
+                    <div className="metric-bar-row">
+                      <span className="metric-label">Open</span>
+                      <span className="metric-value-right">7/10</span>
+                    </div>
+                    <div className="metric-bar-full">
+                      <div className="metric-fill-blue" style={{width: '70%'}}></div>
+                    </div>
+                  </div>
+                </div>            
               </div>
             </div>
           </div>
