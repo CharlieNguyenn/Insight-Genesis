@@ -14,241 +14,241 @@ import AudioAnalysisResult from './AudioAnalysisResult';
 
 const industryOptions = [
   {
-    value: "mortgageLending",
+    value: 1,
     label: "Mortgage Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "commercialBanking",
+    value: 2,
     label: "Commercial Banking",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "p2pLending",
+    value: 3,
     label: "Peer-to-Peer (P2P) Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "smallBusinessLending",
+    value: 4,
     label: "Small Business Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "studentLoanLending",
+    value: 5,
     label: "Student Loan Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "autoLoanLending",
+    value: 6,
     label: "Auto Loan Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "personalLoanLending",
+    value: 7,
     label: "Personal Loan Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "paydayLoanLending",
+    value: 8,
     label: "Payday Loan Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "agriculturalFarmLending",
+    value: 9,
     label: "Agricultural and Farm Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "equipmentFinancingLending",
+    value: 10,
     label: "Equipment Financing Lending",
     groupValue: "loanDefault",
     groupLabel: "Loan Default"
   },
   {
-    value: "debtRepaymentProbability",
+    value: 11,
     label: "Debt Repayment Probability",
     groupValue: "debtCollection",
     groupLabel: "Debt Collection"
   },
   {
-    value: "mentalWellnessProbability",
+    value: 12,
     label: "Mental Wellness",
     groupValue: "mentalWellness",
     groupLabel: "Mental Wellness"
   },
   {
-    value: "employeeChurn",
+    value: 13,
     label: "Employee Churn",
     groupValue: "employeeChurn",
     groupLabel: "Employee Churn"
   },
   {
-    value: "creditCardFraud",
+    value: 14,
     label: "Credit Card Fraud Detection",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "insuranceFraud",
+    value: 15,
     label: "Insurance Fraud",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "retailFraud",
+    value: 16,
     label: "Retail Fraud Prevention",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "healthcareFraud",
+    value: 17,
     label: "Healthcare Fraud Detection",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "cybersecurityFraud",
+    value: 18,
     label: "Cybersecurity Fraud",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "mortgageFraud",
+    value: 19,
     label: "Mortgage Fraud",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "telecommunicationsFraud",
+    value: 20,
     label: "Telecommunications Fraud Management",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "taxEvasion",
+    value: 21,
     label: "Tax Evasion Detection",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "identityTheft",
+    value: 22,
     label: "Identity Theft Prevention",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "securitiesFraud",
+    value: 23,
     label: "Securities and Investment Fraud",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "generalFraud",
+    value: 24,
     label: "General Fraud",
     groupValue: "fraud",
     groupLabel: "Fraud"
   },
   {
-    value: "general",
+    value: 25,
     label: "Candidate Success General",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "construction",
+    value: 26,
     label: "Construction",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "management",
+    value: 27,
     label: "Management",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "programmingTech",
+    value: 28,
     label: "Programming Tech",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "salesMarketing",
+    value: 29,
     label: "Sales Marketing",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "sales",
+    value: 30,
     label: "Sales",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "marketing",
+    value: 31,
     label: "Marketing",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "AIContentTranslation",
+    value: 32,
     label: "AI Content Translation",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "legalFinance",
+    value: 33,
     label: "Legal Finance",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "designCreativity",
+    value: 34,
     label: "Design Creativity",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "accountant",
+    value: 35,
     label: "Accountant",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "recruiter",
+    value: 36,
     label: "Recruiter",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "operationManager",
+    value: 37,
     label: "Operation Manager",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "customerServiceRepresentative",
+    value: 38,
     label: "Customer Service Representative",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "technicalSupportSpecialist",
+    value: 39,
     label: "Technical Support Specialist",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
   },
   {
-    value: "telesalesAgents",
+    value: 40,
     label: "Telesales Agents",
     groupValue: "candidateSuccess",
     groupLabel: "Candidate Success"
@@ -360,4 +360,4 @@ const VideoAnalysis = () => {
   );
 };
 
-export default VideoAnalysis; 
+export default VideoAnalysis;
