@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import './PopupAudioDropzone.css';
 
+const SECRET_KEY = 'c5UqVPihwtydCKe57YJPtpyE2ryB9AJn';
+
 const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndustry, onAnalysisComplete }) => {
   const [file, setFile] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);

@@ -50,26 +50,49 @@ body {
 }
 
 
-.hero-content {
+.home .hero-content {
   position: relative;
   z-index: 3;
   text-align: center;    
   padding: 0 2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-title {
+.home .hero-title {
   font-family: 'Satoshi', 'Parabole', Arial, sans-serif;
-  font-size: 4.5rem;
+  font-size: 120px;
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 2rem;
   text-transform: uppercase;
   color: #fff;
   text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.parabole-letter {
-  font-family: 'Parabole', Arial, sans-serif !important;
+.home .parabole-letter {
+  font-family: 'Parabole', Arial, sans-serif;
+  font-size: 120px;
+
+}
+
+.home .title-2 {
+  margin-top: 2rem;
+  margin-left: 0;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.home .title-2 span {
+  font-size: 120px;
 }
 
 #hero-subtitle-accent {
@@ -78,7 +101,7 @@ body {
   text-transform: lowercase;
   border: 1px solid #fff;
   padding: 5px 30px;
-  border-radius: 40px;  
+  border-radius: 999px;  
   
 }
 
@@ -279,6 +302,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;  
+  margin-bottom: 32px;
 }
 
 .cta-button {  
@@ -1526,4 +1550,20 @@ body {
     z-index: 1;
   }
 
+}
+
+.banner-button {
+  margin-bottom: 10px;
+}
+
+.banner-button .cta-button {
+  margin-top: 0;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+}
+
+.banner-button .cta-button:hover {
+  background-color: #fff0;
+  box-shadow: none;
 }

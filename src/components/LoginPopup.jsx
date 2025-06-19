@@ -11,15 +11,15 @@ const LoginPopup = ({ isOpen, onClose }) => {
   const [showWalletSelection, setShowWalletSelection] = useState(false);
 
   // Thêm useEffect để load script igai.min.js khi popup mở
-useEffect(() => {
-  if (!document.querySelector('script[src="/igai.min.js"]')) {
-    // Load script igai.min.js khi popup mở
-    const script = document.createElement('script');
-    script.src = '/igai.min.js'; // hoặc từ CDN
-    script.async = true;
-    document.head.appendChild(script);
-  }
-}, []);
+// useEffect(() => {
+//   if (!document.querySelector('script[src="/igai.min.js"]')) {
+//     // Load script igai.min.js khi popup mở
+//     const script = document.createElement('script');
+//     script.src = '/igai.min.js'; // hoặc từ CDN
+//     script.async = true;
+//     document.head.appendChild(script);
+//   }
+// }, []);
 
 // Thêm vào useEffect để kiểm tra kết quả đăng nhập
 useEffect(() => {

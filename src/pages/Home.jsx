@@ -18,10 +18,13 @@ import coreFeature2 from "../assets/core-2.png";
 import coreFeature3 from "../assets/core-3.png";
 import viewer from "../assets/svgviewer-output.svg";
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
+import LoginPopup from '../components/LoginPopup.jsx';
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
 
   useEffect(() => {
     const checkMobile = () => {
@@ -46,18 +49,38 @@ const Home = () => {
           <source src="/mp4/bg-homepage1.mp4" type="video/mp4" />
         </video>        
         <div className="hero-content">
+          <div className="container"></div>
           <h1 className="hero-title">
+            <div className="title-1">
             <span className="parabole-letter">O</span>WN YOUR <span className="parabole-letter">D</span>ESTINY
-            <br />
+
+            </div>
+            <div className="title-2">
             <span id="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
+              </div>
+            
           </h1>
           <div className="cta-button-container" id="button-hero">
-            <Link to="/form" className="cta-button">
+            {/* <Link to="/form" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
                 </svg>
-              </Link>
+              </Link> */}
+            <div className="banner-button">
+              <button 
+                className='cta-button'
+                onClick={() => setShowPopup(true)}
+              >
+                Get Your Own Insights Now
+                <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
+              </button>
+              <LoginPopup 
+                isOpen={showPopup} 
+                onClose={() => setShowPopup(false)} 
+                returnUrl='/form'
+              />
+            </div>
           </div>
         </div>
       </section>
