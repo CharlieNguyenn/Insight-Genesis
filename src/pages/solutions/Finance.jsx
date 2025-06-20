@@ -17,6 +17,15 @@ const Finance = () => {
       <div className="finance-page">
         {/* Header */}
         <header className="finance-header">
+          <video 
+          className="hero-video-bg" 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
+        </video>
           <div className="container">
             <h1 className="main-title">
               <div className="text-left"><span className="parabole-font">F</span>INANCIAL</div>
