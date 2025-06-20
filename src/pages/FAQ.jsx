@@ -42,7 +42,7 @@ const FAQ = () => {
             <div className="faq-main-grid">
               <div className="faq-left-column">
                 <div className="faq-title-section">
-                  <h1 className="faq-main-title">FREQUENTLY<br />ASKED QUESTIONS</h1>
+                  <h1 className="faq-main-title"><span className="parabole-font">F</span>REQUENTLY<br /><span className="parabole-font">A</span>SKED QUESTI<span className="parabole-font">O</span>NS</h1>
                 </div>
                 
                 <div className="faq-icon-container">
