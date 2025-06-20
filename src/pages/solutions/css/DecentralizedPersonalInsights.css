@@ -258,10 +258,15 @@
 .cta-button:hover .arrow-icon {
   transform: translateX(5px);
 }
-
+.dpi-hero-title-2 {
+  margin-left: 50px;
+}
 /* Responsive Styles */
 @media (max-width: 992px) {
 
+  .dpi-hero-title-2 {
+    margin-left: 20px;
+  }
   #dpi-hero-title, #dpi-hero-title .parabole-letter.special-letter {
     font-size: 70px;
   }

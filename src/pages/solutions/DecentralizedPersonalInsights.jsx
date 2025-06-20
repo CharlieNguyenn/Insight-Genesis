@@ -19,7 +19,7 @@ const DecentralizedPersonalInsights = () => {
         <div className="container" id="education-hero-container">
           <h1 className="hero-title" id="dpi-hero-title">
               <div><span className="parabole-letter special-letter">D</span>ECENTRALIZED </div>
-              <div>PERS<span className="parabole-letter special-letter">O</span>NAL I<span className="parabole-letter special-letter">N</span>SIGHTS</div>
+              <div className='dpi-hero-title-2'>PERS<span className="parabole-letter special-letter">O</span>NAL I<span className="parabole-letter special-letter">N</span>SIGHTS</div>
             </h1>
         </div>
       </section>

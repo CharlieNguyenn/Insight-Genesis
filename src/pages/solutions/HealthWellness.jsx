@@ -1,6 +1,8 @@
 import React from 'react';
 import '../Solutions.css';
 import './css/HealthWellness.css';
+import { Link } from 'react-router-dom';
+import narrowRightIcon from '../../assets/icons/narrow-right.svg';
 
 const HealthWellness = () => {
   return (
@@ -15,8 +17,7 @@ const HealthWellness = () => {
           playsInline
         >
           <source src="/mp4/bg-homepage4.mp4" type="video/mp4" />
-        </video>
-        <div className="hero-overlay"></div>
+        </video>        
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -49,15 +50,12 @@ const HealthWellness = () => {
                   <span className="dot"></span>
                   <span className="dot"></span>
                 </div>
+                <div className="badge-label">
+                  <div className="text-left">EMP<span className="parabole-font">O</span>WERI<span className="parabole-font">N</span>G</div>
+                  <div className="text-left personal-insights-line">INDIVI<span className="parabole-font">D</span>UALS</div>
+                </div>
               </div>
-              <h2 className="empowering-title">
-                <div className='title-1'>
-                EMP<span className="parabole-font">O</span>WERI<span className="parabole-font">N</span>G
-                </div>
-                <div className='title-2'>
-                <div className="text-left personal-insights-line">INDIVI<span className="parabole-font">D</span>UALS</div>
-                </div>
-              </h2>
+
               <p className="empowering-description">
               INSIGHT GENESIS EMPOWERS INDIVIDUALS WITH PERSONALIZED HEALTH AND WELLNESS INSIGHTS, LEVERAGING AI 93% ACCURACY TO ANALYZE BIOMETRIC DATA AND PROMOTE PROACTIVE HEALTH MANAGEMENT FOR A VIBRANT, BALANCED LIFE.
               </p>
@@ -249,17 +247,12 @@ const HealthWellness = () => {
                   <span className="dot active"></span>
                   <span className="dot"></span>
                 </div>
+                <div className="badge-label">
+                  <div className="text-left"><span className="parabole-font">T</span>ELEHEALTH &</div>
+                  <div className="text-left personal-insights-line">INS<span className="parabole-font">U</span>RA<span className="parabole-font">N</span>CE</div>
+                </div>
               </div>
-              <h2 className="telehealth-title">
-                <div className='title-1'>
-                <span className="parabole-font">T</span>ELEHEALTH &<br />
-
-                </div>
-                <div className='title-2'>
-                <div className="text-left personal-insights-line">INS<span className="parabole-font">U</span>RA<span className="parabole-font">N</span>CE</div>
-
-                </div>
-              </h2>
+              
               <p className="telehealth-description">
               TELEHEALTH COMPANIES CAN LEVERAGE INSIGHT GENESIS TO ENHANCE PATIENT CARE BY INTEGRATING ITS AI PERSONAL INSIGHTS, WHICH ANALYZE BIOMETRIC DATA LIKE VOICE AND FACIAL SCANS TO DETECT HEALTH RISKS WITH 93% ACCURACY.
               </p>
@@ -299,10 +292,10 @@ const HealthWellness = () => {
               </div>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <img src='../src/assets/arrow-button.png' alt="arrow" className="touch-icon" />
-                </a>
+              <Link to="/form" className="cta-button">
+              <span>Get Your Own Insights Now</span>
+              <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+              </Link>
                 <p className="cta-note">
                   *a free report is available once a day. For a more in-depth report get it here
                 </p>
@@ -351,24 +344,21 @@ const HealthWellness = () => {
                   <span className="dot"></span>
                   <span className="dot active"></span>
                 </div>
+                <div className="badge-label">
+                  <div className="text-left">P<span className="parabole-font">H</span>ARMAC<span className="parabole-font">E</span>UTICAL</div>
+                  <div className="text-left personal-insights-line">COM<span className="parabole-font">P</span>ANIES</div>
+                </div>
               </div>
-              <h2 className="pharmaceutical-title">
-                <div className='title-1'>
-                  P<span className="parabole-font">H</span>ARMAC<span className="parabole-font">E</span>UTICAL<br />
-                </div>
-                <div className='title-2'>
-                <div className="text-left personal-insights-line">COM<span className="parabole-font">P</span>ANIES</div>
-                </div>
-              </h2>
+              
               <p className="pharmaceutical-description">
               ACCELERATE YOUR RESEARCH WITH LATEST AND ACCURATE DATA FROM CONSENTING INDIVIDUALS. BOOST YOUR REVENUE!
               </p>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
-                  Get Your Own Insights Now
-                  <img src='../src/assets/arrow-button.png' alt="arrow" className="touch-icon" />
-                </a>
+                <Link to="/form" className="cta-button">
+                  <span>Get Your Own Insights Now</span>
+                  <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
+                </Link>
               </div>
               
               <div className="quote-section">
