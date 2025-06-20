@@ -19,12 +19,14 @@ import coreFeature3 from "../assets/core-3.png";
 import viewer from "../assets/svgviewer-output.svg";
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
 import LoginPopup from '../components/LoginPopup.jsx';
+import ContactFormPopup from '../components/ContactFormPopup.jsx';
 
 const Home = () => {
   const [activeCard, setActiveCard] = useState(0);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [showContactPopup, setShowContactPopup] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-
 
   useEffect(() => {
     const checkMobile = () => {
@@ -43,6 +45,15 @@ const Home = () => {
 
   return (
     <div className="home">
+      <LoginPopup 
+        isOpen={showLoginPopup} 
+        onClose={() => setShowLoginPopup(false)} 
+        returnUrl='/form'
+      />
+      <ContactFormPopup 
+        isOpen={showContactPopup} 
+        onClose={() => setShowContactPopup(false)} 
+      />
       {/* Hero Section */}
       <section className="hero">
         <video autoPlay muted loop className="hero-video">
@@ -56,8 +67,11 @@ const Home = () => {
 
             </div>
             <div className="title-2">
-            <span id="hero-subtitle-accent">with</span> AI PERSONAL INSIGHTS
-              </div>
+            <span id="hero-subtitle-accent">with</span> 
+            <div>
+            AI <span className="parabole-letter">P</span>ERS<span className="parabole-letter">O</span>NAL IN<span className="parabole-letter">S</span>I<span className="parabole-letter">G</span>HTS
+            </div>
+            </div>
             
           </h1>
           <div className="cta-button-container" id="button-hero">
@@ -70,16 +84,12 @@ const Home = () => {
             <div className="banner-button">
               <button 
                 className='cta-button'
-                onClick={() => setShowPopup(true)}
+                onClick={() => setShowLoginPopup(true)}
               >
                 Get Your Own Insights Now
                 <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
               </button>
-              <LoginPopup 
-                isOpen={showPopup} 
-                onClose={() => setShowPopup(false)} 
-                returnUrl='/form'
-              />
+
             </div>
           </div>
         </div>

@@ -96,18 +96,26 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
     setIsAnalyzing(true);
     
     try {
-      // Convert recordedBlob to File with MP4 format
-      const audioFile = new File([recordedBlob], 'recorded-audio.mp4', { type: 'audio/mp4' });
+      // Lấy địa chỉ từ localStorage
+      const address = localStorage.getItem('a');
+      if (!address) {
+        alert('Không tìm thấy địa chỉ ví. Vui lòng đăng nhập lại.');
+        return;
+      }
+
+      // Convert recordedBlob to File với format webm
+      const audioFile = new File([recordedBlob], 'recorded-audio.webm', { type: 'audio/webm' });
 
       const formData = new FormData();
       formData.append('audio', audioFile);
-      formData.append('audioServiceType', 'loanDefault');
+      formData.append('v', selectedVoiceType); // Voice type
+      formData.append('a', address); // Address từ localStorage
 
-      // Gọi API mới
-      const response = await fetch('https://api.insightgenie.ai/unprotected-file-upload/audio/end-to-end-demo', {
+      // Gọi API mới với auth header
+      const response = await fetch('https://api.insightgenesis.ai/v', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          'auth': SECRET_KEY,
         },
         body: formData,
       });
@@ -119,7 +127,7 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
 
       const result = await response.json();
       
-      if (result && result.immediateScoreInfo) {
+      if (result) {
         // Xử lý kết quả
         if (onAnalysisComplete) {
           onAnalysisComplete(result);
@@ -208,7 +216,7 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
           {/* Timer */}
           <div className="recorder-timer">
             {formatTime(recordingTime)} / 0:45
-            {recordingTime >= 45 && <span className="timer-complete"> ✓</span>}
+            {/* {recordingTime >= 45 && <span className="timer-complete"> ✓</span>} */}
           </div>
 
           {audioURL && recordingComplete && (
@@ -226,7 +234,7 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
               "Click the button below to start recording. Talk for at least 45 seconds about anything you like."
             )}
             {isRecording && (
-              "Keep talking... You can stop manually or wait for auto-stop at 45 seconds."
+              "Please ensure the audio file is at least 45 seconds long to proceed with the analysis accurately."
             )}
             {recordingComplete && !isAnalyzing && (
               "Recording complete! Click 'Analyze' to process your voice or 'Record Again' to start over."

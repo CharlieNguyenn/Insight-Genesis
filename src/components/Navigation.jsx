@@ -5,6 +5,7 @@ import logo from '../assets/logo.svg';
 import menuIcon from '../assets/icons/menu.svg';
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
 import LoginPopup from './LoginPopup';
+import ContactFormPopup from './ContactFormPopup';
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,10 +77,9 @@ const Navigation = () => {
               Get in touch
               <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
             </button>
-            <LoginPopup 
+            <ContactFormPopup 
               isOpen={showPopup} 
               onClose={() => setShowPopup(false)} 
-              returnUrl='/form'
             />
           </div>
           
@@ -118,4 +118,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation; 
+export default Navigation;
