@@ -360,9 +360,9 @@ const Home = () => {
               </a>
             </div>
             <div className="social-links">
-              <Link to="/" className="social-link">LinkedIn</Link>
-              <Link to="/" className="social-link">Telegram</Link>
-              <Link to="/" className="social-link">X (Twitter)</Link>
+              <Link to="https://www.linkedin.com/company/insight-genesis" className="social-link">LinkedIn</Link>
+              <Link to="https://t.me/InsightGenesisAi" className="social-link">Telegram</Link>
+              <Link to="https://x.com/genesis_insight" className="social-link">X (Twitter)</Link>
             </div>
           </div>
         </div>

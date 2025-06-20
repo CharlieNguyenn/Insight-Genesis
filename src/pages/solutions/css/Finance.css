@@ -876,6 +876,23 @@
   font-family: 'parabole', sans-serif;
 }
 
+@media (max-width: 992px) {
+
+  .finance-header .hero-video-bg {
+    transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        z-index: 1;
+        -o-object-fit: cover;
+        object-fit: cover;
+  }
+}
+
 @media (max-width: 768px) {
   /* .finance-wrapper video {
     transform: rotate(270deg);
@@ -1020,4 +1037,17 @@
   .main-title{
     font-size: 32px;
   }
+
+  .finance-header .hero-video-bg {
+    position: absolute;
+    transform: rotate(270deg) translate(-0%, -50%);
+    transform-origin: center center;
+    height: 100%;
+    width: 100vh;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
 }
