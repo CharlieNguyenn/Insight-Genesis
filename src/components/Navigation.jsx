@@ -107,7 +107,7 @@ const Navigation = () => {
           
           <Link to="/" className="menu-item">Get AI Insight</Link>
           {/* <Link to="/staking" className="menu-item">Staking</Link> */}
-          <Link to="/" className="menu-item">Resource</Link>
+          <Link to="/" className="menu-item">Whitepaper</Link>
           <Link to="/blog" className="menu-item">Blog</Link>
           <Link to="/faq" className="menu-item">FAQ</Link>
         </div>
