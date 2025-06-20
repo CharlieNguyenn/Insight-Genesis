@@ -240,7 +240,7 @@ const FaceAnalysis = () => {
         
         {isLoading && (
           <div className="loading-container">
-            <p>Đang tải face scanning interface...</p>
+            <p>Preparing face recognition interface. Please wait...</p>
           </div>
         )}
         

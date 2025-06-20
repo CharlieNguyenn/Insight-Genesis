@@ -1,4 +1,4 @@
-.popup-overlay {
+.popup-login{
     position: fixed;
     top: 0;
     left: 0;
@@ -16,12 +16,12 @@
   background: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   padding: 32px;
-  width: 550px;
+  width: 600px;
   gap: 32px;
   /* max-width: 550px; */
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffff;
 }
 
 .popup-close {
@@ -195,7 +195,7 @@
   background: transparent;
   border: none;
   color: #00ffff;
-  font-size: 0.9rem;
+  font-size: 24px;
   cursor: pointer;
   margin-bottom: 1.5rem;
   padding: 0.5rem 0;
@@ -251,12 +251,13 @@
 
 .wallet-icon {
   font-size: 1.5rem;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 1);
   border-radius: 8px;
 }
 
@@ -290,7 +291,34 @@
   }
 }
 
+@media (max-width: 480px) {
+  .popup-login{
+    width: 100%;
+    height: 101vh;
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .popup-login .popup-container {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .popup-login .popup-content {
+    padding: 0;
+  }
+
+  .popup-login .popup-form {
+    gap: 24px;
+  }
+}
+
 .no-scroll {
   overflow: hidden;
   height: 100vh;
+}
+
+.home button:focus, button:focus-visible {
+  outline: none;
 }
