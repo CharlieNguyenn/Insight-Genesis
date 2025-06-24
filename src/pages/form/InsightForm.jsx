@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './InsightForm.css';
 import faceIcon from '../../assets/form-assets/face.svg';
 import videoIcon from '../../assets/form-assets/video.svg';
@@ -11,6 +11,25 @@ import { useNavigate } from 'react-router-dom';
 
 const InsightForm = () => {
   const navigate = useNavigate();
+  
+  // useEffect để xử lý URL callback từ API
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const addressFromUrl = urlParams.get('a');
+    
+    if (addressFromUrl) {
+      // Lưu địa chỉ từ URL vào localStorage
+      localStorage.setItem('a', addressFromUrl);
+      
+      // Xóa parameter khỏi URL để clean up
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.delete('a');
+      window.history.replaceState({}, '', newUrl);
+      
+      console.log('Đã lưu địa chỉ từ API callback:', addressFromUrl);
+    }
+  }, []);
+  
   return (
     <div className="insightform-root">
       <header className="insightform-header">
@@ -94,4 +113,4 @@ const InsightForm = () => {
   );
 };
 
-export default InsightForm; 
+export default InsightForm;

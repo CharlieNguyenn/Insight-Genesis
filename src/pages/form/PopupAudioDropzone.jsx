@@ -35,91 +35,137 @@ const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndus
   const handleAnalyze = async () => {
     if (!file) return;
     setIsAnalyzing(true);
-    let APIToken = localStorage.getItem('APIToken') || '';
-
-    const authenticate = async () => {
-      const payload = {
-        key: "6738b6f4-1390-404b-95ac-59b6ade17773",
-        secret: "a4dc7b7f-a6fd-4441-8a0a-53c62957ef55"
-      };
-      try {
-        const response = await fetch('https://api.insightgenie.ai/auth/authenticate', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-        if (!response.ok) {
-          const errorData = await response.json();
-          console.error('Error response:', errorData);
-          throw new Error('Failed to authenticate');
-        }
-        const data = await response.json();
-        APIToken = data.token || '';
-        localStorage.setItem('APIToken', APIToken);
-      } catch (error) {
-        if (error instanceof Error) {
-          console.error('Error:', error.message);
-        } else {
-          console.error('Unexpected error:', error);
-        }
-        return;
+  
+    try {
+      // Lấy địa chỉ ví từ localStorage
+      const walletAddress = localStorage.getItem('a');
+      if (!walletAddress) {
+        throw new Error('Không tìm thấy địa chỉ ví. Vui lòng đăng nhập lại.');
       }
-    };
-
-    const uploadAudio = async () => {
-      try {
-        const selectedOption = industryOptions.find(option => option.value === selectedIndustry);
-        const groupValue = selectedOption ? selectedOption.groupValue : selectedIndustry;
-        const formData = new FormData();
-        formData.append('audio', file);
-        formData.append('audioServiceType', groupValue);
-        formData.append('isImmediateResult', 'true');
-        const response = await fetch('https://api.insightgenie.ai/upload-file/audio', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${APIToken}`
-          },
-          body: formData,
-        });
-        const result = await response.json();
-        if (response.status === 401 && result.errorCode === 'UNAUTHORIZED') {
-          localStorage.removeItem('APIToken');
-          await authenticate();
-          await uploadAudio();
-        }
-        if (result && result.immediateScoreInfo && !result.isStillPending) {
-          if (onAnalysisComplete) {
-            onAnalysisComplete(result);
-          }
-          const audioServiceType = result.immediateScoreInfo.packagesData.audioUpload.audioServiceType;
-          const audioVarName = "audio" + audioServiceType.charAt(0).toUpperCase() + audioServiceType.slice(1);
-          const resultData = {
-            audio: result.immediateScoreInfo.packagesData[audioVarName],
-            cityName: result.immediateScoreInfo.cityName,
-            countryName: result.immediateScoreInfo.countryName,
-          }
-          setAnalysisResult(resultData);
-        } else {
-          throw new Error('Invalid response data');
-        }
-      } catch (error) {
-        console.error('Error analyzing file:', error);
-        const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-        alert(`An error occurred while parsing the file: ${errorMessage}`);
-      } finally {
-        setIsAnalyzing(false);
+  
+      // Tạo FormData cho API mới
+      const formData = new FormData();
+      formData.append('audio', file, file.name);
+      // Đảm bảo selectedIndustry là số
+      formData.append('v', Number(selectedIndustry));
+      formData.append('a', walletAddress); // ADDRESS từ localStorage
+  
+      // Gọi API voice scanning mới
+      const response = await fetch('https://api.insightgenesis.ai/v', {
+        method: 'POST',
+        headers: {
+          'auth': SECRET_KEY
+        },
+        body: formData
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
+  
+      const result = await response.json();
+      
+      // Xử lý kết quả
+      if (onAnalysisComplete) {
+        onAnalysisComplete(result);
+      }
+      
+      setAnalysisResult(result);
+      
+    } catch (error) {
+      console.error('Error analyzing voice:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      alert(`Có lỗi xảy ra khi phân tích voice: ${errorMessage}`);
+    } finally {
+      setIsAnalyzing(false);
     }
-
-    if (!APIToken) {
-      await authenticate();
-    }
-    await uploadAudio();
   };
+
+  //   let APIToken = localStorage.getItem('APIToken') || '';
+
+  //   const authenticate = async () => {
+  //     const payload = {
+  //       key: "6738b6f4-1390-404b-95ac-59b6ade17773",
+  //       secret: "a4dc7b7f-a6fd-4441-8a0a-53c62957ef55"
+  //     };
+  //     try {
+  //       const response = await fetch('https://api.insightgenie.ai/auth/authenticate', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Accept': 'application/json',
+  //           'Content-Type': 'application/json'
+  //         },
+  //         body: JSON.stringify(payload)
+  //       });
+  //       if (!response.ok) {
+  //         const errorData = await response.json();
+  //         console.error('Error response:', errorData);
+  //         throw new Error('Failed to authenticate');
+  //       }
+  //       const data = await response.json();
+  //       APIToken = data.token || '';
+  //       localStorage.setItem('APIToken', APIToken);
+  //     } catch (error) {
+  //       if (error instanceof Error) {
+  //         console.error('Error:', error.message);
+  //       } else {
+  //         console.error('Unexpected error:', error);
+  //       }
+  //       return;
+  //     }
+  //   };
+
+  //   const uploadAudio = async () => {
+  //     try {
+  //       const selectedOption = industryOptions.find(option => option.value === selectedIndustry);
+  //       const groupValue = selectedOption ? selectedOption.groupValue : selectedIndustry;
+  //       const formData = new FormData();
+  //       formData.append('audio', file);
+  //       formData.append('audioServiceType', groupValue);
+  //       formData.append('isImmediateResult', 'true');
+  //       const response = await fetch('https://api.insightgenie.ai/upload-file/audio', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Accept': 'application/json',
+  //           'Authorization': `Bearer ${APIToken}`
+  //         },
+  //         body: formData,
+  //       });
+  //       const result = await response.json();
+  //       if (response.status === 401 && result.errorCode === 'UNAUTHORIZED') {
+  //         localStorage.removeItem('APIToken');
+  //         await authenticate();
+  //         await uploadAudio();
+  //       }
+  //       if (result && result.immediateScoreInfo && !result.isStillPending) {
+  //         if (onAnalysisComplete) {
+  //           onAnalysisComplete(result);
+  //         }
+  //         const audioServiceType = result.immediateScoreInfo.packagesData.audioUpload.audioServiceType;
+  //         const audioVarName = "audio" + audioServiceType.charAt(0).toUpperCase() + audioServiceType.slice(1);
+  //         const resultData = {
+  //           audio: result.immediateScoreInfo.packagesData[audioVarName],
+  //           cityName: result.immediateScoreInfo.cityName,
+  //           countryName: result.immediateScoreInfo.countryName,
+  //         }
+  //         setAnalysisResult(resultData);
+  //       } else {
+  //         throw new Error('Invalid response data');
+  //       }
+  //     } catch (error) {
+  //       console.error('Error analyzing file:', error);
+  //       const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+  //       alert(`Có lỗi xảy ra khi phân tích file: ${errorMessage}`);
+  //     } finally {
+  //       setIsAnalyzing(false);
+  //     }
+  //   }
+
+  //   // if (!APIToken) {
+  //   //   await authenticate();
+  //   // }
+  //   // await uploadAudio();
+  // };
 
   return (
     <div className="popup-upload-overlay" onClick={onClose}>
@@ -153,4 +199,4 @@ const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndus
   );
 };
 
-export default PopupAudioDropzone; 
+export default PopupAudioDropzone;

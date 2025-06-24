@@ -64,7 +64,7 @@ body {
 
 .home .hero-title {
   font-family: 'Satoshi', 'Parabole', Arial, sans-serif;
-  font-size: 120px;
+  font-size: 90px;
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -78,8 +78,7 @@ body {
 
 .home .parabole-letter {
   font-family: 'Parabole', Arial, sans-serif;
-  font-size: 120px;
-
+  font-size: 90px;
 }
 
 .home .title-2 {
@@ -92,7 +91,7 @@ body {
 }
 
 .home .title-2 span {
-  font-size: 120px;
+  font-size: 90px;
 }
 
 #hero-subtitle-accent {
@@ -206,10 +205,12 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 6px;
   align-items: center;
   position: relative;
   overflow: hidden;
+  height: 220px;
 }
 
 .stat-card::before {
@@ -245,6 +246,12 @@ body {
   color: var(--primary-color) !important;
   text-align: center;
   text-shadow: unset;
+}
+
+.stat-value .parabole-letter {
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--primary-color)!important;
 }
 
 .additional-stats {
@@ -525,7 +532,7 @@ body {
 
 .feature-card {
   width: 100%;
-  border-radius: 50px;
+  border-radius: 56px;
   padding: 4rem;
   color: white;
   display: grid;
@@ -1044,8 +1051,31 @@ body {
   .feature-image img {
     max-width: 230px;
   }
-}
 
+  .home .hero-title {
+    font-weight: 400;
+  }
+
+  .home .parabole-letter {
+    font-family: 'Parabole', Arial, sans-serif;
+    font-size: 26px;
+  }
+  
+  .home .title-2 {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .banner-button .cta-button {
+    font-size: 16px !important;
+  }
+
+  .touch-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
 @media screen and (max-width: 768px) {
   .home .hero-title {
     font-size: 26px;
@@ -1192,7 +1222,7 @@ body {
     max-width: 100%;
   }
   
-  .evolution, .home section {
+  .evolution {
     padding: 100px 0px;
   }
   .evolution-title {
@@ -1361,7 +1391,7 @@ body {
   
   #hero-subtitle-accent {
     display: block;
-    width:50%;
+    /* width:50%; */
     margin: 0 auto;
     font-size: 1.8rem;
     padding: 0px 10px;
@@ -1513,17 +1543,19 @@ body {
   background-color: rgb(35, 32, 32); 
   color: #333; 
   padding: 20px; 
-  border-radius: 10px; 
+  border-radius: 56px; 
   height: 600px;
   width: 100%;
 }
 
 .feature-card-1 {
   top: 100px;
+  background: #3E5C70;
 }
 
 .feature-card-2 {
   top: 270px;
+  background: #232E35;
 }
 
 /* .feature-card:not(:last-child) {
@@ -1532,6 +1564,7 @@ body {
 
 .feature-card-3 {
   top: 440px;
+  background: #0F1519;
 }
 
 .spacer {
