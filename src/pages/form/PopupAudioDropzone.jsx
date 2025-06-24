@@ -109,7 +109,7 @@ const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndus
       } catch (error) {
         console.error('Error analyzing file:', error);
         const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-        alert(`Có lỗi xảy ra khi phân tích file: ${errorMessage}`);
+        alert(`An error occurred while parsing the file: ${errorMessage}`);
       } finally {
         setIsAnalyzing(false);
       }

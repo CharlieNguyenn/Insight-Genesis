@@ -75,7 +75,7 @@ useEffect(() => {
   const handleConnectWallet = () => {
     // Kiểm tra validation
     if (!formData.age || formData.gender === 'M/F') {
-      alert('Vui lòng điền đầy đủ thông tin Age và Gender trước khi kết nối ví!');
+      alert('Please fill in Age and Gender information completely before connecting wallet!');
       return;
     }
     
@@ -173,10 +173,10 @@ useEffect(() => {
         // Lưu thông tin form
         localStorage.setItem('formData', JSON.stringify(formData));
         
-        alert('Địa chỉ ví đã được lưu thành công!');
+        alert('Wallet address saved successfully!');
         onClose();
       } else {
-        alert('Địa chỉ ví không hợp lệ. Vui lòng nhập địa chỉ Ethereum hợp lệ.');
+        alert('Invalid wallet address. Please enter a valid Ethereum address.');
       }
     }
   };
