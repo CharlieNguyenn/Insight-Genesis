@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import About from './pages/About';
 import GetAIInsight from './pages/GetAIInsight';
@@ -44,11 +45,34 @@ function App() {
             <Route path="/solutions/human-resource" element={<HumanResource />} />
             <Route path="/solutions/education" element={<Education />} />
             <Route path="/solutions/decentralized-personal-insights" element={<DecentralizedPersonalInsights />} />
-            <Route path="/form" element={<InsightForm />} />
-            <Route path="/form/face-analysis" element={<FaceAnalysis />} />
-            <Route path="/form/video-analysis" element={<VideoAnalysis />} />
-            <Route path="/form/digital-footprint" element={<DigitalFootprint />} />
-            <Route path="/form/result" element={<Result />} />
+            
+            {/* Protected Routes - Form and its sub-routes */}
+            <Route path="/form" element={
+              <ProtectedRoute>
+                <InsightForm />
+              </ProtectedRoute>
+            } />
+            <Route path="/form/face-analysis" element={
+              <ProtectedRoute>
+                <FaceAnalysis />
+              </ProtectedRoute>
+            } />
+            <Route path="/form/video-analysis" element={
+              <ProtectedRoute>
+                <VideoAnalysis />
+              </ProtectedRoute>
+            } />
+            <Route path="/form/digital-footprint" element={
+              <ProtectedRoute>
+                <DigitalFootprint />
+              </ProtectedRoute>
+            } />
+            <Route path="/form/result" element={
+              <ProtectedRoute>
+                <Result />
+              </ProtectedRoute>
+            } />
+            
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>

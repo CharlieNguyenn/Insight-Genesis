@@ -32,6 +32,9 @@
     z-index: 2;
   }
   
+  .text-left.personal-insights-line {
+    display: block;
+  }
   .empowering-individuals .container, .telehealth-insurance .container, .pharmaceutical-companies .container {
     position: relative;
     z-index: 3;
