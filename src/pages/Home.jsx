@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import iconLoad from "../assets/icons/icon-load.svg";
 import arrowMobile from "../assets/arrow-mobile.svg";
 import imgCore1 from "../assets/core-1.png";
@@ -22,6 +22,7 @@ import LoginPopup from '../components/LoginPopup.jsx';
 import ContactFormPopup from '../components/ContactFormPopup.jsx';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState(0);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
@@ -43,6 +44,15 @@ const Home = () => {
     setActiveCard(cardIndex);
   };
 
+  const handleLoginButtonClick = () => {
+    const isLoggedIn = localStorage.getItem('a');
+    if (isLoggedIn) {
+      navigate('/form');
+    } else {
+      setShowLoginPopup(true);
+    }
+  };
+
   return (
     <div className="home">
       <LoginPopup 
@@ -50,7 +60,7 @@ const Home = () => {
         onClose={() => setShowLoginPopup(false)} 
         returnUrl='/form'
       />
-      <ContactFormPopup 
+      <ContactFormPopup   
         isOpen={showContactPopup} 
         onClose={() => setShowContactPopup(false)} 
       />
@@ -84,7 +94,7 @@ const Home = () => {
             <div className="banner-button">
               <button 
                 className='cta-button'
-                onClick={() => setShowLoginPopup(true)}
+                onClick={handleLoginButtonClick}
               >
                 Get Your Own Insights Now
                 <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
