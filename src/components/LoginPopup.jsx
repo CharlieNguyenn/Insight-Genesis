@@ -31,12 +31,11 @@ const LoginPopup = ({ isOpen, onClose }) => {
       newUrl.searchParams.delete('a');
       window.history.replaceState({}, '', newUrl);
       
-      console.log('Đã lưu địa chỉ từ API callback:', addressFromUrl);
-      
-      // Hiển thị thông báo thành công (tùy chọn)
-      alert('Đăng nhập thành công!');
+      // Hiển thị thông báo thành công và đóng popup
+      alert('Login successful!');
+      onClose();
     }
-  }, []);
+  }, [onClose]);
 
   // Thêm useEffect để load script igai.min.js khi popup mở
 // useEffect(() => {
@@ -56,14 +55,9 @@ useEffect(() => {
   const savedFormData = localStorage.getItem('formData');
   
   if (walletAddress && savedFormData) {
-    // Đăng nhập thành công, có thể đóng popup và thông báo
-    console.log('Login successful with wallet:', walletAddress);
-    console.log('Form data:', JSON.parse(savedFormData));
-    
-    // Có thể gọi callback hoặc cập nhật state cha
     onClose();
   }
-}, []);
+}, [onClose]);
 
   const wallets = [
     // Crypto Wallets
@@ -176,8 +170,6 @@ useEffect(() => {
 	</g>
 	<g>
 	</g>
-	<g>
-	</g>
 </g>
 </svg>
     ), installed: true, type: 'social' },
@@ -220,7 +212,7 @@ useEffect(() => {
   const handleConnectWallet = () => {
     // Kiểm tra validation
     if (!formData.age || formData.gender === 'M/F') {
-      alert('Vui lòng điền đầy đủ thông tin Age và Gender trước khi kết nối ví!');
+      alert('Please fill in Age and Gender information completely before connecting wallet!');
       return;
     }
     
@@ -228,8 +220,7 @@ useEffect(() => {
     setShowWalletSelection(true);
   };
 
-  const handleWalletSelect = (wallet) => {
-    console.log('Selected wallet:', wallet.name);
+  const handleWalletSelect = (wallet) => {    
     
     // Lưu form data vào localStorage trước khi chuyển hướng
     localStorage.setItem('formData', JSON.stringify(formData));
@@ -304,8 +295,7 @@ useEffect(() => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form data:', formData);
+    e.preventDefault();    
   };
 
   const handleManualWalletAddress = () => {
@@ -320,10 +310,10 @@ useEffect(() => {
         // Lưu thông tin form
         localStorage.setItem('formData', JSON.stringify(formData));
         
-        alert('Địa chỉ ví đã được lưu thành công!');
+        alert('Wallet address saved successfully!');
         onClose();
       } else {
-        alert('Địa chỉ ví không hợp lệ. Vui lòng nhập địa chỉ Ethereum hợp lệ.');
+        alert('Invalid wallet address. Please enter a valid Ethereum address.');
       }
     }
   };
@@ -414,7 +404,7 @@ useEffect(() => {
             </form>
           </div>
         ) : (
-          <div className="popup-content wallet-selection">
+          <div className="popup-content wallet-selection" id='wallet-selection'>
             <h2 className="popup-title">SELECT WALLET</h2>
             <button 
               className="back-button"

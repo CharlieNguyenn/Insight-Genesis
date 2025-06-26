@@ -71,7 +71,7 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
 
     } catch (error) {
       console.error('Error accessing microphone:', error);
-      alert('Không thể truy cập microphone. Vui lòng cho phép quyền truy cập microphone.');
+      alert('Microphone cannot be accessed. Please allow microphone access.');
     }
   };
 
@@ -99,7 +99,7 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
       // Lấy địa chỉ từ localStorage
       const address = localStorage.getItem('a');
       if (!address) {
-        alert('Không tìm thấy địa chỉ ví. Vui lòng đăng nhập lại.');
+        alert('Wallet address not found. Please log in again.');
         return;
       }
 
@@ -143,10 +143,10 @@ const PopupAudioRecorder = ({ open, onClose, industryOptions = [], selectedIndus
       console.error('Error analyzing recorded audio:', error);
       
       if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        alert('Lỗi kết nối mạng. Vui lòng kiểm tra kết nối internet và thử lại.');
+        alert('Network connection error. Please check your internet connection and try again.');
       } else {
         const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-        alert(`Có lỗi xảy ra khi phân tích voice: ${errorMessage}`);
+        alert(`An error occurred while parsing voice: ${errorMessage}`);
       }
     } finally {
       setIsAnalyzing(false);

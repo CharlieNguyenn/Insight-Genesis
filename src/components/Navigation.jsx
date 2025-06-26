@@ -6,6 +6,7 @@ import menuIcon from '../assets/icons/menu.svg';
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
 import LoginPopup from './LoginPopup';
 import ContactFormPopup from './ContactFormPopup';
+import { useAuth } from '../hooks/useAuth';
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ const Navigation = () => {
   const sideMenuRef = useRef(null);
   const location = useLocation();
   const [showPopup, setShowPopup] = useState(false);
+  const { isAuthenticated, walletAddress, logout } = useAuth();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -20,6 +22,11 @@ const Navigation = () => {
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    closeMenu();
   };
 
   // Đóng menu khi chuyển trang
@@ -110,6 +117,33 @@ const Navigation = () => {
           <Link to="/" className="menu-item">Whitepaper</Link>
           <Link to="/blog" className="menu-item">Blog</Link>
           <Link to="/faq" className="menu-item">FAQ</Link>
+          
+          {/* Authentication Status */}
+          {isAuthenticated && (
+            <div className="menu-section">
+              <h3 className="menu-heading">Account</h3>
+              <div className="menu-item submenu-item">
+                <span style={{ fontSize: '12px', color: '#666' }}>
+                  Wallet: {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : 'Connected'}
+                </span>
+              </div>
+              <button 
+                className="menu-item submenu-item logout-btn" 
+                onClick={handleLogout}
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  color: 'inherit', 
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                  padding: '8px 0'
+                }}
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       </div>
       

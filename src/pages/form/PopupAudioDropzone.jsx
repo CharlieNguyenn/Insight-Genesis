@@ -72,10 +72,9 @@ const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndus
       
       setAnalysisResult(result);
       
-    } catch (error) {
-      console.error('Error analyzing voice:', error);
+    } catch (error) {      
       const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-      alert(`Có lỗi xảy ra khi phân tích voice: ${errorMessage}`);
+      alert(`An error occurred while parsing voice: ${errorMessage}`);
     } finally {
       setIsAnalyzing(false);
     }
