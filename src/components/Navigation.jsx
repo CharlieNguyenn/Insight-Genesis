@@ -122,11 +122,6 @@ const Navigation = () => {
           {isAuthenticated && (
             <div className="menu-section">
               <h3 className="menu-heading">Account</h3>
-              <div className="menu-item submenu-item">
-                <span style={{ fontSize: '12px', color: '#666' }}>
-                  Wallet: {walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : 'Connected'}
-                </span>
-              </div>
               <button 
                 className="menu-item submenu-item logout-btn" 
                 onClick={handleLogout}
