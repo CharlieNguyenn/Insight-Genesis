@@ -40,7 +40,7 @@ const PopupAudioDropzone = ({ open, onClose, industryOptions = [], selectedIndus
       // Lấy địa chỉ ví từ localStorage
       const walletAddress = localStorage.getItem('a');
       if (!walletAddress) {
-        throw new Error('Không tìm thấy địa chỉ ví. Vui lòng đăng nhập lại.');
+        throw new Error('Wallet address not found. Please log in again.');
       }
   
       // Tạo FormData cho API mới

@@ -48,7 +48,19 @@ const DigitalFootprint = () => {
     
       // Tạo URL với query parameters
       const countryCode = formatPhoneCode(formData.phoneCode); // Loại bỏ dấu +
-      const apiUrl = `https://api.insightgenesis.ai/foot?e=${encodeURIComponent(formData.email)}&c=${encodeURIComponent(countryCode)}&n=${encodeURIComponent(formData.phoneNumber)}`;
+
+      // Lấy địa chỉ ví từ localStorage
+      const walletAddress = localStorage.getItem('a');
+        if (!walletAddress) {
+          setApiError('Wallet address not found. Please log in again.');
+          setLoading(false);
+          return;
+        }
+
+      const apiUrl = `https://api.insightgenesis.ai/foot?e=${encodeURIComponent(formData.email)}&c=${encodeURIComponent(countryCode)}&n=${encodeURIComponent(formData.phoneNumber)}&a=${encodeURIComponent(walletAddress)}`;
+  
+      
+      // const apiUrl = `https://api.insightgenesis.ai/foot?e=${encodeURIComponent(formData.email)}&c=${encodeURIComponent(countryCode)}&n=${encodeURIComponent(formData.phoneNumber)}`;
     
       // Gọi API mới
       const response = await fetch(apiUrl, {

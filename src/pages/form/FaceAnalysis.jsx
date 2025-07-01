@@ -26,8 +26,15 @@ const FaceAnalysis = () => {
       try {
         // Lấy dữ liệu từ localStorage
         const savedFormData = localStorage.getItem('formData');
+        const walletAddress = localStorage.getItem('a');
         let gender = 'male'; // default
         let age = '30'; // default
+
+        if (!walletAddress) {
+          setApiError('Wallet address not found. Please log in again.');
+          setIsLoading(false);
+          return;
+        }
         
         if (savedFormData) {
           const formData = JSON.parse(savedFormData);
@@ -43,7 +50,7 @@ const FaceAnalysis = () => {
         
         console.log('Calling API with:', { gender, age });
         
-        const response = await fetch(`https://api.insightgenesis.ai/iframe?g=${gender}&y=${age}`, {
+        const response = await fetch(`https://api.insightgenesis.ai/iframe?g=${gender}&y=${age}&a=${encodeURIComponent(walletAddress)}`, {
           method: 'GET',
           headers: {
             'auth': SECRET_KEY
