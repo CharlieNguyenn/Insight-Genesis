@@ -612,6 +612,7 @@
 
     .cta-section, .cta-button {
         margin: 0;
+        margin-top: 3rem;
     }
 
     .applicants-title {
