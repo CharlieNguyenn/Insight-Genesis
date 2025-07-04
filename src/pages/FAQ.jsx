@@ -5,25 +5,53 @@ import faqIcon from '../assets/faq-icon1.png';
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
+  // const faqData = [
+  //   {
+  //     category: 'General',
+  //     questions: [
+  //       {
+  //         question: 'What is InSight Genesis?',
+  //         answer: 'Insight Genesis is a DPI (Decentralized Personal Insight) infrastructure that enables users to control, monetize, and govern their personal data.'
+  //       },
+  //       {
+  //         question: 'How does the platform work?',
+  //         answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  //       },
+  //       {
+  //         question: 'Is my data secure?',
+  //         answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  //       },
+  //       {
+  //         question: 'What is IGT token?',
+  //         answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  //       }
+  //     ]
+  //   }
+  // ];
+
   const faqData = [
     {
       category: 'General',
       questions: [
         {
-          question: 'What is InSight Genesis?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          question: 'What is Insight Genesis?',
+          answer: 'Insight Genesis is a DPI (Decentralized Personal Insight) infrastructure that enables users to control, monetize, and govern their personal data.'
         },
         {
-          question: 'How does the platform work?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          question: 'What is DPI?',
+          answer: 'DPI stands for Decentralized Personal Insight—a framework that returns ownership of data and AI insights to the individual.'
         },
         {
-          question: 'Is my data secure?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          question: 'How is Insight Genesis different from traditional AI platforms?',
+          answer: 'Instead of extracting user data, Insight Genesis turns it into a secure, tokenized asset within a privacy-first DPI ecosystem.'
         },
         {
-          question: 'What is IGT token?',
-          answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          question: 'What\'s the vision of Insight Genesis?',
+          answer: 'To replace AI-as-a-service with AI-as-an-economy—where people own, govern, and profit from their insights.'
+        },
+        {
+          question: 'Who can use Insight Genesis?',
+          answer: 'Anyone—individuals, researchers, institutions—who wants to own and monetize their personal data.'
         }
       ]
     }
