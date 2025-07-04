@@ -381,7 +381,8 @@ const Home = () => {
             </div>
             <div className="social-links">
               <Link to="https://www.linkedin.com/company/insight-genesis" className="social-link">LinkedIn</Link>
-              <Link to="https://t.me/InsightGenesisAi" className="social-link">Telegram</Link>
+              <Link to="https://t.me/InsightGenesisAi" className="social-link">Telegram Channel</Link>
+              <Link to="https://t.me/InsightGenesis" className="social-link">Telegram Group</Link>
               <Link to="https://x.com/genesis_insight" className="social-link">X (Twitter)</Link>
             </div>
           </div>
