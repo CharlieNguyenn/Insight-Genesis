@@ -224,15 +224,15 @@ const FaceAnalysis = () => {
         </p>
       </header>
       <div className="face-analysis-card-row">
-        <div className="face-analysis-card" onClick={() => navigate('/form/face-analysis')}>
+        <div className="face-analysis-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Face Scan Analysis</div>          
         </div>
-        <div className="face-analysis-card" onClick={() => navigate('/form/video-analysis')}>
+        <div className="face-analysis-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Voice Analysis</div>          
         </div>
-        <div className="face-analysis-card" onClick={() => navigate('/form/digital-footprint')}>
+        <div className="face-analysis-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Digital Footprint</div>          
         </div>
@@ -479,7 +479,7 @@ const FaceAnalysis = () => {
                 <span>To start the test allow using microphone</span>
               </div>
             </div>
-            <button className="face-analysis-submit" onClick={() => navigate('/form/result')}>
+            <button className="face-analysis-submit" onClick={() => navigate('/insights-form/result')}>
               Show insight
             </button>
             {apiResult && (

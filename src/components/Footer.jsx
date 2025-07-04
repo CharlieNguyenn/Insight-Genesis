@@ -44,11 +44,11 @@ const Footer = () => {
             <div className="footer-column">
               <h3 className="footer-heading">Contact</h3>
               <ul className="footer-links">
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://t.me/insightgenesis" target="_blank" rel="noopener noreferrer">Telegram Channel</a></li>
-                <li><a href="https://t.me/insightgenesischat" target="_blank" rel="noopener noreferrer">Telegram Group Chat</a></li>
-                <li><a href="https://twitter.com/insightgenesis" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                <li><a href="mailto:IGAi@insightgenesis.ai">IGAi@insightgenesis.ai</a></li>
+                <li><a href="https://www.linkedin.com/company/insight-genesis" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://t.me/InsightGenesisAi" target="_blank" rel="noopener noreferrer">Telegram Channel</a></li>
+                <li><a href="https://t.me/InsightGenesis" target="_blank" rel="noopener noreferrer">Telegram Group Chat</a></li>
+                <li><a href="https://x.com/genesis_insight" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                <li><a href="mailto:IGAi@insightgenesis.ai" target="_blank">IGAi@insightgenesis.ai</a></li>
               </ul>
             </div>
             

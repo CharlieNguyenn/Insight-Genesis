@@ -162,15 +162,15 @@ const DigitalFootprint = () => {
         </p>
       </header>
       <div className="footprint-card-row">
-        <div className="footprint-card" onClick={() => navigate('/form/face-analysis')}>
+        <div className="footprint-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="footprint-card-icon" />
           <div className="footprint-card-title">Face Scan Analysis</div>          
         </div>
-        <div className="footprint-card" onClick={() => navigate('/form/video-analysis')}>
+        <div className="footprint-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="footprint-card-icon" />
           <div className="footprint-card-title">Voice Analysis</div>          
         </div>
-        <div className="footprint-card" onClick={() => navigate('/form/digital-footprint')}>
+        <div className="footprint-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="footprint-card-icon" />
           <div className="footprint-card-title">Digital Footprint</div>          
         </div>
