@@ -279,7 +279,7 @@ useEffect(() => {
     // const apiUrl = `https://api.insightgenesis.ai/lg?t=${loginType}&u=${currentUrl.toString()}`;
 
     const baseUrl = window.location.origin;
-    const redirectPath = "/form"; // hoặc trang bạn muốn
+    const redirectPath = "/insights-form"; // hoặc trang bạn muốn
     const redirectUrl = baseUrl + redirectPath;
     const apiUrl = `https://api.insightgenesis.ai/lg?t=${loginType}&u=${redirectUrl}`;
     

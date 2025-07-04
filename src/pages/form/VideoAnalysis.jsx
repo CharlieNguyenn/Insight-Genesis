@@ -286,15 +286,15 @@ const VideoAnalysis = () => {
         </p>
       </header>
       <div className="video-analysis-card-row">
-        <div className="video-analysis-card" onClick={() => navigate('/form/face-analysis')}>
+        <div className="video-analysis-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="video-analysis-card-icon" />
           <div className="video-analysis-card-title">Face Scan Analysis</div>          
         </div>
-        <div className="video-analysis-card" onClick={() => navigate('/form/video-analysis')}>
+        <div className="video-analysis-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="video-analysis-card-icon" />
           <div className="video-analysis-card-title">Voice Analysis</div>          
         </div>
-        <div className="video-analysis-card" onClick={() => navigate('/form/digital-footprint')}>
+        <div className="video-analysis-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="video-analysis-card-icon" />
           <div className="video-analysis-card-title">Digital Footprint</div>          
         </div>

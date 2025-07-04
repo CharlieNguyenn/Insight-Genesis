@@ -41,15 +41,15 @@ const InsightForm = () => {
         </p>
       </header>
       <div className="insightform-card-row">
-        <div className="insightform-card" onClick={() => navigate('/form/face-analysis')}>
+        <div className="insightform-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="insightform-card-icon" />
           <div className="insightform-card-title">Face Scan Analysis</div>          
         </div>
-        <div className="insightform-card" onClick={() => navigate('/form/video-analysis')}>
+        <div className="insightform-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="insightform-card-icon" />
           <div className="insightform-card-title">Voice Analysis</div>          
         </div>
-        <div className="insightform-card" onClick={() => navigate('/form/digital-footprint')}>
+        <div className="insightform-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="insightform-card-icon" />
           <div className="insightform-card-title">Digital Footprint</div>          
         </div>
@@ -64,7 +64,7 @@ const InsightForm = () => {
           <div className="insightform-feature-desc">
             Our pre-built voice models, trained on over hundreds of thousands voice samples, is used by banks, insurance companies and employers to model fraud detection, job suitability and repayment intent.
           </div>
-          <button className="insightform-feature-btn" onClick={() => navigate('/form/video-analysis')}>
+          <button className="insightform-feature-btn" onClick={() => navigate('/insights-form/video-analysis')}>
             Try now &emsp;<img src={arrowIcon} alt="arrow" className="insightform-arrow" />
           </button>
         </div>
@@ -82,7 +82,7 @@ const InsightForm = () => {
           <div className="insightform-feature-desc">
             A 30-second video clip from a webcam or phone provides enough information for our video module to enhance your understanding of a person's physiological health and wellbeing
           </div>
-          <button className="insightform-feature-btn" onClick={() => navigate('/form/face-analysis')}>
+          <button className="insightform-feature-btn" onClick={() => navigate('/insights-form/face-analysis')}>
             Try now &emsp;<img src={arrowIcon} alt="arrow" className="insightform-arrow" />
           </button>
         </div>
@@ -100,7 +100,7 @@ const InsightForm = () => {
           <div className="insightform-feature-desc">
             The Digital Footprints module enables improved sales conversions and enhanced risk profiles by modeling customer mobile and email usage.
           </div>
-          <button className="insightform-feature-btn" onClick={() => navigate('/form/digital-footprint')}>
+          <button className="insightform-feature-btn" onClick={() => navigate('/insights-form/digital-footprint')}>
             Try now &emsp;<img src={arrowIcon} alt="arrow" className="insightform-arrow" />
           </button>
         </div>

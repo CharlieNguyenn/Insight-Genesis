@@ -47,27 +47,27 @@ function App() {
             <Route path="/solutions/decentralized-personal-insights" element={<DecentralizedPersonalInsights />} />
             
             {/* Protected Routes - Form and its sub-routes */}
-            <Route path="/form" element={
+            <Route path="/insights-form" element={
               <ProtectedRoute>
                 <InsightForm />
               </ProtectedRoute>
             } />
-            <Route path="/form/face-analysis" element={
+            <Route path="/insights-form/face-analysis" element={
               <ProtectedRoute>
                 <FaceAnalysis />
               </ProtectedRoute>
             } />
-            <Route path="/form/video-analysis" element={
+            <Route path="/insights-form/video-analysis" element={
               <ProtectedRoute>
                 <VideoAnalysis />
               </ProtectedRoute>
             } />
-            <Route path="/form/digital-footprint" element={
+            <Route path="/insights-form/digital-footprint" element={
               <ProtectedRoute>
                 <DigitalFootprint />
               </ProtectedRoute>
             } />
-            <Route path="/form/result" element={
+            <Route path="/insights-form/result" element={
               <ProtectedRoute>
                 <Result />
               </ProtectedRoute>

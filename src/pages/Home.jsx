@@ -47,7 +47,7 @@ const Home = () => {
   const handleLoginButtonClick = () => {
     const isLoggedIn = localStorage.getItem('a');
     if (isLoggedIn) {
-      navigate('/form');
+      navigate('/insights-form');
     } else {
       setShowLoginPopup(true);
     }
@@ -58,7 +58,7 @@ const Home = () => {
       <LoginPopup 
         isOpen={showLoginPopup} 
         onClose={() => setShowLoginPopup(false)} 
-        returnUrl='/form'
+        returnUrl='/insights-form'
       />
       <ContactFormPopup   
         isOpen={showContactPopup} 
@@ -87,7 +87,7 @@ const Home = () => {
           <div className="cta-button-container" id="button-hero">
             <div className="banner-button">
               <Link 
-                to="/form"
+                to="/insights-form"
                 className="cta-button"
               >
                 <span>Get Your Own Insights Now</span>
@@ -165,7 +165,7 @@ const Home = () => {
             <p> &emsp;&emsp;We harness cutting-edge AI to forecast human behavior, delivering powerful insights through a secure, up-to-date, and accurate data passport, empowering individuals with Decentralized Personal Insights.</p>            
           </div>
           <div className="cta-button-container">
-            <Link to="/form" className="cta-button">
+            <Link to="/insights-form" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
