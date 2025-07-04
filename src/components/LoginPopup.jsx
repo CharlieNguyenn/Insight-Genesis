@@ -440,7 +440,7 @@ useEffect(() => {
                   setScanLoading(false);
                 }}
               >
-                {scanLoading ? 'Loading...' : 'Scan now'}
+                {scanLoading ? 'Loading...' : 'Start'}
               </button>
             </form>
           </div>
