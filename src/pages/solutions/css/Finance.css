@@ -799,6 +799,9 @@
   color: #FFFFFF50;
 }
 
+.metric-percent {
+  margin-left: 2px;
+}
 
 .connection-line {
   display: flex;

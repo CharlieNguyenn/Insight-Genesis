@@ -218,7 +218,7 @@ const HumanResource = () => {
               </div>
               
               <div className="cta-section">
-                <a href="/form" className="cta-button">
+                <a href="/insights-form" className="cta-button">
                   Get Your Own Insights Now
                   <span className="arrow-icon">→</span>
                 </a>
