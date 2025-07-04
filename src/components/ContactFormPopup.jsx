@@ -104,7 +104,7 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
                 <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
               </svg>
-              Đã gửi thành công!
+              Sent successfully!
             </div>
           )}
           

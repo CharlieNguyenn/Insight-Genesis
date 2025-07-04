@@ -9,6 +9,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
     email: ''
   });
   const [showWalletSelection, setShowWalletSelection] = useState(false);
+  const [scanLoading, setScanLoading] = useState(false);
 
   // Kiểm tra trạng thái đăng nhập ngay khi component render
   const isLoggedIn = localStorage.getItem('a');
@@ -401,6 +402,46 @@ useEffect(() => {
                   placeholder="david@gmail.com"
                 />
               </div>
+
+              <button
+                type="button"
+                className="connect-wallet-btn"
+                onClick={async () => {
+                  if (!formData.email) {
+                    alert('Please enter your email!');
+                    return;
+                  }
+                  setScanLoading(true);
+                  try {
+                    // Dynamically import Magic SDK if not already
+                    let Magic;
+                    try {
+                      Magic = (await import('magic-sdk')).Magic;
+                    } catch (e) {
+                      alert('Bạn cần cài magic-sdk: npm install magic-sdk');
+                      setScanLoading(false);
+                      return;
+                    }
+                    const magic = new Magic('pk_live_394B77698E7E6DBC');
+                    const result = await magic.auth.loginWithMagicLink({ email: formData.email });
+                    const userInfo = await magic.user.getInfo();
+                    if (userInfo.publicAddress) {
+                      localStorage.setItem('a', userInfo.publicAddress);
+                      localStorage.setItem('formData', JSON.stringify(formData));
+                      alert('Wallet created and address saved!');
+                      onClose();
+                      window.location.reload();
+                    } else {
+                      alert('Could not get wallet address!');
+                    }
+                  } catch (err) {
+                    alert('MagicLink error: ' + err.message);
+                  }
+                  setScanLoading(false);
+                }}
+              >
+                {scanLoading ? 'Loading...' : 'Scan now'}
+              </button>
             </form>
           </div>
         ) : (

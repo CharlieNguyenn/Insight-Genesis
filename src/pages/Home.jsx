@@ -85,21 +85,14 @@ const Home = () => {
             
           </h1>
           <div className="cta-button-container" id="button-hero">
-            {/* <Link to="/form" className="cta-button">
-                <span>Get Your Own Insights Now</span>
-                <svg className="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
-                </svg>
-              </Link> */}
             <div className="banner-button">
-              <button 
-                className='cta-button'
-                onClick={handleLoginButtonClick}
+              <Link 
+                to="/form"
+                className="cta-button"
               >
-                Get Your Own Insights Now
+                <span>Get Your Own Insights Now</span>
                 <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
-              </button>
-
+              </Link>
             </div>
           </div>
         </div>
