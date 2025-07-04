@@ -405,14 +405,19 @@ useEffect(() => {
 
               <button
                 type="button"
-                className="connect-wallet-btn"
+                className={`connect-wallet-btn ${
+                  !formData.email || !formData.age || formData.gender === 'M/F' ? 'disabled' : ''
+                }`}
                 onClick={async () => {
-                  if (!formData.email) {
-                    alert('Please enter your email!');
+                  if (!formData.email || !formData.age || formData.gender === 'M/F') {
+                    alert('Please fill in all required fields: Age, Gender, and Email!');
                     return;
                   }
                   setScanLoading(true);
                   try {
+                    // Lưu form data vào localStorage trước
+                    localStorage.setItem('formData', JSON.stringify(formData));
+                    
                     // Dynamically import Magic SDK if not already
                     let Magic;
                     try {
@@ -439,6 +444,7 @@ useEffect(() => {
                   }
                   setScanLoading(false);
                 }}
+                disabled={!formData.email || !formData.age || formData.gender === 'M/F'}
               >
                 {scanLoading ? 'Loading...' : 'Start'}
               </button>
