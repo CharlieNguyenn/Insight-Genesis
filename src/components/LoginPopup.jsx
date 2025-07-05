@@ -495,5 +495,3 @@ useEffect(() => {
 };
 
 export default LoginPopup;
-
-

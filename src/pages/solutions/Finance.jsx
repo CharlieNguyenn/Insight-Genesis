@@ -6,6 +6,18 @@ import bgFinance from "../../assets/bg-finance.png";
 import Footer from '../../components/Footer';
 
 const Finance = () => {
+  const metricsCol1 = [
+    { label: 'Burnout', value: 38 },
+    { label: 'Emotional Stability', value: 50 },
+    { label: 'Financial Risk', value: 23 },
+    { label: 'Opportunistic', value: 85 },
+  ];
+  const metricsCol2 = [
+    { label: 'Cooperation', value: 90 },
+    { label: 'Energy Level', value: 20 },
+    { label: 'Open', value: 40 },
+  ];
+
   return (
     <div className="finance-wrapper">
       {/* Video Background và Overlay ở cấp cao nhất */}
@@ -195,7 +207,7 @@ const Finance = () => {
                   </div>
                 </div>
 
-                <Link to="/form" className="cta-button">
+                <Link to="/insights-form" className="cta-button">
               <span>Get Your Own Insights Now</span>
               <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
               </Link>
@@ -209,90 +221,39 @@ const Finance = () => {
                   
                   <div className="circular-progress">
                     <div className="progress-circle">
-                      <div className="main-percentage">36%</div>
+                      <div className="main-percentage">49%</div>
                     </div>
                   </div>
                   
-                  {/* <div className="risk-bars">
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                    
-                    <div className="risk-bar">
-                      <span className="bar-label">Burnout</span>
-                      <div className="bar-container">
-                        <div className="bar-fill" style={{width: '70%'}}></div>
-                      </div>
-                      <span className="bar-value">7/10</span>
-                    </div>
-                  </div> */}
                   <div className='metrics'>
                     <div className="burnout-metrics">
-                      {Array(4).fill(null).map((_, index) => (
-                        <div key={index} className="metric-row">
+                      {metricsCol1.map((item, idx) => (
+                        <div className="metric-row" key={item.label}>
                           <div className="metric-info">
-                            <span className="metric-label">Burnout</span>
-                            <span className="metric-score">7<span>/10</span></span>
+                            <span className="metric-label">{item.label}</span>
+                            <span className="metric-score">
+                              {item.value}
+                              <span className="metric-percent">%</span>
+                            </span>
                           </div>
                           <div className="metric-bar">
-                            <div className="bar-fill" style={{width: '70%'}}></div>
+                            <div className="bar-fill" style={{width: `${item.value}%`}}></div>
                           </div>
                         </div>
                       ))}
                     </div>
                     <div className="burnout-metrics-2">
-                      {Array(3).fill(null).map((_, index) => (
-                        <div key={index} className="metric-row">
+                      {metricsCol2.map((item, idx) => (
+                        <div className="metric-row" key={item.label}>
                           <div className="metric-info">
-                            <span className="metric-label">Burnout</span>
-                            <span className="metric-score">7<span>/10</span></span>
+                            <span className="metric-label">{item.label}</span>
+                            <span className="metric-score">
+                              {item.value}
+                              <span className="metric-percent">%</span>
+                            </span>
                           </div>
                           <div className="metric-bar">
-                            <div className="bar-fill" style={{width: '70%'}}></div>
+                            <div className="bar-fill" style={{width: `${item.value}%`}}></div>
                           </div>
                         </div>
                       ))}

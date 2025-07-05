@@ -59,7 +59,7 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-                <Link to="/form" className="cta-button">
+                <Link to="/insights-form" className="cta-button">
                 <span>Get Your Own Insights Now</span>
                 <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
                 </Link>
@@ -113,7 +113,7 @@ const Education = () => {
               </div>
               
               <div className="cta-section">
-              <Link to="/form" className="cta-button">
+              <Link to="/insights-form" className="cta-button">
               <span>Get Your Own Insights Now</span>
               <img src={narrowRightIcon} alt="arrow" className="cta-icon" />
               </Link>
