@@ -112,9 +112,9 @@ const Navigation = () => {
             <Link to="/solutions/education" className="menu-item submenu-item">Education</Link>
           </div>
           
-          <Link to="/" className="menu-item">Get AI Insight</Link>
+          <Link to="/insights-form" className="menu-item">Get AI Insight</Link>
           {/* <Link to="/staking" className="menu-item">Staking</Link> */}
-          <Link to="/" className="menu-item">Whitepaper</Link>
+          <Link to="https://docs.insightgenesis.ai/" target="_blank" rel="noopener noreferrer" className="menu-item">Whitepaper</Link>
           <Link to="/blog" className="menu-item">Blog</Link>
           <Link to="/faq" className="menu-item">FAQ</Link>
           
