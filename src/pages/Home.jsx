@@ -122,7 +122,7 @@ const Home = () => {
             </div>
             <div className="stat-card">
               <div className="stat-label">Revenue Run rate</div>
-              <div className="stat-value"><span className="parabole-letter">$</span>16,000,000</div>
+              <div className="stat-value"><span className="parabole-letter">$</span>18,000,000</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Valuation</div>
