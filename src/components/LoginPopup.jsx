@@ -324,8 +324,12 @@ useEffect(() => {
   return (
     <div className="popup-overlay popup-login" onClick={onClose}>
       <div className="popup-container" onClick={(e) => e.stopPropagation()}>
-        <button className="popup-close" onClick={onClose}>
+        {/* <button className="popup-close" onClick={onClose}>
           ×
+        </button> */}
+        
+        <button className="popup-back" onClick={() => window.history.back()}>
+          &lt;
         </button>
         
         {!showWalletSelection ? (
