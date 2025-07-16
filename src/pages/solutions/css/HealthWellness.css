@@ -620,6 +620,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    margin-top: 3rem;
     height: 200px;
   }
 
@@ -823,10 +824,10 @@
     height: 100%;
   }
 
-  .pharmaceutical-companies  .metrics-container {
+  /* .pharmaceutical-companies  .metrics-container {
     grid-template-columns: 1fr;
     height: fit-content;
-  }
+  } */
 
   .pharmaceutical-companies .burnout-metrics {
     height: 200px;
@@ -865,6 +866,10 @@
   .health-wellness .metric-label{
     text-align: left;
   }
+
+  .pharmaceutical-companies .burnout-metrics {
+    gap: 15px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -894,4 +899,21 @@
     padding: 0px;
   }
   
+  .metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+  .metrics-container > * {
+    width: 100%;
+    max-width: 320px;
+  }
+  .metrics-container > *:nth-child(odd),
+  .metrics-container > *:nth-child(even) {
+    align-self: center;
+    text-align: center;
+  }
 }

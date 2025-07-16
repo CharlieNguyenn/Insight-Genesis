@@ -1263,7 +1263,7 @@ body {
   }
   
   .contact-content {
-    gap: 0px;
+    gap: 1rem;
   }
   
   .social-links {
@@ -1464,11 +1464,20 @@ body {
   }
 
   .social-links {
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    padding: 0;
   }
-
   .social-link {
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
     font-size: 14px;
+    padding: 10px 0;
   }
 
   .email-link {

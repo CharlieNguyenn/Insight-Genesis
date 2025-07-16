@@ -386,10 +386,47 @@ const HealthWellness = () => {
                     <source src="/mp4/health-bg-1-3.mp4" type="video/mp4" />
                   </video>
                   <div className="circle-overlay"></div>
-                  <div className="percentage-display">85.2%</div>
+                  {/* <div className="percentage-display">85.2%</div> */}
                 </div>
-                
+
                 <div className="metrics-container">
+                <div className="burnout-metrics">
+                        <div className="metric-row">
+                          <div className="metric-info">
+                            <span className="metric-label">Access to Rich, Real-World Data</span>
+                          </div>
+                        </div>
+                        <div className="metric-row">
+                          <div className="metric-info">
+                          <span className="metric-label">Accelerated Clinical Trials & Research</span>
+                          </div>
+                        </div>
+                        <div className="metric-row">
+                          <div className="metric-info">
+                          <span className="metric-label">Enhanced Pharmacovigilance</span>
+                          </div>
+                        </div>
+                </div>
+                <div className="burnout-metrics">
+                        <div className="metric-row">
+                          <div className="metric-info">
+                            <span className="metric-label">Patent-Centric Engagement</span>
+                          </div>
+                        </div>
+                        <div className="metric-row">
+                          <div className="metric-info">
+                          <span className="metric-label">Regulatory-Grade Security & Complimance</span>
+                          </div>
+                        </div>
+                        <div className="metric-row">
+                          <div className="metric-info">
+                          <span className="metric-label">New Data Monetization Models</span>
+                          </div>
+                        </div>
+                </div>
+                </div>                
+                
+                {/* <div className="metrics-container">
                 <div className="burnout-metrics">
                         <div className="metric-row">
                           <div className="metric-info">
@@ -448,7 +485,7 @@ const HealthWellness = () => {
                           </div>
                         </div>
                 </div>
-                </div>
+                </div> */}
 
               </div>
             </div>
