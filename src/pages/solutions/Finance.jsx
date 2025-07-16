@@ -114,9 +114,16 @@ const Finance = () => {
               <div className="visual-side">
                 <div className="finance-image-container">
                   <div className="finance-analysis">
+                    {/* <div className="face-scan">
+                      <img src="/src/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
+                    </div> */}
                     <div className="face-scan">
-                      <img src="/src/assets/facial-recognition-software 1.png" alt="Face Scan" className="scan-image" />
-                      {/* <div className="scan-overlay"></div> */}
+                      <img src="/src/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
+                      <div className="analyzing-label">
+                        <span>Analyzing...</span>
+                        <div className="analyzing-line analyzing-line-horizontal"></div>
+                        <div className="analyzing-line analyzing-line-diagonal"></div>
+                      </div>
                     </div>
                     <div className="analysis-data">
                       <div className="intent-score">
