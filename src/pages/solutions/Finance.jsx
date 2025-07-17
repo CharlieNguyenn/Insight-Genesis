@@ -2,7 +2,7 @@ import React from 'react';
 import './css/Finance.css';
 import { Link } from 'react-router-dom';
 import narrowRightIcon from '../../assets/icons/narrow-right.svg';
-import bgFinance from "../../assets/bg-finance.png";
+import facialRecognitionSoftware from "../../assets/facial-recognition-software.png";
 import Footer from '../../components/Footer';
 
 const Finance = () => {
@@ -118,7 +118,7 @@ const Finance = () => {
                       <img src="/src/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
                     </div> */}
                     <div className="face-scan">
-                      <img src="/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
+                      <img src={facialRecognitionSoftware} alt="Face Scan" className="scan-image" />
                       <div className="analyzing-label">
                         <span>Analyzing...</span>
                         <div className="analyzing-line analyzing-line-horizontal"></div>
