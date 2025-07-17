@@ -29,7 +29,8 @@ const Blog = () => {
       date: 'April 5, 2025',
       category: 'Community',
       readTime: '8 min read',
-      image: blogImage1
+      image: blogImage1,
+      url: "https://insightgenesis0.wordpress.com/"
     },
     {
       id: 2,
@@ -39,7 +40,8 @@ const Blog = () => {
       date: 'April 10, 2025',
       category: 'Community',
       readTime: '6 min read',
-      image: blogImage2
+      image: blogImage2,
+      url: null
     },
     {
       id: 3,
@@ -49,7 +51,8 @@ const Blog = () => {
       date: 'April 13, 2025',
       category: 'Community',
       readTime: '10 min read',
-      image: blogImage3
+      image: blogImage3,
+      url: null
     },
     {
       id: 4,
@@ -59,7 +62,8 @@ const Blog = () => {
       date: 'April 5, 2025',
       category: 'Community',
       readTime: '7 min read',
-      image: blogImage4
+      image: blogImage4,
+      url: null
     },
     {
       id: 5,
@@ -69,7 +73,8 @@ const Blog = () => {
       date: 'April 13, 2025',
       category: 'Community',
       readTime: '9 min read',
-      image: blogImage5
+      image: blogImage5,
+      url: null
     },
     {
       id: 6,
@@ -79,7 +84,8 @@ const Blog = () => {
       date: 'April 13, 2025',
       category: 'Community',
       readTime: '5 min read',
-      image: blogImage6
+      image: blogImage6,
+      url: null
     }
   ];
 
@@ -160,7 +166,18 @@ const Blog = () => {
                       <span className="category-tag">{post.category}</span>
                       <span className="blog-date">{post.date}</span>
                     </div>
-                    <span className="read-tag">Read</span>
+                    {post.url ? (
+                      <a
+                        className="read-tag"
+                        href={post.url.startsWith('http') ? post.url : `https://${post.url}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Read
+                      </a>
+                    ) : (
+                      <span className="read-tag">Read</span>
+                    )}
                   </div>
                 </div>
               </article>
