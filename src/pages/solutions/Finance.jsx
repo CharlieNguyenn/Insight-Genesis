@@ -118,7 +118,7 @@ const Finance = () => {
                       <img src="/src/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
                     </div> */}
                     <div className="face-scan">
-                      <img src="/src/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
+                      <img src="/assets/facial-recognition-software.png" alt="Face Scan" className="scan-image" />
                       <div className="analyzing-label">
                         <span>Analyzing...</span>
                         <div className="analyzing-line analyzing-line-horizontal"></div>
