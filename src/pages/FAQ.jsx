@@ -20,14 +20,8 @@ const FAQ = () => {
   return (
     <div className="faq">
       <div className="faq-content">
-        <div className="container">
+        <div className="" style={{maginTop: '90px'}}>
           <div className="section-badge" id="dpi-badge">
-            <div className="badge-dots">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
-            <div className="faq-section-title">FAQS</div>
             <div className="hero-title">
               <div><span className="parabole-letter special-letter">F</span>REQUENTLY ASKED</div>
               <div className='dpi-hero-title-2'><span className="parabole-letter special-letter">Q</span>UESTI<span className="parabole-letter special-letter">O</span>NS<span className="parabole-letter special-letter">N</span>SIGHTS</div>
