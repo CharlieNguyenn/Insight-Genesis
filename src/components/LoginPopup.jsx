@@ -328,12 +328,11 @@ useEffect(() => {
           ×
         </button> */}
         
-        <button className="popup-back" onClick={() => window.history.back()}>
-          &lt;
-        </button>
-        
         {!showWalletSelection ? (
           <div className="popup-content">
+            <button className="popup-back" onClick={() => window.history.back()}>
+              &lt;
+            </button>
             <h2 className="popup-title">GET STARTED</h2>
             
             <form onSubmit={handleSubmit} className="popup-form">
