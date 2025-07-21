@@ -8,6 +8,30 @@ import COUNTRY_CODES from './countryCodes';
 
 const SECRET_KEY = 'c5UqVPihwtydCKe57YJPtpyE2ryB9AJn';
 
+// Hàm định dạng balance từ wei sang IGAIR, làm tròn 2 chữ số thập phân
+function formatIGAIR(balance) {
+  if (!balance) return '0';
+  const igair = Number(balance) / 1e18;
+  return igair.toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+// Component hiển thị trạng thái IGAIR
+const IGAIRDisplay = ({ igairLoading, igairError, igairInfo, formatIGAIRPrefix = '', showPrefix = false }) => {
+  if (igairLoading) {
+    return <span className="igair-loading">Loading IGAIR...</span>;
+  } else if (igairError) {
+    return <span className="igair-error">{igairError}</span>;
+  } else if (igairInfo && igairInfo.balance) {
+    return (
+      <span className="igair-value">
+        {showPrefix ? formatIGAIRPrefix : ''}{formatIGAIR(igairInfo.balance)} IGAIR
+      </span>
+    );
+  } else {
+    return null;
+  }
+};
+
 const DigitalFootprint = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -22,6 +46,10 @@ const DigitalFootprint = () => {
   });
   const [apiError, setApiError] = useState(null);
   const resultRef = useRef(null);
+
+  const [igairInfo, setIgairInfo] = useState(null);
+  const [igairLoading, setIgairLoading] = useState(false);
+  const [igairError, setIgairError] = useState(null);
 
   const formatDate = (date) => {
     if (!date) return '';
@@ -151,6 +179,27 @@ const DigitalFootprint = () => {
     return notes;
   }
 
+    // Fetch IGAIR info balance
+    useEffect(() => {
+      const fetchIGAIrInfo = async () => {
+        const address = localStorage.getItem('a');
+        if (!address) return;
+        setIgairLoading(true);
+        setIgairError(null);
+        try {
+          const res = await fetch(`https://api.insightgenesis.ai/info?addr=${address}`);
+          if (!res.ok) throw new Error('Failed to fetch IGAIr info');
+          const data = await res.json();
+          setIgairInfo(data);
+        } catch (err) {
+          setIgairError('Failed to load IGAIr info');
+        } finally {
+          setIgairLoading(false);
+        }
+      };
+      fetchIGAIrInfo();
+    }, []);
+
   return (
     <div className="footprint-root">
       <header className="footprint-header">
@@ -160,19 +209,31 @@ const DigitalFootprint = () => {
         <p className="footprint-subtitle">
           Our integrated behavior modules enable you to get started immediately. Try it for yourself.
         </p>
+        <div className='insightform-igair'>
+          <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} formatIGAIRPrefix="TOTAL IGAIR: " showPrefix={true} />
+        </div>
       </header>
       <div className="footprint-card-row">
         <div className="footprint-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="footprint-card-icon" />
-          <div className="footprint-card-title">Face Scan Analysis</div>          
+          <div className="footprint-card-title">Face Scan Analysis</div>    
+          <div>
+            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
+          </div>      
         </div>
         <div className="footprint-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="footprint-card-icon" />
-          <div className="footprint-card-title">Voice Analysis</div>          
+          <div className="footprint-card-title">Voice Analysis</div>     
+          <div>
+            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
+          </div>     
         </div>
         <div className="footprint-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="footprint-card-icon" />
-          <div className="footprint-card-title">Digital Footprint</div>          
+          <div className="footprint-card-title">Digital Footprint</div>  
+          <div>
+            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
+          </div>        
         </div>
       </div>
       <section className="footprint-section">

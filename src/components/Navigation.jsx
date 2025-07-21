@@ -8,6 +8,19 @@ import LoginPopup from './LoginPopup';
 import ContactFormPopup from './ContactFormPopup';
 import { useAuth } from '../hooks/useAuth';
 
+// Helper: shorten wallet address
+function shortAddress(addr) {
+  if (!addr) return '';
+  return addr.slice(0, 6) + '...' + addr.slice(-4);
+}
+
+// Helper: format IGAIR
+function formatIGAIR(balance) {
+  if (!balance) return '0';
+  const igair = Number(balance) / 1e18;
+  return igair.toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -15,6 +28,41 @@ const Navigation = () => {
   const location = useLocation();
   const [showPopup, setShowPopup] = useState(false);
   const { isAuthenticated, walletAddress, logout } = useAuth();
+
+  // IGAIR/referral info state
+  const [igairInfo, setIgairInfo] = useState(null);
+  const [igairLoading, setIgairLoading] = useState(false);
+  const [igairError, setIgairError] = useState(null);
+  // Wallet name (handle) from localStorage
+  const [walletName, setWalletName] = useState('');
+
+  useEffect(() => {
+    setWalletName(localStorage.getItem('handle') || '');
+  }, [isAuthenticated, walletAddress]);
+
+  // Fetch IGAIR/referral info async when authenticated
+  useEffect(() => {
+    if (!isAuthenticated || !walletAddress) return;
+    let ignore = false;
+    setIgairLoading(true);
+    setIgairError(null);
+    setIgairInfo(null);
+    fetch(`https://api.insightgenesis.ai/info?addr=${walletAddress}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch IGAIR info');
+        return res.json();
+      })
+      .then(data => {
+        if (!ignore) setIgairInfo(data);
+      })
+      .catch(err => {
+        if (!ignore) setIgairError('Failed to load IGAIR info');
+      })
+      .finally(() => {
+        if (!ignore) setIgairLoading(false);
+      });
+    return () => { ignore = true; };
+  }, [isAuthenticated, walletAddress]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -72,6 +120,29 @@ const Navigation = () => {
         </Link>
         
         <div className="header-actions">
+          {isAuthenticated && (
+            <div className="user-info-box">
+              <div className="user-info-content">
+                <div className="user-info-handle">{walletName ? `@${walletName}` : ''}</div>
+                <div className="user-info-address">{shortAddress(walletAddress)}</div>
+                {igairLoading ? (
+                  <div className="user-info-loading">Loading...</div>
+                ) : igairError ? (
+                  <div className="user-info-error">{igairError}</div>
+                ) : igairInfo && (
+                  <>
+                    {/* Remove IGAIR balance line */}
+                    {igairInfo.upline && (
+                      <div className="user-info-upline">Upline: {shortAddress(igairInfo.upline)}</div>
+                    )}
+                    {igairInfo.downlines && igairInfo.downlines.length > 0 && (
+                      <div className="user-info-downlines">Downlines: {igairInfo.downlines.map(shortAddress).join(', ')}</div>
+                    )}
+                  </>
+                )}
+              </div>
+            </div>
+          )}
           {/* <Link to="/insights-form" className="get-in-touch">
             Get in touch
             <img src={narrowRightIcon} alt="arrow" className="touch-icon" />

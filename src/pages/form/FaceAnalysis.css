@@ -24,6 +24,32 @@
   margin-bottom: 0;
 }
 
+.insightform-igair {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 24px 0;
+}
+
+.face-analysis-card>div:last-child {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+}
+
+.igair-loading,
+.igair-value {
+    color: #bebebe;
+    font-weight: 600;
+}
+
+.igair-error {
+    color: #FF6F77;
+    font-weight: 600;
+}
+
 .face-analysis-card-row {
   display: flex;
   gap: 2.2rem;
