@@ -83,6 +83,17 @@ const FaceAnalysis = () => {
   // Hàm để xử lý khi nhận kết quả từ iframe
   useEffect(() => {
     const handleMessage = (event) => {
+      const d = event.data;
+      const walletAddress = localStorage.getItem('a');
+      if (d.analysisData && d.analysisData.vitalSigns) {
+        console.log('Event Data', d);
+        fetch("https://api.insightgenesis.ai/store", {
+          method: "POST",
+          headers: { addr: walletAddress, type: "1", "Content-Type": "application/json" },
+          body: JSON.stringify(d.analysisData),
+        });
+      }
+
       // Kiểm tra origin để bảo mật
       if (event.origin !== 'https://api.insightgenesis.ai') {
         return;
