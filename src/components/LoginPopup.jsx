@@ -328,12 +328,11 @@ useEffect(() => {
           ×
         </button> */}
         
-        <button className="popup-back" onClick={() => window.history.back()}>
-          &lt;
-        </button>
-        
         {!showWalletSelection ? (
           <div className="popup-content">
+            <button className="popup-back" onClick={() => window.history.back()}>
+              &lt;
+            </button>
             <h2 className="popup-title">GET STARTED</h2>
             
             <form onSubmit={handleSubmit} className="popup-form">
@@ -437,6 +436,12 @@ useEffect(() => {
                     if (userInfo.publicAddress) {
                       localStorage.setItem('a', userInfo.publicAddress);
                       localStorage.setItem('formData', JSON.stringify(formData));
+                      // Save handle (wallet name) if available
+                      if (userInfo.handle) {
+                        localStorage.setItem('handle', userInfo.handle);
+                      } else if (userInfo.email) {
+                        localStorage.setItem('handle', userInfo.email.split('@')[0]);
+                      }
                       alert('Wallet created and address saved!');
                       onClose();
                       window.location.reload();
