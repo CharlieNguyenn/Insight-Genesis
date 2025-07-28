@@ -6,6 +6,7 @@ import menuIcon from '../assets/icons/menu.svg';
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
 import LoginPopup from './LoginPopup';
 import ContactFormPopup from './ContactFormPopup';
+import Avatar from './Avatar';
 import { useAuth } from '../hooks/useAuth';
 
 // Helper: shorten wallet address
@@ -27,6 +28,7 @@ const Navigation = () => {
   const sideMenuRef = useRef(null);
   const location = useLocation();
   const [showPopup, setShowPopup] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const { isAuthenticated, walletAddress, logout } = useAuth();
 
   // IGAIR/referral info state
@@ -75,6 +77,9 @@ const Navigation = () => {
   const handleLogout = () => {
     logout();
     closeMenu();
+    setShowDropdown(false);
+    // Reload page to ensure state is properly updated
+    window.location.reload();
   };
 
   // Đóng menu khi chuyển trang
@@ -104,6 +109,9 @@ const Navigation = () => {
       if (sideMenuRef.current && !sideMenuRef.current.contains(event.target) && !event.target.closest('.menu-toggle')) {
         closeMenu();
       }
+      if (!event.target.closest('.user-info-box')) {
+        setShowDropdown(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -119,9 +127,33 @@ const Navigation = () => {
           <img src={logo} alt="Insight Genesis" />
         </Link>
         
-        <div className="header-actions">
+                <div className="header-actions">
+          {!isAuthenticated && (
+            <div>
+              <button 
+                className='get-in-touch'
+                onClick={() => {
+                  console.log('Get in touch clicked, setting showPopup to true');
+                  setShowPopup(true);
+                }}
+              >
+                Get in touch
+                <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
+              </button>
+              <ContactFormPopup 
+                isOpen={showPopup} 
+                onClose={() => {
+                  console.log('Closing popup');
+                  setShowPopup(false);
+                }} 
+              />
+            </div>
+          )}
           {isAuthenticated && (
-            <div className="user-info-box">
+            <div className="user-info-box" onClick={() => setShowDropdown(!showDropdown)}>
+              <div className="user-info-avatar">
+                <Avatar address={walletAddress} size={36} />
+              </div>
               <div className="user-info-content">
                 <div className="user-info-handle">{walletName ? `@${walletName}` : ''}</div>
                 <div className="user-info-address">{shortAddress(walletAddress)}</div>
@@ -141,25 +173,30 @@ const Navigation = () => {
                   </>
                 )}
               </div>
+              {showDropdown && (
+                <div className="user-info-dropdown">
+                  <button className="get-in-touch-dropdown" onClick={(e) => {
+                    e.stopPropagation();
+                    setShowPopup(true);
+                    setShowDropdown(false);
+                  }}>
+                    Get in touch
+                    <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
+                  </button>
+                  <button className="logout-dropdown" onClick={(e) => {
+                    e.stopPropagation();
+                    handleLogout();
+                  }}>
+                    Logout
+                  </button>
+                </div>
+              )}
+              <ContactFormPopup 
+                isOpen={showPopup} 
+                onClose={() => setShowPopup(false)} 
+              />
             </div>
           )}
-          {/* <Link to="/insights-form" className="get-in-touch">
-            Get in touch
-            <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
-          </Link> */}
-          <div>
-            <button 
-            className='get-in-touch'
-              onClick={() => setShowPopup(true)}
-            >
-              Get in touch
-              <img src={narrowRightIcon} alt="arrow" className="touch-icon" />
-            </button>
-            <ContactFormPopup 
-              isOpen={showPopup} 
-              onClose={() => setShowPopup(false)} 
-            />
-          </div>
           
           <button className="menu-toggle" onClick={toggleMenu}>
             <img src={menuIcon} alt="menu" className="menu-icon" />
@@ -192,10 +229,19 @@ const Navigation = () => {
           {/* Authentication Status */}
           {isAuthenticated && (
             <div className="menu-section">
+              <div className="menu-user-info">
+                <Avatar address={walletAddress} size={32} />
+                <div className="menu-user-details">
+                  <div className="menu-user-handle">{walletName ? `@${walletName}` : ''}</div>
+                  <div className="menu-user-address">{shortAddress(walletAddress)}</div>
+                </div>
+              </div>
               <h3 className="menu-heading">Account</h3>
               <button 
                 className="menu-item submenu-item logout-btn" 
-                onClick={handleLogout}
+                onClick={() => {
+                  handleLogout();
+                }}
                 style={{ 
                   background: 'none', 
                   border: 'none', 

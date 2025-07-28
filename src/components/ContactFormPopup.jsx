@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import emailjs from '@emailjs/browser';
 import './ContactFormPopup.css';
 
@@ -108,10 +109,14 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
     onClose();
   }, [resetForm, onClose]);
 
+  console.log('ContactFormPopup render - isOpen:', isOpen);
   if (!isOpen) return null;
   
-  return (
-    <div className="popup-contact popup-overlay" onClick={handleClose}>
+  const popupContent = (
+    <div 
+      className="popup-contact" 
+      onClick={handleClose}
+    >
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
         <button className="popup-close" onClick={handleClose} aria-label="Close">
           ×
@@ -197,6 +202,9 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
       </div>
     </div>
   );
+  
+  // Render popup using Portal
+  return createPortal(popupContent, document.getElementById('popup-portal'));
 };
 
 export default ContactFormPopup;

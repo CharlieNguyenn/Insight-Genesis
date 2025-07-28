@@ -315,4 +315,178 @@
   font-size: 28px;
   line-height: 0;
   font-weight: 300;
+}
+
+/* User Info Box Styles */
+.user-info-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.user-info-box {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-info-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-info-avatar {
+  flex-shrink: 0;
+}
+
+.user-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.user-info-handle {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-info-address {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-info-loading,
+.user-info-error {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.user-info-upline,
+.user-info-downlines {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-info-box {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  
+  .user-info-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .user-info-handle {
+    font-size: 13px;
+  }
+  
+  .user-info-address {
+    font-size: 11px;
+  }
+}
+
+/* User Info Dropdown */
+.user-info-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 8px;
+  min-width: 160px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.get-in-touch-dropdown,
+.logout-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.get-in-touch-dropdown:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #8FEAFF;
+}
+
+.logout-dropdown:hover {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
+}
+
+.get-in-touch-dropdown .touch-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Menu User Info Styles */
+.menu-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.menu-user-handle {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-user-address {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 } 

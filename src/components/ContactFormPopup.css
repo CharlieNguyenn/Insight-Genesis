@@ -2,14 +2,16 @@
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100vw;
-    height: 101vh;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 10000;
     overflow: hidden;
     animation: fadeIn 0.3s ease-out;
 }
@@ -37,6 +39,7 @@
     border: 1px solid #00ffff;
     animation: slideUp 0.4s ease-out;
     overflow: hidden;
+    z-index: 10001;
 }
 
 .popup-content::before {

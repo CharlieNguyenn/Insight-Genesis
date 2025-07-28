@@ -86,8 +86,22 @@ const InsightForm = () => {
         <p className="insightform-subtitle">
           Our integrated behavior modules enable you to get started immediately. Try it for yourself.
         </p>
-        <div className='insightform-igair'>
-          <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} formatIGAIRPrefix="TOTAL IGAIR: " showPrefix={true} />
+        <div className='web3-balance-container'>
+          <div className='web3-balance-card'>
+            <div className='web3-balance-header'>
+              <div className='web3-balance-icon'>
+                <div className='web3-icon-inner'>⚡</div>
+                <div className='web3-icon-glow'></div>
+              </div>
+              <div className='web3-balance-info'>
+                <div className='web3-balance-label'>TOTAL IGAIR</div>
+                <div className='web3-balance-value'>
+                  <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </header>
       <div className="insightform-card-row">
