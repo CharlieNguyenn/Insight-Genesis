@@ -90,7 +90,7 @@ const InsightForm = () => {
           <div className='web3-balance-card'>
             <div className='web3-balance-header'>
               <div className='web3-balance-icon'>
-                <div className='web3-icon-inner'>⚡</div>
+                <div className='web3-icon-inner'>💎</div>
                 <div className='web3-icon-glow'></div>
               </div>
               <div className='web3-balance-info'>
