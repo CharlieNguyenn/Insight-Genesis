@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
+import './CopyButton.css';
 import logo from '../assets/logo.svg';
 import menuIcon from '../assets/icons/menu.svg';
 import narrowRightIcon from '../assets/icons/narrow-right.svg';
 import LoginPopup from './LoginPopup';
 import ContactFormPopup from './ContactFormPopup';
 import Avatar from './Avatar';
+import CopyButton from './CopyButton';
 import { useAuth } from '../hooks/useAuth';
 
 // Helper: shorten wallet address
@@ -156,7 +158,10 @@ const Navigation = () => {
               </div>
               <div className="user-info-content">
                 <div className="user-info-handle">{walletName ? `@${walletName}` : ''}</div>
-                <div className="user-info-address">{shortAddress(walletAddress)}</div>
+                <div className="user-info-address">
+                  {shortAddress(walletAddress)}
+                  <CopyButton text={walletAddress} />
+                </div>
                 {igairLoading ? (
                   <div className="user-info-loading">Loading...</div>
                 ) : igairError ? (
@@ -164,12 +169,6 @@ const Navigation = () => {
                 ) : igairInfo && (
                   <>
                     {/* Remove IGAIR balance line */}
-                    {igairInfo.upline && (
-                      <div className="user-info-upline">Upline: {shortAddress(igairInfo.upline)}</div>
-                    )}
-                    {igairInfo.downlines && igairInfo.downlines.length > 0 && (
-                      <div className="user-info-downlines">Downlines: {igairInfo.downlines.map(shortAddress).join(', ')}</div>
-                    )}
                   </>
                 )}
               </div>
@@ -229,14 +228,25 @@ const Navigation = () => {
           {/* Authentication Status */}
           {isAuthenticated && (
             <div className="menu-section">
-              <div className="menu-user-info">
+              <h3 className="menu-heading">Account</h3>
+              <div className="menu-user-info-below">
                 <Avatar address={walletAddress} size={32} />
-                <div className="menu-user-details">
-                  <div className="menu-user-handle">{walletName ? `@${walletName}` : ''}</div>
-                  <div className="menu-user-address">{shortAddress(walletAddress)}</div>
+                <div className="menu-user-address-container">
+                  <Link to="/insights-form" className="menu-user-address">
+                    {shortAddress(walletAddress)}
+                  </Link>
+                  <CopyButton text={walletAddress} />
                 </div>
               </div>
-              <h3 className="menu-heading">Account</h3>
+              {igairLoading ? (
+                <div className="menu-user-loading">Loading...</div>
+              ) : igairError ? (
+                <div className="menu-user-error">{igairError}</div>
+              ) : igairInfo && (
+                <>
+                  {/* Referral info removed */}
+                </>
+              )}
               <button 
                 className="menu-item submenu-item logout-btn" 
                 onClick={() => {

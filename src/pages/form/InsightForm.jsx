@@ -16,6 +16,12 @@ function formatIGAIR(balance) {
   return igair.toLocaleString(undefined, { maximumFractionDigits: 2 });
 }
 
+// Helper: shorten wallet address
+function shortAddress(addr) {
+  if (!addr) return '';
+  return addr.slice(0, 6) + '...' + addr.slice(-4);
+}
+
 // Component hiển thị trạng thái IGAIR
 const IGAIRDisplay = ({ igairLoading, igairError, igairInfo, formatIGAIRPrefix = '', showPrefix = false }) => {
   if (igairLoading) {
@@ -100,7 +106,22 @@ const InsightForm = () => {
                 </div>
               </div>
             </div>
-
+            <div className='web3-balance-footer'>
+              <div className='web3-balance-stats'>
+                <div className='web3-stat'>
+                  <div className='web3-stat-label'>Referred</div>
+                  <div className='web3-stat-value'>
+                    {igairInfo && igairInfo.from && igairInfo.from.length > 0 ? igairInfo.from.length : '0'}
+                  </div>
+                </div>
+                <div className='web3-stat'>
+                  <div className='web3-stat-label'>Referral</div>
+                  <div className='web3-stat-value'>
+                    {igairInfo && igairInfo.to ? shortAddress(igairInfo.to) : 'None'}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
