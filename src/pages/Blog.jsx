@@ -30,7 +30,7 @@ const Blog = () => {
       category: 'Community',
       readTime: '8 min read',
       image: blogImage1,
-      url: '/blogs/index.html'
+      url: '/blogs/press-release.html'
     },
     {
       id: 2,
