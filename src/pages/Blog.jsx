@@ -23,14 +23,14 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: 'Press Release',
-      excerpt: 'Insight Genesis Wins Prestigious Global-AI Decentralized Intelligence Award at Hong Kong Debut.',
+      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
+      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
       author: 'Community',
       date: 'April 5, 2025',
       category: 'Community',
       readTime: '8 min read',
       image: blogImage1,
-      url: '/blogs/press-release.html'
+      url: "https://insightgenesis0.wordpress.com/"
     },
     {
       id: 2,
@@ -169,7 +169,9 @@ const Blog = () => {
                     {post.url ? (
                       <a
                         className="read-tag"
-                        href={post.url}
+                        href={post.url.startsWith('http') ? post.url : `https://${post.url}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Read
                       </a>
