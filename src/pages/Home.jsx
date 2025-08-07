@@ -110,13 +110,13 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      {/* <section className="stats">
+      <section className="stats">
         <div className="container">
           <div className="title">
             <h2>ABOUT INSIGHT GENIE</h2>
           </div>
           <div className="stats-cards">
-            <div className="stat-card">
+            {/* <div className="stat-card">
               <div className="stat-label">Has been in operation</div>
               <div className="stat-value"><span className="parabole-letter">S</span>INCE 2<span className="parabole-letter">0</span>22</div>
             </div>
@@ -127,7 +127,7 @@ const Home = () => {
             <div className="stat-card">
               <div className="stat-label">Valuation</div>
               <div className="stat-value"><span className="parabole-letter">$</span>100,000,000</div>
-            </div>
+            </div> */}
             <div className="stat-card">
               <div className="stat-label">Backed by</div>
               <div className="stat-value">
@@ -153,7 +153,7 @@ const Home = () => {
             <img src={iconLoad} alt="arrow" className="load-icon" />           
           </div>          
         </div>
-      </section> */}
+      </section>
 
       {/* What We Do Section */}
       <section className="what-we-do">
