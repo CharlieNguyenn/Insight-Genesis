@@ -92,60 +92,19 @@ const InsightForm = () => {
         <p className="insightform-subtitle">
           Our integrated behavior modules enable you to get started immediately. Try it for yourself.
         </p>
-        <div className='web3-balance-container'>
-          <div className='web3-balance-card'>
-            <div className='web3-balance-header'>
-              <div className='web3-balance-icon'>
-                <div className='web3-icon-inner'>💎</div>
-                <div className='web3-icon-glow'></div>
-              </div>
-              <div className='web3-balance-info'>
-                <div className='web3-balance-label'>TOTAL IGAIR</div>
-                <div className='web3-balance-value'>
-                  <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-                </div>
-              </div>
-            </div>
-            <div className='web3-balance-footer'>
-              <div className='web3-balance-stats'>
-                <div className='web3-stat'>
-                  <div className='web3-stat-label'>Referred</div>
-                  <div className='web3-stat-value'>
-                    {igairInfo && igairInfo.from && igairInfo.from.length > 0 ? igairInfo.from.length : '0'}
-                  </div>
-                </div>
-                <div className='web3-stat'>
-                  <div className='web3-stat-label'>Referral</div>
-                  <div className='web3-stat-value'>
-                    {igairInfo && igairInfo.to ? shortAddress(igairInfo.to) : 'None'}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </header>
       <div className="insightform-card-row">
         <div className="insightform-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="insightform-card-icon" />
           <div className="insightform-card-title">Face Scan Analysis</div>
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>
         </div>
         <div className="insightform-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="insightform-card-icon" />
           <div className="insightform-card-title">Voice Analysis</div>
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>
         </div>
         <div className="insightform-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="insightform-card-icon" />
           <div className="insightform-card-title">Digital Footprint</div>
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>
         </div>
       </div>
       {/* Voice Analysis Section */}

@@ -174,6 +174,12 @@ const Navigation = () => {
               </div>
               {showDropdown && (
                 <div className="user-info-dropdown">
+                  <Link to="/profile" className="my-profile-dropdown" onClick={(e) => {
+                    e.stopPropagation();
+                    setShowDropdown(false);
+                  }}>
+                    My profile
+                  </Link>
                   <button className="get-in-touch-dropdown" onClick={(e) => {
                     e.stopPropagation();
                     setShowPopup(true);
@@ -232,7 +238,7 @@ const Navigation = () => {
               <div className="menu-user-info-below">
                 <Avatar address={walletAddress} size={32} />
                 <div className="menu-user-address-container">
-                  <Link to="/insights-form" className="menu-user-address">
+                  <Link to="/profile" className="menu-user-address">
                     {shortAddress(walletAddress)}
                   </Link>
                   <CopyButton text={walletAddress} />

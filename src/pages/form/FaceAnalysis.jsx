@@ -165,114 +165,6 @@ const FaceAnalysis = () => {
     fetchIGAIrInfo();
   }, []);
 
-  // useEffect(() => {
-  //   const handleBeforeUnload = (e) => {
-  //     e.preventDefault();
-  //     e.returnValue = '';
-  //     return '';
-  //   };
-
-  //   window.addEventListener('beforeunload', handleBeforeUnload);
-
-  //   const authenticateAndFetchVideoToken = async () => {
-  //     let APIToken = localStorage.getItem('APIToken') || '';
-
-  //     const authenticate = async () => {
-  //       const payload = {
-  //         key: "6738b6f4-1390-404b-95ac-59b6ade17773",
-  //         secret: "a4dc7b7f-a6fd-4441-8a0a-53c62957ef55"
-  //       };
-
-  //       try {
-  //         const response = await fetch('https://api.insightgenie.ai/auth/authenticate', {
-  //           method: 'POST',
-  //           headers: {
-  //             'Accept': 'application/json',
-  //             'Content-Type': 'application/json'
-  //           },
-  //           body: JSON.stringify(payload)
-  //         });
-
-  //         if (!response.ok) {
-  //           const errorData = await response.json();
-  //           console.error('Error response:', errorData);
-  //           throw new Error('Failed to authenticate');
-  //         }
-
-  //         const data = await response.json();
-  //         APIToken = data.token || '';
-  //         localStorage.setItem('APIToken', APIToken);
-  //       } catch (error) {
-  //         if (error instanceof Error) {
-  //           console.error('Error:', error.message);
-  //         } else {
-  //           console.error('Unexpected error:', error);
-  //         }
-  //         return;
-  //       }
-  //     };
-
-  //     const fetchVideoToken = async () => {
-  //       try {
-  //         const payload = {
-  //           "clientId": "123456789",
-  //           "age": 18,
-  //           "gender": "male",
-  //           "showResults": "display",
-  //           "noDesign": false,
-  //           // "buttonBgColor": "#ebfbff",
-  //           // "buttonTextColor": "#ebfbff",
-  //           "isVoiceAnalysisOn": true,
-  //           "voiceAnalysisType": "fraud"
-  //         };
-  //         const videoResponse = await fetch('https://api.insightgenie.ai/face-scan/generate-video-token', {
-  //           method: 'POST',
-  //           headers: {
-  //             'Authorization': `Bearer ${APIToken}`,
-  //             'Accept': 'application/json',
-  //             'Content-Type': 'application/json'
-  //           },
-  //           body: JSON.stringify(payload)
-  //         });
-
-  //         if (!videoResponse.ok) {
-  //           const errorData = await videoResponse.json();
-  //           console.error('Error response:', errorData);
-
-  //           if (videoResponse.status === 401 && errorData.errorCode === 'UNAUTHORIZED') {
-  //             localStorage.removeItem('APIToken');
-  //             await authenticate();
-  //             await fetchVideoToken();
-  //           } else {
-  //             throw new Error('Failed to fetch video token');
-  //           }
-  //         } else {
-  //           const videoData = await videoResponse.json();
-  //           setIFrameURL(videoData.videoIframeUrl);
-  //           console.log('Video URL:', videoData.videoIframeUrl);
-  //         }
-  //       } catch (error) {
-  //         if (error instanceof Error) {
-  //           console.error('Error:', error.message);
-  //         } else {
-  //           console.error('Unexpected error:', error);
-  //         }
-  //       }
-  //     };
-
-  //     if (!APIToken) {
-  //       await authenticate();
-  //     }
-  //     await fetchVideoToken();
-  //   };
-
-  //   authenticateAndFetchVideoToken();
-
-  //   return () => {
-  //     window.removeEventListener('beforeunload', handleBeforeUnload);
-  //   };
-  // }, []);
-
   return (
     <div className="face-analysis-root">
       <header className="face-analysis-header">
@@ -282,31 +174,19 @@ const FaceAnalysis = () => {
         <p className="face-analysis-subtitle">
           Our integrated behavior modules enable you to get started immediately. Try it for yourself.
         </p>
-        <div className='insightform-igair'>
-          <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} formatIGAIRPrefix="TOTAL IGAIR: " showPrefix={true} />
-        </div>
       </header>
       <div className="face-analysis-card-row">
         <div className="face-analysis-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Face Scan Analysis</div>   
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>       
         </div>
         <div className="face-analysis-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Voice Analysis</div>    
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>      
         </div>
         <div className="face-analysis-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="face-analysis-card-icon" />
           <div className="face-analysis-card-title">Digital Footprint</div>  
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>        
         </div>
       </div>
       <section className="face-analysis-feature-section">

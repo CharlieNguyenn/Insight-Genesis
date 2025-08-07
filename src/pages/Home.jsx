@@ -110,7 +110,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="stats">
+      {/* <section className="stats">
         <div className="container">
           <div className="title">
             <h2>ABOUT INSIGHT GENIE</h2>
@@ -153,7 +153,7 @@ const Home = () => {
             <img src={iconLoad} alt="arrow" className="load-icon" />           
           </div>          
         </div>
-      </section>
+      </section> */}
 
       {/* What We Do Section */}
       <section className="what-we-do">

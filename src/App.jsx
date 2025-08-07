@@ -17,6 +17,7 @@ import HumanResource from './pages/solutions/HumanResource';
 import Education from './pages/solutions/Education';
 import DecentralizedPersonalInsights from './pages/solutions/DecentralizedPersonalInsights';
 import InsightForm from './pages/form/InsightForm';
+import Profile from './pages/form/Profile';
 import FaceAnalysis from './pages/form/FaceAnalysis';
 import VideoAnalysis from './pages/form/VideoAnalysis';
 import DigitalFootprint from './pages/form/DigitalFootprint';
@@ -68,6 +69,33 @@ function App() {
               </ProtectedRoute>
             } />
             <Route path="/insights-form/result" element={
+              <ProtectedRoute>
+                <Result />
+              </ProtectedRoute>
+            } />
+            
+            {/* Profile Routes */}
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile/face-analysis" element={
+              <ProtectedRoute>
+                <FaceAnalysis />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile/video-analysis" element={
+              <ProtectedRoute>
+                <VideoAnalysis />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile/digital-footprint" element={
+              <ProtectedRoute>
+                <DigitalFootprint />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile/result" element={
               <ProtectedRoute>
                 <Result />
               </ProtectedRoute>

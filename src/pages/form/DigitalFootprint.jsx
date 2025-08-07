@@ -209,31 +209,19 @@ const DigitalFootprint = () => {
         <p className="footprint-subtitle">
           Our integrated behavior modules enable you to get started immediately. Try it for yourself.
         </p>
-        <div className='insightform-igair'>
-          <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} formatIGAIRPrefix="TOTAL IGAIR: " showPrefix={true} />
-        </div>
       </header>
       <div className="footprint-card-row">
         <div className="footprint-card" onClick={() => navigate('/insights-form/face-analysis')}>
           <img src={faceIcon} alt="Face Scan" className="footprint-card-icon" />
           <div className="footprint-card-title">Face Scan Analysis</div>    
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>      
         </div>
         <div className="footprint-card" onClick={() => navigate('/insights-form/video-analysis')}>
           <img src={videoIcon} alt="Voice" className="footprint-card-icon" />
           <div className="footprint-card-title">Voice Analysis</div>     
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>     
         </div>
         <div className="footprint-card" onClick={() => navigate('/insights-form/digital-footprint')}>
           <img src={footPrintIcon} alt="Digital Footprint" className="footprint-card-icon" />
           <div className="footprint-card-title">Digital Footprint</div>  
-          <div>
-            <IGAIRDisplay igairLoading={igairLoading} igairError={igairError} igairInfo={igairInfo} />
-          </div>        
         </div>
       </div>
       <section className="footprint-section">
@@ -320,7 +308,7 @@ const DigitalFootprint = () => {
             </div>
           </div>
           <p className="footprint-form-terms">
-            By clicking 'Show insights', you agree to the InsightGenie's <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.
+            By clicking 'Show insights', you agree to the Insight Geniesis AI's <a href="/terms-of-service">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>.
           </p>
           <button type="submit" className="footprint-submit" disabled={loading}>
             {loading ? 'Processing...' : 'Show insight'}
