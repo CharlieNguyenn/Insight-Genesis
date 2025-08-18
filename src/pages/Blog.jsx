@@ -1,100 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Blog.css';
-import blogImage from '../assets/blog.png';
-import blogImage1 from '../assets/blog1.png';
-import blogImage2 from '../assets/blog2.png';
-import blogImage3 from '../assets/blog3.png';
-import blogImage4 from '../assets/blog4.png';
-import blogImage5 from '../assets/blog5.png';
-import blogImage6 from '../assets/blog6.png';
+import {
+  fetchBlogPosts,
+  categories,
+  filterPostsByCategory
+} from './blogApi';
 
 const Blog = () => {
-  const featuredPost = {
-    id: 0,
-    title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-    excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen, exploring the hidden forces and phenomena that shape our reality. From the microscopic wonders of Nanotex undiscovered gems.',
-    author: 'Community',
-    date: 'April 25, 2025',
-    category: 'Insight',
-    readTime: '12 min read',
-    image: blogImage
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        setLoading(true);
+        const { posts: fetchedPosts, error: fetchError } = await fetchBlogPosts();
+        if (fetchError) {
+          setError(fetchError);
+        } else {
+          setPosts(fetchedPosts);
+          setError(null);
+        }
+      } catch (err) {
+        console.error('Error loading posts:', err);
+        setError('Failed to load posts. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadPosts();
+  }, []);
+
+  // Get all featured posts (sticky posts)
+  const featuredPosts = posts.filter(p => p.sticky);
+  const currentFeaturedPost = featuredPosts[currentFeaturedIndex];
+  
+  useEffect(() => {
+    if (featuredPosts.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentFeaturedIndex(prev => 
+          (prev + 1) % featuredPosts.length
+        );
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [featuredPosts.length]);
+
+  const filteredPosts = filterPostsByCategory(posts, selectedCategory);
+  const visiblePosts = filteredPosts.slice(0, visibleCount);
+
+  const handleDotClick = (index) => {
+    setCurrentFeaturedIndex(index);
   };
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 5, 2025',
-      category: 'Community',
-      readTime: '8 min read',
-      image: blogImage1,
-      url: "https://insightgenesis0.wordpress.com/"
-    },
-    {
-      id: 2,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 10, 2025',
-      category: 'Community',
-      readTime: '6 min read',
-      image: blogImage2,
-      url: null
-    },
-    {
-      id: 3,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 13, 2025',
-      category: 'Community',
-      readTime: '10 min read',
-      image: blogImage3,
-      url: null
-    },
-    {
-      id: 4,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 5, 2025',
-      category: 'Community',
-      readTime: '7 min read',
-      image: blogImage4,
-      url: null
-    },
-    {
-      id: 5,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 13, 2025',
-      category: 'Community',
-      readTime: '9 min read',
-      image: blogImage5,
-      url: null
-    },
-    {
-      id: 6,
-      title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-      excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen...',
-      author: 'Community',
-      date: 'April 13, 2025',
-      category: 'Community',
-      readTime: '5 min read',
-      image: blogImage6,
-      url: null
-    }
-  ];
-
-  const categories = ['All', 'Community', 'Insight', 'Products', 'News'];
-  const [selectedCategory, setSelectedCategory] = React.useState('Community');
-
-  const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+  if (error) {
+    return (
+      <div className="blog">
+        <div className="container" style={{ textAlign: 'center', padding: '50px' }}>
+          <div style={{ color: 'red' }}>{error}</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="blog">
@@ -104,29 +75,39 @@ const Blog = () => {
         </div>
       </section>
 
-      <section className="featured-post">
-        <div className="container">
-          <div className="featured-card">
-            <div className="featured-image">
-              <img src={featuredPost.image} alt={featuredPost.title} />
-            </div>
-            <div className="featured-content">
-              <h2 className="featured-title">{featuredPost.title}</h2>
-              <p className="featured-excerpt">{featuredPost.excerpt}</p>
-              <div className="featured-meta">
-                <span className="featured-read-time">{featuredPost.readTime}</span>
-                <span className="featured-date">{featuredPost.date}</span>
+      {featuredPosts.length > 0 && currentFeaturedPost && (
+        <section className="featured-post">
+          <div className="container">
+            <div className="featured-card">
+              <div className="featured-image">
+                <img src={currentFeaturedPost.image} alt={currentFeaturedPost.title} loading="lazy"/>
+              </div>
+              <div className="featured-content">
+                <h2 className="featured-title">{currentFeaturedPost.title}</h2>
+                <p className="featured-excerpt">{currentFeaturedPost.excerpt}</p>
+                <div className="featured-meta">
+                  <span className="featured-read-time">{currentFeaturedPost.readTime}</span>
+                  <span className="featured-date">{currentFeaturedPost.date}</span>
+                </div>
               </div>
             </div>
+            
+            {/* Show dots only if there are multiple featured posts */}
+            {featuredPosts.length > 1 && (
+              <div className="carousel-dots">
+                {featuredPosts.map((_, index) => (
+                  <span 
+                    key={index}
+                    className={`dot ${index === currentFeaturedIndex ? 'active' : ''}`}
+                    onClick={() => handleDotClick(index)}
+                    style={{ cursor: 'pointer' }}
+                  ></span>
+                ))}
+              </div>
+            )}
           </div>
-          <div className="carousel-dots">
-            <span className="dot active"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="blog-content">
         <div className="container">
@@ -139,7 +120,10 @@ const Blog = () => {
                   <button
                     key={category}
                     className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                      setVisibleCount(6);
+                    }}
                   >
                     {category}
                   </button>
@@ -153,44 +137,67 @@ const Blog = () => {
           </div>
 
           <div className="blog-grid">
-            {filteredPosts.map((post) => (
-              <article key={post.id} className="blog-card">
-                <div className="blog-image">
-                  <img src={post.image} alt={post.title} />
-                </div>
-                <div className="blog-content-area">
-                  <h3 className="blog-title">{post.title}</h3>
-                  <p className="blog-excerpt">{post.excerpt}</p>
-                  <div className="blog-footer">
-                    <div className="blog-meta">
-                      <span className="category-tag">{post.category}</span>
-                      <span className="blog-date">{post.date}</span>
-                    </div>
-                    {post.url ? (
-                      <a
-                        className="read-tag"
-                        href={post.url.startsWith('http') ? post.url : `https://${post.url}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Read
-                      </a>
-                    ) : (
-                      <span className="read-tag">Read</span>
-                    )}
+            {visiblePosts.length > 0 ? (
+              visiblePosts.map((post) => (
+                <article key={post.id} className="blog-card">
+                  <div className="blog-image">
+                    <img src={post.image} alt={post.title} loading="lazy" />
                   </div>
-                </div>
-              </article>
-            ))}
+                  <div className="blog-content-area">
+                    <h3 className="blog-title">{post.title}</h3>
+                    <p className="blog-excerpt">{post.excerpt}</p>
+                    <div className="blog-footer">
+                      <div className="blog-meta">
+                        <span className="category-tag">{post.category}</span>
+                        <span className="blog-date">{post.date}</span>
+                      </div>
+                      {post.url ? (
+                        <a
+                          className="read-tag"
+                          href={post.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Read
+                        </a>
+                      ) : (
+                        <span className="read-tag">Read</span>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div style={{ textAlign: 'center', padding: '50px', gridColumn: '1 / -1' }}>
+                No posts found for the selected category.
+              </div>
+            )}
           </div>
 
-          <div className="view-more">
-            <button className="view-more-btn">View more</button>
-          </div>
+          {/* View more / View less */}
+          {filteredPosts.length > 6 && (
+            <div className="view-more">
+              {visibleCount < filteredPosts.length ? (
+                <button
+                  className="view-more-btn"
+                  onClick={() => setVisibleCount(filteredPosts.length)}
+                >
+                  View more
+                </button>
+              ) : (
+                <button
+                  className="view-more-btn"
+                  onClick={() => setVisibleCount(6)}
+                >
+                  View less
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>
   );
 };
 
-export default Blog; 
+export default Blog;
