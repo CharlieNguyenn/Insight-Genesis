@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Blog.css';
+import { Link } from 'react-router-dom';
 import {
   fetchBlogPosts,
   categories,
@@ -71,7 +72,10 @@ const Blog = () => {
     <div className="blog">
       <section className="trending-header">
         <div className="trending-text">
-          // TRENDING // HOT NEWS // TRENDING
+          // <div className='trending-item'><span className="parabole-letter special-letter">T</span>REN<span className="parabole-letter special-letter">D</span>ING</div>
+          // <div className='trending-item'>H<span className="parabole-letter special-letter">O</span>T NEWS</div>
+          // <div className='trending-item'><span className="parabole-letter special-letter">T</span>REN<span className="parabole-letter special-letter">D</span>ING</div>
+          {/* // TRENDING // HOT NEWS // TRENDING */}
         </div>
       </section>
 
@@ -151,18 +155,13 @@ const Blog = () => {
                         <span className="category-tag">{post.category}</span>
                         <span className="blog-date">{post.date}</span>
                       </div>
-                      {post.url ? (
-                        <a
-                          className="read-tag"
-                          href={post.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Read
-                        </a>
-                      ) : (
-                        <span className="read-tag">Read</span>
-                      )}
+                      <Link
+                        className="read-tag"
+                        to={`/blog/${post.slug}`}
+                        state={{ post }}
+                      >
+                        Read
+                      </Link>
                     </div>
                   </div>
                 </article>

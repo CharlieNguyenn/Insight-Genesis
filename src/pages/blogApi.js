@@ -6,20 +6,11 @@ import blogImage4 from '../assets/blog4.png';
 import blogImage5 from '../assets/blog5.png';
 import blogImage6 from '../assets/blog6.png';
 
+// Configuration
+const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:3000/wp-json/wp/v2/posts/?_embed'; 
+
 // Fallback images for posts without featured media
 const fallbackImages = [blogImage1, blogImage2, blogImage3, blogImage4, blogImage5, blogImage6];
-
-// Featured post data
-export const featuredPost = {
-  id: 0,
-  title: 'EXPLORING THE WONDERS OF THE UNKNOWN',
-  excerpt: 'Unraveling the Secrets of the Invisible World\nJoin us as we delve into the fascinating realm of the unseen, exploring the hidden forces and phenomena that shape our reality. From the microscopic wonders of Nanotex undiscovered gems.',
-  author: 'Community',
-  date: 'April 25, 2025',
-  category: 'Insight',
-  readTime: '12 min read',
-  image: blogImage
-};
 
 // Utility functions
 const stripHtml = (html) => {
@@ -80,7 +71,7 @@ const getFirstLine = (text) => {
 // Main API function to fetch and transform posts
 export const fetchBlogPosts = async () => {
   try {
-    const response = await fetch('http://localhost:3000/wp-json/wp/v2/posts/?_embed');
+    const response = await fetch(API_URL);
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -111,7 +102,9 @@ export const fetchBlogPosts = async () => {
         image: getFeaturedImage(post, index),
         url: post.link,
         slug: post.slug,
-        sticky: post.sticky
+        sticky: post.sticky,
+        // Preserve full HTML content for detail view rendering
+        contentHtml: post.content?.rendered || ''
       };
     }));
 
