@@ -24,6 +24,7 @@ import DigitalFootprint from './pages/form/DigitalFootprint';
 import Result from './pages/form/Result';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import BlogDetail from './pages/BlogDetail';
 import './App.css';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/staking" element={<Staking />} />
             <Route path="/" element={<Resource />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/solutions/finance" element={<Finance />} />
             <Route path="/solutions/health-wellness" element={<HealthWellness />} />
